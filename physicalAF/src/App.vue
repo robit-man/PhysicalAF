@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from '@/components/HelloWorld.vue'
 </script>
 
 <template>
@@ -8,12 +7,19 @@ import HelloWorld from '@/components/HelloWorld.vue'
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
 
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/render">Render</RouterLink>
+        <RouterLink to="/"><div class="menubutton">Home</div></RouterLink>
+        <RouterLink to="/about"><div class="menubutton">About</div></RouterLink>
+        <RouterLink to="/render"><div class="menubutton">AFers</div></RouterLink>
+        <div class="menubutton">More</div>
+        <div class="menubutton"><img src="@/assets/icons/twitter.svg" alt=""></div>
+        <div class="menubutton"><img src="@/assets/icons/discord.svg" alt=""></div>
+        <div class="menubutton"><img src="@/assets/icons/opensea.svg" alt=""></div>
+
+        <div class="profilebutton"><img src="@/assets/icons/profile.svg" alt=""></div>
+        <div class="walletbutton"><b style="margin:auto;font-weight:bold;margin-right:0.5rem;">Connect</b><img src="@/assets/icons/wallet.svg" alt=""></div>
+
       </nav>
     </div>
   </header>
@@ -24,17 +30,63 @@ import HelloWorld from '@/components/HelloWorld.vue'
 <style>
 @import '@/assets/base.css';
 
+.profilebutton{
+  height:48px;
+  width:48px;
+  display:flex;
+  padding:0.5rem;
+  background:var(--vt-c-white);
+  border-radius:0.25rem;
+  margin: auto 0.5rem;
+}
+.walletbutton{
+  padding:0.5rem;
+  height:48px;
+  width:auto;
+  display:flex;  
+  padding:0.5rem 1rem;
+  color:var(--vt-c-black-mute);
+  background:var(--vt-c-white);
+  margin: auto 0.5rem;
+  font-weight:bold;
+  border-radius:0.25rem;
+
+}
+
 #app {
   max-width: 100%;
-  margin: 0 auto;
-  padding: 2rem;
-
+  height:100vh;
   font-weight: normal;
 }
 
 header {
+  display:flex;
+  flex-flow:row;
+  justify-content:space-between;
   line-height: 1.5;
-  max-height: 100vh;
+  max-height: 100px;
+  width:calc(100vw - 4rem);
+}
+
+.menubutton{
+  line-height:30px;
+  height:30px;
+  padding:0rem 1rem;
+  margin:auto 0.5rem;
+  display:flex;
+  flex-flow:wrap;
+  justify-content:center;
+  border-radius:0.25rem;
+  background-color:#3F3C40;
+}
+
+nav {
+  display:flex;
+  flex-flow:row;
+  width: auto;
+  font-size: 12px;
+  text-align: center;
+  margin:auto;
 }
 
 .logo {
@@ -45,7 +97,7 @@ header {
 a,
 .green {
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
+  color: var(--vt-c-white);
   transition: 0.4s;
 }
 
@@ -59,11 +111,10 @@ nav {
   width: 100%;
   font-size: 12px;
   text-align: center;
-  margin-top: 2rem;
 }
 
 nav a.router-link-exact-active {
-  color: var(--color-text);
+  color: var(--vt-c-green);
 }
 
 nav a.router-link-exact-active:hover {
@@ -71,9 +122,7 @@ nav a.router-link-exact-active:hover {
 }
 
 nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
+  display: flex;
 }
 
 nav a:first-of-type {
@@ -108,11 +157,8 @@ nav a:first-of-type {
 
   nav {
     text-align: left;
-    margin-left: -1rem;
     font-size: 1rem;
-
     padding: 1rem 0;
-    margin-top: 1rem;
   }
 }
 </style>
