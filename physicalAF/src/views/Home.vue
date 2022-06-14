@@ -17,8 +17,21 @@
         <Renderer ref="renderer" resize antialias :orbit-ctrl="{ autoRotate: true, enableDamping: true, dampingFactor: 0.05 }">
           <Camera :position="{ x: 0, y: 0, z: 10 }" />
           <Scene background="#030306">
-            <Box ref="mesh" :width="3" :height="5" :depth="0.1" :rotation="{ y: Math.PI / 2, z: Math.PI / 1 }">
-              <MatcapMaterial name="444444_444444_444444_444444" />
+            <PointLight :position="{ y: 36, z: 15, x: -12 }" />
+            <PointLight :position="{ y: -52, z: -15, x: 15 }" />
+            <Box ref="mesh" :width="3" :height="5" :depth=".1" :rotation="{ y: Math.PI / 2.2, z: Math.PI / 1.1 }">
+             
+             <StandardMaterial :props="{ displacementScale: 0.2 }">
+              <Texture src="/src/assets/card.png" />
+              <Texture src="/src/assets/card.png" name="displacementMap" />
+              <Texture src="/src/assets/card.png" name="normalMap" />
+              <Texture src="/src/assets/card.png" name="roughnessMap" />
+              <Texture src="/src/assets/card.png" name="aoMap" />
+            </StandardMaterial>
+             
+             <StandardMaterial>
+                    <CubeTexture path="/src/assets/" :urls="['card.png', 'card.png', 'card.png', 'card.png', 'card.png', 'card.png']" />
+              </StandardMaterial>
             </Box>
           </Scene>
         </Renderer>
@@ -45,10 +58,13 @@
 </template>
 
 <script>
-import { Box, Camera, MatcapMaterial, Renderer, Scene } from 'troisjs';
+import { Box, Camera, StandardMaterial, CubeTexture, Texture, Renderer, Scene } from 'troisjs';
 export default {
-  components: { Box, Camera, MatcapMaterial, Renderer, Scene },
+  components: { Box, Camera, StandardMaterial, CubeTexture, Texture, Renderer, Scene },
 };
+
+
+
 </script>
 
 <style>
