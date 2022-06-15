@@ -5,7 +5,7 @@
 
 <div class="hero-text">
 
-<h2>Verifiable</h2>
+<h2 style="transform-origin: 0%;">Verifiable</h2>
 <h1 class="homeheader">Physical As F<b class="s1">*</b><b class="s2">U</b>CK</h1>
 <h3>1 of 1 Physical NFT cards.</h3>
 <p>Your NFT on the blockchain is just one side of the equation. <br> Using onchain data PhysicalAF enables you to prove in the <br>real world that you are the owner of the digital asset. </p>
@@ -75,6 +75,6 @@ export default {
 .homeheader > b{font-weight:bold;}
 .homeheader:hover > .s1{display:none;}
 .homeheader:hover > .s2{display:inline-block;}
-    .cardview{width:512px;height:512px;}
+    .cardview{width:40vw;height:calc(100vh - 200px);}
 .hero-text{margin:auto 0rem;}
 </style>
