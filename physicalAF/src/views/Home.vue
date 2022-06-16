@@ -14,23 +14,19 @@
 </div>
 
       <div class="cardview">
+        <div class="price" style="position:absolute;right:0px;top:50%;z-index:10;font-weight:100;font-size:3rem;">0.045  <img src="~/@/assets/icons/ethereum.svg" style="height:2.5rem;" alt=""></div>
         <Renderer ref="renderer" resize antialias :orbit-ctrl="{ autoRotate: true, enableDamping: true, dampingFactor: 0.05 }">
           <Camera :position="{ x: 0, y: 0, z: 10 }" />
           <Scene background="#030306">
  
-      <AmbientLight :intensity="0.5" />
+      <AmbientLight :intensity="0.9" />
       <PointLight :position="{ y: 50, z: 0 }" />
       <PointLight color="#ffffff" :intensity="0.75" :position="{ y: -50, z: 0 }" />
 
             <Box ref="mesh"  :width="3" :height="4" :depth="0.01" :width-segments="200" :height-segments="200" >
-                                  <MatcapMaterial name="392307_B3AE7D_6D5618_847C42" />
 
                     <StandardMaterial :props="{ displacementScale: 0.2 }">
                       <Texture src="/src/assets/card.png" />
-                      <Texture src="/assets/textures/Wood_Tiles_002_height.png" name="displacementMap" />
-                      <Texture src="/assets/textures/Wood_Tiles_002_normal.jpg" name="normalMap" />
-                      <Texture src="/assets/textures/Wood_Tiles_002_roughness.jpg" name="roughnessMap" />
-                      <Texture name="aoMap" />
                     </StandardMaterial>
                   </Box>
 
