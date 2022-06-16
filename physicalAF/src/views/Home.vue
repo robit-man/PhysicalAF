@@ -17,24 +17,39 @@
         <div class="price" style="position:absolute;right:0px;top:50%;z-index:10;font-weight:100;font-size:3rem;">0.045  <img src="~/@/assets/icons/ethereum.svg" style="height:2.5rem;" alt=""></div>
         <Renderer ref="renderer" resize antialias :orbit-ctrl="{ autoRotate: true, enableDamping: true, dampingFactor: 0.05 }">
           <Camera :position="{ x: 0, y: 0, z: 10 }" />
-          <Scene background="#030306">
+          <Scene background="#000000">
  
       <AmbientLight :intensity="0.9" />
-      <PointLight :position="{ y: 50, z: 0 }" />
-      <PointLight color="#ffffff" :intensity="0.75" :position="{ y: -50, z: 0 }" />
+      <PointLight color="#55ffff" :intensity="0.25" :position="{x: 100, y: -150, z: 120 }"  />
+      <PointLight color="#ffff55" :intensity="0.25" :position="{x: -100, y: 150, z: 150 }"  />
+      <PointLight color="#ff55ff" :intensity="0.25" :position="{x: 100, y: -100, z: -100 }" />
+        <Group>
+                    <Box  cast-shadow ref="mesh"  :width="3" :height="4" :depth="0.1" :position="{x: 0, y:  0, z: 0}" :depthSegments="20" :width-segments="200" :height-segments="200" >
+                            <MatcapMaterial name="070B0C_B2C7CE_728FA3_5B748B" />
+                          </Box>
 
-            <Box ref="mesh"  :width="3" :height="4" :depth="0.01" :width-segments="200" :height-segments="200" >
-
-                    <StandardMaterial :props="{ displacementScale: 0.2 }">
-                      <Texture src="/src/assets/card.png" />
-                    </StandardMaterial>
-                  </Box>
+                    <Box ref="mesh"  :width="3" :height="4"  :depth="0.001" :position="{x: 0, y:  0, z: 0.05}" :depthSegments="20" :width-segments="200" :height-segments="200" >
+                            <StandardMaterial :props="{ displacementScale: 0.2 }">
+                              <Texture src="/src/assets/card.png" />
+                            </StandardMaterial>
+                          </Box> 
+                          
+                          <Box ref="mesh"  :width="1" :height="1"  :depth="0" :position="{x: 0, y:  0, z: -0.051}" :depthSegments="20" :width-segments="200" :height-segments="200" >
+                            <BasicMaterial :props="{ displacementScale: 0.5 }">
+                              <Texture refraction :refraction-ratio="0.95" src="/src/assets/back.png" />
+                            </BasicMaterial>
+                          </Box>
+        </Group>
 
           </Scene>   
 
-          <EffectComposer>
-              <RenderPass />
-            </EffectComposer>
+
+    <EffectComposer>
+      <RenderPass />
+      <FilmPass   />
+      <UnrealBloomPass :strength="0.4" />
+    </EffectComposer>
+
         </Renderer>
       </div>
 
@@ -66,7 +81,7 @@
 
 <script>
 
-import { Box, Camera, StandardMaterial, BasicMaterial,SubSurfaceMaterial, RenderPass, PhongMaterial, HalftonePass, EffectComposer,  UnrealBloomPass, CubeTexture, MatcapMaterial, Texture, Renderer, Scene } from 'troisjs';
+import { Box, Camera, StandardMaterial, BasicMaterial,SubSurfaceMaterial, RenderPass, PhongMaterial, FilmPass    , EffectComposer,  UnrealBloomPass, CubeTexture, MatcapMaterial, Texture, Renderer, Scene } from 'troisjs';
 export default {
   
   mounted() {
@@ -77,7 +92,7 @@ export default {
 
 
 
-  components: { Box, Camera, StandardMaterial, BasicMaterial,SubSurfaceMaterial, HalftonePass, PhongMaterial, EffectComposer,  UnrealBloomPass, RenderPass, MatcapMaterial, CubeTexture, Texture, Renderer, Scene },
+  components: { Box, Camera, StandardMaterial, BasicMaterial,SubSurfaceMaterial, FilmPass    , PhongMaterial, EffectComposer,  UnrealBloomPass, RenderPass, MatcapMaterial, CubeTexture, Texture, Renderer, Scene },
 };
 
 
@@ -85,6 +100,7 @@ export default {
 </script>
 
 <style>
+canvas{mix-blend-mode:lighten;}
 .orderbutton{cursor:pointer;line-height:1.8;height:60px;background-color:white;color:#3F3C40;border-radius:0.25rem;padding:0.5rem 2rem;display:flex;font-size:1.5rem;font-weight:bold;}
 .orderbutton:hover{opacity:0.5;}
 .homeheader{font-size:3rem;font-weight:bold;color:var(--vt-c-green);
