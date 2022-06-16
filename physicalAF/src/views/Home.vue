@@ -23,20 +23,23 @@
       <PointLight color="#55ffff" :intensity="0.25" :position="{x: 100, y: -150, z: 120 }"  />
       <PointLight color="#ffff55" :intensity="0.25" :position="{x: -100, y: 150, z: 150 }"  />
       <PointLight color="#ff55ff" :intensity="0.25" :position="{x: 100, y: -100, z: -100 }" />
+      <PointLight color="#55ffff" :intensity="0.25" :position="{x: -100, y: 150, z: -120 }"  />
+      <PointLight color="#ffff55" :intensity="0.25" :position="{x: 100, y: -150, z: -150 }"  />
+      <PointLight color="#ff55ff" :intensity="0.25" :position="{x: -100, y: 100, z: 100 }" />
         <Group>
                     <Box  cast-shadow ref="mesh"  :width="3" :height="4" :depth="0.1" :position="{x: 0, y:  0, z: 0}" :depthSegments="20" :width-segments="200" :height-segments="200" >
                             <MatcapMaterial name="070B0C_B2C7CE_728FA3_5B748B" />
                           </Box>
 
-                    <Box ref="mesh"  :width="3" :height="4"  :depth="0.001" :position="{x: 0, y:  0, z: 0.05}" :depthSegments="20" :width-segments="200" :height-segments="200" >
-                            <StandardMaterial :props="{ displacementScale: 0.2 }">
-                              <Texture src="/src/assets/card.png" />
+                    <Box ref="mesh"  :width="3" :height="4"  :depth="0" :position="{x: 0, y:  0, z: 0.051}" :depthSegments="20" :width-segments="200" :height-segments="200" >
+                            <StandardMaterial :props="{ displacementScale: 1 }">
+                              <Texture refraction :refraction-ratio="0.5" src="/src/assets/card.png" />
                             </StandardMaterial>
                           </Box> 
                           
                           <Box ref="mesh"  :width="1" :height="1"  :depth="0" :position="{x: 0, y:  0, z: -0.051}" :depthSegments="20" :width-segments="200" :height-segments="200" >
-                            <BasicMaterial :props="{ displacementScale: 0.5 }">
-                              <Texture refraction :refraction-ratio="0.95" src="/src/assets/back.png" />
+                            <BasicMaterial :props="{ displacementScale: 1 }">
+                              <Texture refraction :refraction-ratio="0.5" src="/src/assets/back.png" />
                             </BasicMaterial>
                           </Box>
         </Group>
@@ -47,7 +50,7 @@
     <EffectComposer>
       <RenderPass />
       <FilmPass   />
-      <UnrealBloomPass :strength="0.4" />
+      <UnrealBloomPass :strength="0.35" />
     </EffectComposer>
 
         </Renderer>
