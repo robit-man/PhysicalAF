@@ -38,6 +38,8 @@ import { RouterLink, RouterView } from 'vue-router'
   background:var(--vt-c-white);
   border-radius:0.25rem;
   margin: auto 0.5rem;
+  cursor:pointer;
+
 }
 .walletbutton{
   padding:0.5rem;
@@ -50,22 +52,30 @@ import { RouterLink, RouterView } from 'vue-router'
   margin: auto 0.5rem;
   font-weight:bold;
   border-radius:0.25rem;
+  margin-right:0rem;
+cursor:pointer;
+}
+.walletbutton:hover{
+opacity:0.5;
+}
+.profilebutton:hover{
+opacity:0.5;
 
 }
-
 #app {
-  max-width: 100%;
+  width: calc(100vw - 2rem);
   height:100vh;
   font-weight: normal;
 }
 
 header {
+  z-index:100;
   display:flex;
   flex-flow:row;
   justify-content:space-between;
   line-height: 1.5;
   max-height: 100px;
-  width:calc(100vw - 4rem);
+  width:100%;
 }
 
 .menubutton{
@@ -103,7 +113,7 @@ a,
 
 @media (hover: hover) {
   a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
+    opacity:0.8;
   }
 }
 
@@ -136,13 +146,12 @@ nav a:first-of-type {
   }
 
   #app {
-    padding: 0 2rem;
+    padding: 0 4rem;
   }
 
   header {
     display: flex;
     place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
   }
 
   header .wrapper {
