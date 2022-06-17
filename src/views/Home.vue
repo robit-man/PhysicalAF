@@ -5,9 +5,9 @@
 
 <div class="hero-text">
 
-<h2 style="font-size:2.5rem;transform-origin:0% 50%;transform:rotate(-15deg);">Verifiable</h2>
-<h1 class="homeheader" style="transform-origin:0% 50%;transform:rotate(-10deg);">Physical As F<b class="s1">*</b><b class="s2">U</b>CK</h1>
-<h3 style="margin-bottom:1rem;transform-origin: 0% 50%;transform:rotate(-5deg);">1 of 1 Physical NFT cards.</h3>
+<h2 style="font-size:2.5rem;transform-origin:10% 150%;transform:rotate(-14deg);">Verifiable</h2>
+<h1 class="homeheader" style="transform-origin:0% 150%;transform:rotate(-8deg);">Physical As F<b class="s1">*</b><b class="s2">U</b>CK</h1>
+<h3 style="margin-bottom:1rem;transform-origin: 10% -50%;transform:rotate(-3deg);">1 of 1 Physical NFT cards.</h3>
 <p>Your NFT on the blockchain is just one side of the equation. <br> Using onchain data PhysicalAF enables you to prove in the <br>real world that you are the owner of the digital asset. </p>
 <a href=""><div style="padding:0.5rem 1rem;margin:1rem 0rem;background-color:#3F3C40;border-radius:0.25rem;width:max-content;font-size:1.5rem;font-weight:bold;" class="cta-button">Learn More</div></a>
 
@@ -113,6 +113,6 @@ canvas{mix-blend-mode:lighten;}
 .homeheader > b{font-weight:bold;}
 .homeheader:hover > .s1{display:none;}
 .homeheader:hover > .s2{display:inline-block;}
-    .cardview{width:40vw;height:calc(100vh - 200px);}
+    .cardview{width:40vw;min-width:500px;height:calc(100vh - 200px);}
 .hero-text{margin:auto 0rem;}
 </style>
