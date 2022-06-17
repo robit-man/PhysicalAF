@@ -69,15 +69,15 @@
           <h3>Pre-Order a Physical NFT </h3>
           <p>And mint a #AFer entirely free!</p>
         </div>
-        <div class="orderbutton" v-if="!wallet" v-on:click="wallet = !wallet">Order</div>
-        <div class="orderbutton" v-else >Order</div>
+        <div class="orderbutton" v-if="!modalLoginOpen" v-on:click="wallet = !wallet">Order</div>
+        <div class="orderbutton" style="animation:flash 1s linear infinite;" v-else >Order</div>
       </div>
 
   </div>
 
 </footer>
 
-<ConnectWallet v-if="wallet" v-on:click="wallet = !wallet">
+<ConnectWallet v-if="wallet" v-on:click="wallet = !wallet, modalLoginOpen = !modalLoginOpen">
 
 </ConnectWallet>
 
@@ -110,6 +110,13 @@ export default {
 </script>
 
 <style>
+@keyframes flash{
+  0%{background-color:white;}
+  30%{background-color:white;}
+  50%{background-color:#B7EAC2;}
+  70%{background-color:white;}
+  100%{background-color:white;}
+}
 canvas{mix-blend-mode:lighten;}
 .orderbutton{cursor:pointer;line-height:1.8;height:60px;background-color:white;color:#3F3C40;border-radius:0.25rem;padding:0.5rem 2rem;display:flex;font-size:1.5rem;font-weight:bold;}
 .orderbutton:hover{opacity:0.5;}
