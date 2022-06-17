@@ -46,7 +46,6 @@
 
           </Scene>   
 
-
     <EffectComposer>
       <RenderPass />
       <FilmPass   />
@@ -70,12 +69,17 @@
           <h3>Pre-Order a Physical NFT </h3>
           <p>And mint a #AFer entirely free!</p>
         </div>
-        <div class="orderbutton" >Order</div>
+        <div class="orderbutton" v-if="!wallet" v-on:click="wallet = !wallet">Order</div>
+        <div class="orderbutton" v-else >Order</div>
       </div>
 
   </div>
 
 </footer>
+
+<ConnectWallet v-if="wallet" v-on:click="wallet = !wallet">
+
+</ConnectWallet>
 
 </div>
 
@@ -83,19 +87,22 @@
 </template>
 
 <script>
+import ConnectWallet from '@/components/ConnectWallet.vue'
 
 import { Box, Camera, StandardMaterial, BasicMaterial,SubSurfaceMaterial, RenderPass, PhongMaterial, FilmPass    , EffectComposer,  UnrealBloomPass, CubeTexture, MatcapMaterial, Texture, Renderer, Scene } from 'troisjs';
 export default {
-  
-  mounted() {
-
-
-    
+   data() {
+    return {
+      wallet: false,
+      form: {
+        quantity: ''
+      },
+      modalLoginOpen: false,
+    };
   },
-
-
-
-  components: { Box, Camera, StandardMaterial, BasicMaterial,SubSurfaceMaterial, FilmPass    , PhongMaterial, EffectComposer,  UnrealBloomPass, RenderPass, MatcapMaterial, CubeTexture, Texture, Renderer, Scene },
+  mounted() {
+  },
+  components: { Box, Camera, ConnectWallet,  StandardMaterial, BasicMaterial, SubSurfaceMaterial, FilmPass, PhongMaterial, EffectComposer,  UnrealBloomPass, RenderPass, MatcapMaterial, CubeTexture, Texture, Renderer, Scene },
 };
 
 
