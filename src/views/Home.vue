@@ -33,13 +33,13 @@
 
                     <Box ref="mesh"  :width="3" :height="4"  :depth="0" :position="{x: 0, y:  0, z: 0.051}" :depthSegments="20" :width-segments="200" :height-segments="200" >
                             <StandardMaterial :props="{ displacementScale: 1 }">
-                              <Texture refraction :refraction-ratio="0.5" src="/assets/card.png" />
+                              <Texture refraction :refraction-ratio="0.5" src="/card.png" />
                             </StandardMaterial>
                           </Box> 
                           
                           <Box ref="mesh"  :width="1" :height="1"  :depth="0" :position="{x: 0, y:  0, z: -0.051}" :depthSegments="20" :width-segments="200" :height-segments="200" >
                             <BasicMaterial :props="{ displacementScale: 1 }">
-                              <Texture refraction :refraction-ratio="0.5" src="/assets/back.png" />
+                              <Texture refraction :refraction-ratio="0.5" src="/back.png" />
                             </BasicMaterial>
                           </Box>
         </Group>
