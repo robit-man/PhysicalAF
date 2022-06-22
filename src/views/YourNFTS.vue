@@ -253,7 +253,8 @@
 <div class="row center">    
 
   <div class="column">
-    <div class="row" style="margin-bottom:1rem;margin-top:2rem;"><p style="margin-right:0.5rem;">Nx NFTs Selected</p> <button>Clear</button></div>
+    <div class="row" style="margin-bottom:1rem;margin-top:2rem;"><p style="margin-right:0.5rem;">Nx NFTs Selected</p> <button style="  height: 2rem;
+  margin: auto;">Clear</button></div>
   
   <div class="confirm-button" v-on:click="preview = !preview" style="">Confirm</div>
   <div style="margin-top:1rem" class="confirm-button" v-on:click="checkout = !checkout" >Checkout</div>
@@ -332,7 +333,8 @@ export default {
 .nftlist{display:flex;flex-flow:wrap;width:100%;margin-top:1rem;max-height:60vh;overflow-y:scroll;margin-left:-0.5rem;margin-right:-0.5rem;}
 
 .searchbox{padding:0.5rem;background:transparent;color:white;border:1px solid white;}
-
+.nft-title{font-size:0.8rem;}
+.nft-number{font-size:0.8rem;}
 .nft{max-width:200px;background:black;margin:0.5rem;}
 
 .mintbutton{height:2.5rem;width:auto;display:flex;flex-flow:column;justify-content:center;cursor:pointer;padding:0.5rem 1rem;color:#3F3C40;background-color:white; border-radius:0.25rem;margin:auto 0;font-size:1.5rem;font-weight:bold;}
