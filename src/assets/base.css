@@ -68,18 +68,19 @@
 }
 
 h1{
+  font-size:4rem;
   font-weight:bold;
 }
 h2{
-  font-size:1.8rem;
+  font-size:3rem;
   font-weight:bold;
 }
 h3{
-  font-size:1.5rem;
+  font-size:2rem;
   font-weight:bold;
 }
 h4{
-  font-size:1.2rem;
+  font-size:1.5rem;
 }
 .header{}
 @media (max-width: 1024px) {
@@ -116,7 +117,7 @@ body {
   color: var(--color-text);
   background: var(--vt-c-black);
   transition: color 0.5s, background-color 0.5s;
-  font-size: 15px;
+  font-size: 1.5rem;
   line-height: 1.4;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

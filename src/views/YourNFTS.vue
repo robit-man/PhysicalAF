@@ -276,11 +276,15 @@
 
 </div>
 
-  <Preview v-if="preview">
-  </Preview>
+    <Preview  v-if="preview"    
+    v-show="preview"
+          @close="closeModal">
+    </Preview>
 
-  <Checkout v-if="checkout">
-  </Checkout>
+    <Checkout v-if="checkout"        
+    v-show="checkout"
+          @close="closeModal">
+    </Checkout>
 
 </template>
 
@@ -305,10 +309,12 @@ export default {
   },
   methods:{
     showModal() {
-        this.isModalVisible = true;
+        this.preview = true;
+        this.checkout = true;
       },
       closeModal() {
-        this.isModalVisible = false;
+        this.preview = false;
+        this.checkout = false;
       }
   },
   mounted() {

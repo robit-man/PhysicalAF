@@ -3,16 +3,16 @@
 <div class="fill-h-f column between">
   <div class="row center auto">
 
-<div class="hero-text" style="margin:auto;margin-top:10rem;">
+<div class="hero-text" style="margin:auto;">
 
 <h2 style="font-size:3rem;transform-origin:10% 150%;transform:rotate(-14deg)translatex(-32px);">Learn More!</h2>
 <h1 class="header green" style="">PhysicalAF</h1>
-<p style="margin-bottom:1rem;width:700px;font-weight:bold;">What is a PhysicalAF card? </p>
-<p style="margin-bottom:1rem;width:700px;">The PhysicalAF card is a proof of NFT ownership (PoN), granting the ability to verify you own the NFT without having to connect your wallet.  Verifying your own PhysicalAF card is quick and easy. To prove verification, simply scan the  QR code on the PhysicalAF card.</p>
-<p style="margin-bottom:1rem;width:700px;">PhysicalAF cards give you a unique way to prove ownership of your digital assets in the real world.  </p>
-<p style="margin-bottom:1rem;width:700px;font-weight:bold;">How is it done? </p>
-<p style="margin-bottom:1rem;width:700px;">Our verification technology uses live onchain data to validate if the Ethereum address which purchased the PhysicalAF card still holds the NFT in their wallet. If the wallet that purchased the card still owns the NFT your verification will be successful. However, a transfer of the NFT to another wallet will deem the PhysicalAF card unverifiable and the verification will fail. This process ensures authenticity and validity of the digital goods.</p>
-<p style="margin-bottom:1rem;width:700px;">You can order as many copies of the same NFT as you like, but be aware that if your NFT doesnt remain in the wallet used to order, all your cards will become unverifiable.  </p>
+<p style="margin-bottom:1rem;font-size:20px;width:800px;font-weight:bold;">What is a PhysicalAF card? </p>
+<p style="margin-bottom:1rem;font-size:20px;width:800px;">The PhysicalAF card is a proof of NFT ownership (PoN), granting the ability to verify you own the NFT without having to connect your wallet.  Verifying your own PhysicalAF card is quick and easy. To prove verification, simply scan the  QR code on the PhysicalAF card.</p>
+<p style="margin-bottom:1rem;font-size:20px;width:800px;">PhysicalAF cards give you a unique way to prove ownership of your digital assets in the real world.  </p>
+<p style="margin-bottom:1rem;font-size:20px;width:800px;font-weight:bold;">How is it done? </p>
+<p style="margin-bottom:1rem;font-size:20px;width:800px;">Our verification technology uses live onchain data to validate if the Ethereum address which purchased the PhysicalAF card still holds the NFT in their wallet. If the wallet that purchased the card still owns the NFT your verification will be successful. However, a transfer of the NFT to another wallet will deem the PhysicalAF card unverifiable and the verification will fail. This process ensures authenticity and validity of the digital goods.</p>
+<p style="margin-bottom:1rem;font-size:20px;width:800px;">You can order as many copies of the same NFT as you like, but be aware that if your NFT doesnt remain in the wallet used to order, all your cards will become unverifiable.  </p>
 
 
 </div>
@@ -37,16 +37,16 @@
 
   </div>
 
-<footer style="height:100px;display:flex;flex-flow:column;justify-content: center;width:100%;">
+<footer style="padding-bottom:2rem;height:100px;display:flex;flex-flow:column;justify-content: center;width:100%;">
 
 
   <div class="row" style="margin:auto;flex-flow:row;width:100%;justify-content: space-between;">
 
-    <div class="copyright" style="margin-top:auto;font-weight:100;">© PhysicalAF, Inc. 2022. </div>
+    <div class="copyright" style="margin-top:auto;font-weight:100;font-size:1rem;">© PhysicalAF, Inc. 2022. </div>
       <div class="order-box" style="background-color:#3F3C40; width:auto;padding:0.5rem;border-radius:0.25rem;height:auto;display:flex;flex-flow:row;justify-content:space-between;">
         <div class="text" style="padding:0rem 2rem;display: flex;flex-flow: column;justify-content: center;">
-          <h3>Pre-Order a Physical NFT </h3>
-          <p>And mint a #AFer entirely free!</p>
+          <h3 style="font-size:30px!important;">Pre-Order a Physical NFT </h3>
+          <p style="font-size:20px!important;">And mint a #AFer entirely free!</p>
         </div>
         <div class="orderbutton" v-if="!modalLoginOpen" v-on:click="wallet = !wallet">Order</div>
         <RouterLink v-else class="orderbutton" style="animation:flash 1s linear infinite;" to="/mint">ORDER</RouterLink>
@@ -105,7 +105,7 @@ export default {
   100%{background-color:white;}
 }
 canvas{mix-blend-mode:lighten;}
-.orderbutton{cursor:pointer;line-height:1.8;height:60px;background-color:white;color:#3F3C40;border-radius:0.25rem;padding:0.5rem 2rem;display:flex;font-size:1.5rem;font-weight:bold;}
+.orderbutton{height:100%;cursor:pointer;line-height:1;height:auto;background-color:white;color:#3F3C40;border-radius:0.25rem;padding:0.5rem 2rem;display:flex;font-size:2rem;text-align:center;display:flex;flex-flow:column;justify-content:center;font-weight:bold;}
 .orderbutton:hover{opacity:0.5;}
 .header{font-size:3rem;font-weight:bold;}
 .header> .s1{display:inline-block;}

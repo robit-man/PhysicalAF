@@ -71,7 +71,7 @@ export default {
       form: {
         quantity: ''
       },
-      modalLoginOpen: false,
+      preview: false,
     };
   },
   mounted() {

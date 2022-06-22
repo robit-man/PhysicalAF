@@ -55,7 +55,7 @@
               MOBILE (OPTIONAL)
               <input type="text">
             </div>
-<h3 style="margin-bottom:2rem;margin-top:1rem;">SHIPPING DETAILS</h3>
+<h3 style="margin-bottom:1rem;margin-top:1rem;">SHIPPING DETAILS</h3>
             <div class="form-input">
               STREET ADDRESS
               <input type="text">
@@ -105,7 +105,7 @@ export default {
       form: {
         quantity: ''
       },
-      modalLoginOpen: false,
+      checkout: false,
     };
   },
   mounted() {
@@ -119,9 +119,9 @@ export default {
 
 <style scoped>
 .form{margin-bottom:2rem;margin-top:2rem;}
-.form-input{display:flex;flex-flow:column;margin-bottom:1rem;}
+.form-input{font-size:1rem;display:flex;flex-flow:column;margin-bottom:1rem;}
 .form-input > input{color:white;background:unset;border:1px solid white;padding:0.5rem;}
-.data{margin:1rem;}
+.data{margin:1rem 0rem;}
 .cardbutton{cursor:pointer;margin:auto;width:max-content;margin-top:0.5rem;padding:0.5rem 2rem;border:1px solid white;border-radius:0.25rem;}
 .confirm-button{margin-top:1rem;background:#B7EAC2;text-align:center;font-size:1.5rem;padding:0.5rem 2rem;cursor:pointer;color:#3F3C40;font-weight:600;border-radius:0.25rem;width:max-content;margin:auto;}
 .buttondesc{margin-bottom:0.5rem;}
