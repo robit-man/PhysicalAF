@@ -2,12 +2,14 @@
 <div class="backdrop" style="">
   
 <div class="buttonmodal" style="">
+
 <button style="display:none;background-color:unset;cursor:pointer;border:unset;height:35px;width:35px;position:absolute;right:2rem;"
               type="button"
               class="close"
               @click="$emit('close')" >
               <img src="~/@/assets/icons/modalclose.svg" alt="">
             </button>
+
     <div class="buttondesc" style=""><p>Connect your wallet to continue.</p></div>
     <div class="connect-wallet" style="">Connect Wallet</div>
   </div>

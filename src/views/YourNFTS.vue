@@ -256,6 +256,7 @@
     <div class="row" style="margin-bottom:1rem;margin-top:2rem;"><p style="margin-right:0.5rem;">Nx NFTs Selected</p> <button>Clear</button></div>
   
   <div class="confirm-button" v-on:click="preview = !preview" style="">Confirm</div>
+  <div style="margin-top:1rem" class="confirm-button" v-on:click="checkout = !checkout" >Checkout</div>
   </div>
 </div>
 
@@ -278,10 +279,14 @@
   <Preview v-if="preview">
   </Preview>
 
+  <Checkout v-if="checkout">
+  </Checkout>
+
 </template>
 
 <script>
 import Preview from '@/components/Preview.vue';
+import Checkout from '@/components/Checkout.vue';
 import ConnectWallet from '@/components/ConnectWallet.vue';
 
 import { Box, Camera, StandardMaterial, BasicMaterial,SubSurfaceMaterial, RenderPass, PhongMaterial, FilmPass    , EffectComposer,  UnrealBloomPass, CubeTexture, MatcapMaterial, Texture, Renderer, Scene } from 'troisjs';
@@ -290,6 +295,7 @@ export default {
     return {
       wallet: false,
       preview: false,
+      checkout: false,
       isModalVisible: false,
       form: {
         quantity: ''
@@ -307,7 +313,7 @@ export default {
   },
   mounted() {
   },
-  components: { Preview, Box, Camera, ConnectWallet,  StandardMaterial, BasicMaterial, SubSurfaceMaterial, FilmPass, PhongMaterial, EffectComposer,  UnrealBloomPass, RenderPass, MatcapMaterial, CubeTexture, Texture, Renderer, Scene },
+  components: { Preview, Checkout, Box, Camera, ConnectWallet,  StandardMaterial, BasicMaterial, SubSurfaceMaterial, FilmPass, PhongMaterial, EffectComposer,  UnrealBloomPass, RenderPass, MatcapMaterial, CubeTexture, Texture, Renderer, Scene },
 };
 
 
