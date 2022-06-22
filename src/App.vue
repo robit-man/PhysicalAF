@@ -4,20 +4,20 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+    <RouterLink to="/"><img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" /></RouterLink>
 
     <div class="wrapper">
 
       <nav>
         <RouterLink to="/"><div class="menubutton">Home</div></RouterLink>
         <RouterLink to="/about"><div class="menubutton">About</div></RouterLink>
-        <RouterLink to="/render"><div class="menubutton">AFers</div></RouterLink>
+        <RouterLink to="/mint"><div class="menubutton">AFers</div></RouterLink>
         <div class="menubutton">More</div>
         <div class="menubutton"><img src="@/assets/icons/twitter.svg" alt=""></div>
         <div class="menubutton"><img src="@/assets/icons/discord.svg" alt=""></div>
         <div class="menubutton"><img src="@/assets/icons/opensea.svg" alt=""></div>
 
-        <div class="profilebutton"><img src="@/assets/icons/profile.svg" alt=""></div>
+       <RouterLink to="/profile"><div class="profilebutton"><img src="@/assets/icons/profile.svg" alt=""></div></RouterLink>
         <div class="walletbutton"><b style="margin:auto;font-weight:bold;margin-right:0.5rem;">Connect</b><img src="@/assets/icons/wallet.svg" alt=""></div>
 
       </nav>
@@ -63,7 +63,7 @@ opacity:0.5;
 
 }
 #app {
-  width: calc(100vw - 2rem);
+  width: 100%;
   height:100vh;
   font-weight: normal;
 }
@@ -104,8 +104,7 @@ nav {
   margin: 0 auto 2rem;
 }
 
-a,
-.green {
+a {
   text-decoration: none;
   color: var(--vt-c-white);
   transition: 0.4s;
