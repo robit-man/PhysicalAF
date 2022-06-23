@@ -70,17 +70,21 @@
 h1{
   font-size:4rem;
   font-weight:bold;
+  color:var(--vt-c-white);
 }
 h2{
   font-size:3rem;
   font-weight:bold;
+  color:var(--vt-c-white);
 }
 h3{
   font-size:2rem;
   font-weight:bold;
+  color:var(--vt-c-white);
 }
 h4{
   font-size:1.5rem;
+  color:var(--vt-c-white);
 }
 .header{}
 @media (max-width: 1024px) {
@@ -110,6 +114,8 @@ h4{
   font-weight: normal;
 }
 p{  line-height: 1.8;
+  font-size:1.5rem;
+  color:var(--vt-c-white);
 }
 body {   
   font-family: 'Montserrat', sans-serif;
