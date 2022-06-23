@@ -56,8 +56,8 @@
 .between{
   justify-content:space-between;
 }
-.red{color: var(--vt-c-red);}
-.green{color: var(--vt-c-green);}
+.red{color: var(--vt-c-red)!important;}
+.green{color: var(--vt-c-green)!important;}
 .row{
   display:flex;
   flex-flow:row;
@@ -86,6 +86,7 @@ h4{
 @media (max-width: 1024px) {
   .row{flex-flow:wrap;}
 }
+/*
 @media (prefers-color-scheme: dark) {
   :root {
     --color-background: var(--vt-c-black);
@@ -98,7 +99,7 @@ h4{
     --color-heading: var(--vt-c-text-dark-1);
     --color-text: var(--vt-c-text-dark-2);
   }
-}
+}*/
 
 *,
 *::before,
