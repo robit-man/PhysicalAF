@@ -104,6 +104,90 @@
               </div>
 
           </div>
+        
+          <div class="nft">
+            <div class="nft-img"><img src="@/assets/mf.png"></div>
+              <div class="row between">
+
+              <div class="nft-desc">
+                <div class="nft-title">Bored Ape Yacht Club</div>
+                <div class="nft-number">#4312</div>
+              </div>
+              
+                <a href=""><img src="@/assets/icons/opensea.svg" alt=""></a>
+              </div>
+
+          </div>
+          
+          <div class="nft">
+            <div class="nft-img"><img src="@/assets/mf.png"></div>
+              <div class="row between">
+
+              <div class="nft-desc">
+                <div class="nft-title">Bored Ape Yacht Club</div>
+                <div class="nft-number">#4312</div>
+              </div>
+              
+                <a href=""><img src="@/assets/icons/opensea.svg" alt=""></a>
+              </div>
+
+          </div>
+          
+          <div class="nft">
+            <div class="nft-img"><img src="@/assets/mf.png"></div>
+              <div class="row between">
+
+              <div class="nft-desc">
+                <div class="nft-title">Bored Ape Yacht Club</div>
+                <div class="nft-number">#4312</div>
+              </div>
+              
+                <a href=""><img src="@/assets/icons/opensea.svg" alt=""></a>
+              </div>
+
+          </div>
+          
+          <div class="nft">
+            <div class="nft-img"><img src="@/assets/mf.png"></div>
+              <div class="row between">
+
+              <div class="nft-desc">
+                <div class="nft-title">Bored Ape Yacht Club</div>
+                <div class="nft-number">#4312</div>
+              </div>
+              
+                <a href=""><img src="@/assets/icons/opensea.svg" alt=""></a>
+              </div>
+
+          </div>
+          
+          <div class="nft">
+            <div class="nft-img"><img src="@/assets/mf.png"></div>
+              <div class="row between">
+
+              <div class="nft-desc">
+                <div class="nft-title">Bored Ape Yacht Club</div>
+                <div class="nft-number">#4312</div>
+              </div>
+              
+                <a href=""><img src="@/assets/icons/opensea.svg" alt=""></a>
+              </div>
+
+          </div>
+          
+          <div class="nft">
+            <div class="nft-img"><img src="@/assets/mf.png"></div>
+              <div class="row between">
+
+              <div class="nft-desc">
+                <div class="nft-title">Bored Ape Yacht Club</div>
+                <div class="nft-number">#4312</div>
+              </div>
+              
+                <a href=""><img src="@/assets/icons/opensea.svg" alt=""></a>
+              </div>
+
+          </div>
           
           <div class="nft">
             <div class="nft-img"><img src="@/assets/mf.png"></div>
@@ -330,11 +414,12 @@ export default {
 <style>
 .confirm-button{margin-top:1rem;background:#B7EAC2;text-align:center;font-size:1.5rem;padding:0.5rem 2rem;cursor:pointer;color:#3F3C40;font-weight:600;border-radius:0.25rem;width:max-content;margin:auto;}
 
-.nftlist{display:flex;flex-flow:wrap;width:100%;margin-top:1rem;max-height:60vh;overflow-y:scroll;margin-left:-0.5rem;margin-right:-0.5rem;}
+.nftlist{display:flex;flex-flow:wrap;width:100%;margin-top:1rem;max-height:40vh;overflow-y:auto;margin-left:-0.5rem;margin-right:-0.5rem;}
 
 .searchbox{padding:0.5rem;background:transparent;color:white;border:1px solid white;}
-.nft-title{font-size:0.8rem;}
-.nft-number{font-size:0.8rem;}
+.nft-title{font-size:0.8rem;
+color:white;}
+.nft-number{font-size:0.8rem;color:white;}
 .nft{max-width:200px;background:black;margin:0.5rem;}
 
 .mintbutton{height:2.5rem;width:auto;display:flex;flex-flow:column;justify-content:center;cursor:pointer;padding:0.5rem 1rem;color:#3F3C40;background-color:white; border-radius:0.25rem;margin:auto 0;font-size:1.5rem;font-weight:bold;}
@@ -347,7 +432,6 @@ export default {
   100%{background-color:white;}
 }
 canvas{mix-blend-mode:lighten;}
-.orderbutton{cursor:pointer;line-height:1.8;height:60px;background-color:white;color:#3F3C40;border-radius:0.25rem;padding:0.5rem 2rem;display:flex;font-size:1.5rem;font-weight:bold;}
 .orderbutton:hover{opacity:0.5;}
 .header{font-size:3rem;font-weight:bold;}
 .header> .s1{display:inline-block;}

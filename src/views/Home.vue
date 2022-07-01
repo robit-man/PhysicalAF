@@ -14,7 +14,7 @@
 </div>
 
       <div class="cardview">
-        <div class="price" style="position:absolute;right:0px;top:50%;z-index:10;font-weight:100;font-size:3rem;">0.045  <img src="~/@/assets/icons/ethereum.svg" style="filter:invert(1);height:2.5rem;" alt=""></div>
+        <div class="price" style="">0.045  <img src="~/@/assets/icons/ethereum.svg" style="filter:invert(1);height:2.5rem;" alt=""></div>
         <Renderer ref="renderer" resize antialias :orbit-ctrl="{ autoRotate: true, enableDamping: true, dampingFactor: 0.05 }">
           <Camera :position="{ x: 0, y: 0, z: 10 }" />
           <Scene background="#000000">
@@ -64,7 +64,7 @@
 
     <div class="copyright" style="font-size:1rem;margin-top:auto;font-weight:100;">© PhysicalAF, Inc. 2022. </div>
       <div class="order-box" style="background-color:#3F3C40; width:auto;padding:0.5rem;border-radius:0.25rem;height:auto;display:flex;flex-flow:row;justify-content:space-between;">
-        <div class="text" style="padding:0rem 2rem;display: flex;flex-flow: column;justify-content: center;">
+        <div class="text" style="padding:0rem 2rem;padding-left:1rem;display: flex;flex-flow: column;justify-content: center;">
           <h3 style="font-size:30px!important;">Pre-Order a Physical NFT </h3>
           <p style="font-size:20px!important;">And mint a #AFer entirely free!</p>
         </div>
@@ -110,6 +110,7 @@ export default {
 </script>
 
 <style>
+.price{position:absolute;right:0px;top:50%;z-index:10;font-weight:100;font-size:3rem;color:white;}
 @keyframes flash{
   0%{background-color:white;}
   30%{background-color:white;}
@@ -118,7 +119,7 @@ export default {
   100%{background-color:white;}
 }
 canvas{mix-blend-mode:lighten;}
-.orderbutton{cursor:pointer;line-height:1;height:auto;background-color:white;color:#3F3C40;border-radius:0.25rem;padding:0.5rem 2rem;display:flex;font-size:2rem;text-align:center;display:flex;flex-flow:column;justify-content:center;font-weight:bold;}
+.orderbutton{cursor:pointer;line-height:1;height:100%;background-color:white;color:#3F3C40;border-radius:0.25rem;padding:0.5rem 2rem;display:flex;font-size:2rem;text-align:center;display:flex;flex-flow:column;justify-content:center;font-weight:bold;}
 .orderbutton:hover{opacity:0.5;}
 .homeheader{font-size:4rem;font-weight:bold;color:var(--vt-c-green);
 }

@@ -64,6 +64,8 @@ opacity:0.5;
 }
 #app {
   width: 100%;
+  max-width:1920px;
+  margin:auto;
   height:100vh;
   font-weight: normal;
 }
@@ -88,6 +90,16 @@ header {
   justify-content:center;
   border-radius:0.25rem;
   background-color:#3F3C40;
+  border:1px solid;
+  color:white;
+    cursor:pointer;
+
+  border-color:#3F3C40;
+  box-shadow:0px 2px 5px #0005;
+}
+.menubutton:hover{ 
+   border-color:white;
+  background-color:transparent;
 }
 
 nav {
@@ -112,7 +124,6 @@ a {
 
 @media (hover: hover) {
   a:hover {
-    opacity:0.8;
   }
 }
 

@@ -5,7 +5,7 @@
 
 <div class="hero-text" style="margin:auto;">
 
-<h2 style="font-size:3rem;transform-origin:10% 150%;transform:rotate(-14deg)translatex(-32px);">AFers!</h2>
+<h2 style="font-size:3rem;">AFers!</h2>
 <h1 class="header red" style="">AS F<b class="s1">***</b><b class="s2">UNK</b>ERS</h1>
 <p style="max-width:500px;">These dudes may not be the most sane, but they know how to be themselves. They are one-of-a-kind and live by a set of rules that only make sense to them. </p>
 
@@ -33,12 +33,12 @@
              
              <div class="image-title">
                 <p ><b style="font-size:1.5rem;font-weight:bold;">AFer #4342</b></p>
-                <img src="~/@/assets/7af.png" style="height:300px;" alt="">
+                <img src="~/@/assets/7af.png" style="width:100%; margin:1rem 0rem;" alt="">
               </div>
 
 
               <div class="mint-button" style="display:flex;flex-flow:row;justify-content:space-between;">
-                <div class="price"><p style="font-size:1.5rem;">0.045 ETH <img src="~/@/assets/icons/ethereum.svg" style="height:1.2rem;filter:invert(1);" alt=""> </p></div>
+                <div class="price"><p style="font-size:1.5rem;line-height:1;">0.045 ETH <img src="~/@/assets/icons/ethereum.svg" style="height:1.2rem;filter:invert(1);" alt=""> </p></div>
                 <div class="mintbutton" v-on:click="showModal()">MINT</div>
               </div>
 
@@ -110,7 +110,6 @@ export default {
   100%{background-color:white;}
 }
 canvas{mix-blend-mode:lighten;}
-.orderbutton{cursor:pointer;line-height:1.8;height:60px;background-color:white;color:#3F3C40;border-radius:0.25rem;padding:0.5rem 2rem;display:flex;font-size:1.5rem;font-weight:bold;}
 .orderbutton:hover{opacity:0.5;}
 .header{font-size:3rem;font-weight:bold;}
 .header> .s1{display:inline-block;}

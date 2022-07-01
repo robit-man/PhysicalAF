@@ -5,7 +5,7 @@
 
 <div class="hero-text" style="margin:auto;">
 
-<h2 style="font-size:3rem;transform-origin:10% 150%;transform:rotate(-14deg)translatex(-32px);">Learn More!</h2>
+<h2 style="font-size:3rem;">Learn More!</h2>
 <h1 class="header green" style="">PhysicalAF</h1>
 <p style="margin-bottom:1rem;font-size:20px;width:800px;font-weight:bold;">What is a PhysicalAF card? </p>
 <p style="margin-bottom:1rem;font-size:20px;width:800px;">The PhysicalAF card is a proof of NFT ownership (PoN), granting the ability to verify you own the NFT without having to connect your wallet.  Verifying your own PhysicalAF card is quick and easy. To prove verification, simply scan the  QR code on the PhysicalAF card.</p>
@@ -105,7 +105,6 @@ export default {
   100%{background-color:white;}
 }
 canvas{mix-blend-mode:lighten;}
-.orderbutton{height:100%;cursor:pointer;line-height:1;height:auto;background-color:white;color:#3F3C40;border-radius:0.25rem;padding:0.5rem 2rem;display:flex;font-size:2rem;text-align:center;display:flex;flex-flow:column;justify-content:center;font-weight:bold;}
 .orderbutton:hover{opacity:0.5;}
 .header{font-size:3rem;font-weight:bold;}
 .header> .s1{display:inline-block;}
