@@ -2,41 +2,42 @@
 
 <div class="fill-h-f column between">
   <div class="row center auto">
+<h2 style="font-size:3rem;">Verification</h2>
 
-<div class="hero-text" >
+<div class="verify-row" >
 
-<h2 style="font-size:3rem;">Learn More!</h2>
-<h1 class="header green" style="">PhysicalAF</h1>
-<p style="margin-bottom:1rem;font-size:20px;width:800px;font-weight:bold;">What is a PhysicalAF card? </p>
-<p style="margin-bottom:1rem;font-size:20px;width:800px;">The PhysicalAF card is a proof of NFT ownership (PoN), granting the ability to verify you own the NFT without having to connect your wallet.  Verifying your own PhysicalAF card is quick and easy. To prove verification, simply scan the  QR code on the PhysicalAF card.</p>
-<p style="margin-bottom:1rem;font-size:20px;width:800px;">PhysicalAF cards give you a unique way to prove ownership of your digital assets in the real world.  </p>
-<p style="margin-bottom:1rem;font-size:20px;width:800px;font-weight:bold;">How is it done? </p>
-<p style="margin-bottom:1rem;font-size:20px;width:800px;">Our verification technology uses live onchain data to validate if the Ethereum address which purchased the PhysicalAF card still holds the NFT in their wallet. If the wallet that purchased the card still owns the NFT your verification will be successful. However, a transfer of the NFT to another wallet will deem the PhysicalAF card unverifiable and the verification will fail. This process ensures authenticity and validity of the digital goods.</p>
-<p style="margin-bottom:1rem;font-size:20px;width:800px;">You can order as many copies of the same NFT as you like, but be aware that if your NFT doesnt remain in the wallet used to order, all your cards will become unverifiable.  </p>
 
+<div class="verification-status">
+
+  <div class="row">
+    <div class="circle-1">
+      <h3 class="circ-h3">SCAN</h3>
+      <div class="stat-1"></div>
+    </div>
+    <hr class="statushr">
+    <div class="circle-2">
+      <h3 class="circ-h3">PROCESS</h3>
+      <div class="stat-2"></div>
+    </div>
+    <hr class="statushr">
+
+    <div class="circle-3">
+      <h3 class="circ-h3">STATUS</h3>
+      <div class="stat-3"></div>
+    </div>
+
+  </div>
+</div>
 
 </div>
 
       <div class="mintbox" style="display:flex;flex-flow:column;margin:auto;margin-top:5rem;">
              
-             <div class="image-title">
-                <p style="font-size:2.5rem;text-align:center;font-weight:bold;margin:auto;" >Hover</p>
-                <img src="~/@/assets/aboutcard.png" style="height:500px;" alt="">
-              </div>
-
-<div class="desc" style="display:flex;flex-flow:row;justify-content:space-between;">
-  <p>Description</p>
-  <p>QR Code</p>
-</div>
-<div class="desc" style="display:flex;flex-flow:row;position:absolute;width:400px;top:100px;right:-420px;transform-origin:0% 100%;transform:rotate(90deg);justify-content:space-between;">
-    <p>NFT</p>
-<p>Date Of Purchase</p>
-</div>
       </div>
 
 
   </div>
-
+<!--
 <footer style="padding-bottom:2rem;height:100px;display:flex;flex-flow:column;justify-content: center;width:100%;">
 
 
@@ -55,6 +56,8 @@
   </div>
 
 </footer>
+-->
+
 </div>
 
 
@@ -68,6 +71,7 @@ import { Box, Camera, StandardMaterial, BasicMaterial,SubSurfaceMaterial, Render
 export default {
    data() {
     return {
+      step: 1,
       wallet: false,
       mint: false,
       isModalVisible: false,
@@ -105,6 +109,16 @@ export default {
   100%{background-color:white;}
 }
 canvas{mix-blend-mode:lighten;}
+.circ-h3{
+  transform:translateY(-2rem);
+  font-size:1rem!important;
+  transform-origin: center;text-align: center;
+}
+.circle-1, .circle-2, .circle-3{
+  display:flex;flex-flow:row;justify-content: center;
+  width:64px;height:64px;margin-top:auto;margin-bottom:auto;border-radius:5rem;border:2px solid white;
+}
+.statushr{background-color:white;opacity:1;height:2px;margin-top:auto;margin-bottom:auto;width:200px;border:unset;}
 .orderbutton:hover{opacity:0.5;}
 .header{font-size:3rem;font-weight:bold;}
 .header> .s1{display:inline-block;}
@@ -113,5 +127,5 @@ canvas{mix-blend-mode:lighten;}
 .header:hover > .s1{display:none;}
 .header:hover > .s2{display:inline-block;}
     .cardview{width:40vw;min-width:500px;height:calc(100vh - 200px);}
-.hero-text{margin:auto 0rem;}
+.verify-row{transition:all 0.2s ease;margin:auto 0rem; margin-left:calc(50vw - 592px);display:flex;flex-flow:row;width:100%;justify-content: space-between;}
 </style>
