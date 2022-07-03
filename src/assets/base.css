@@ -44,7 +44,8 @@
 }
 
 .fill-h-f{
-  height:calc(100vh - 200px);
+  padding-top:2rem;
+  height:calc(100vh - 200px - 2rem);
 }
 .fill-h{
   height:calc(100vh - 100px);

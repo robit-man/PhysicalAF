@@ -4,7 +4,7 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <header>
-    <RouterLink to="/"><img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" /></RouterLink>
+    <RouterLink to="/"><img alt="Vue logo" class="logo" src="@/assets/logo.png" height="64"  /></RouterLink>
 
     <div class="wrapper">
 
@@ -71,6 +71,7 @@ opacity:0.5;
 }
 
 header {
+  height:100%;
   z-index:100;
   display:flex;
   flex-flow:row;

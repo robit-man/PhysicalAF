@@ -4,6 +4,7 @@ import Mint from '../views/Mint.vue'
 import About from '../views/About.vue'
 import Profile from '../views/Profile.vue'
 import YourNFTS from '../views/YourNFTS.vue'
+import Verify from '../views/Verify.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -17,6 +18,11 @@ const router = createRouter({
       path: '/mint',
       name: 'mint',
       component: Mint
+    },
+    {
+      path: '/verify',
+      name: 'verify',
+      component: Verify
     },
     {
       path: '/profile',

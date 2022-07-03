@@ -3,7 +3,7 @@
 <div class="fill-h-f column center">
   <div class="row center auto">
 
-<div class="hero-text" style="margin:auto;">
+<div class="hero-text" >
 
 <h2 style="font-size:3rem;">AFers!</h2>
 <h1 class="header red" style="">AS F<b class="s1">***</b><b class="s2">UNK</b>ERS</h1>
