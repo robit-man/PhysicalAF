@@ -2,28 +2,31 @@
 
 <div class="fill-h-f column between">
   <div class="row center auto">
-<h2 style="font-size:3rem;">Verification</h2>
+<h2 style="font-size:3rem;" v-on:click="step ++" >Verification {{step}}</h2>
 
 <div class="verify-row" >
 
 
-<div class="verification-status">
+<div class="verification-status" v-on:click="step = 1">
 
   <div class="row">
     <div class="circle-1">
       <h3 class="circ-h3">SCAN</h3>
-      <div class="stat-1"></div>
+      <div class="stat-1" v-if="step == 1"><img src="~/@/assets/spinner.svg" width="36" class="spin" alt=""></div>      
+      <div class="stat-1" style="background:#B7EAC2;" v-if="step >= 2"><img src="~/@/assets/check.png" width="60" height="60" alt=""></div>
     </div>
     <hr class="statushr">
     <div class="circle-2">
       <h3 class="circ-h3">PROCESS</h3>
-      <div class="stat-2"></div>
+      <div class="stat-1" v-if="step == 3"><img src="~/@/assets/spinner.svg" width="36" class="spin" alt=""></div>      
+      <div class="stat-1" style="background:#B7EAC2;" v-if="step >= 4"><img src="~/@/assets/check.png" width="60" height="60" alt=""></div>
     </div>
     <hr class="statushr">
 
     <div class="circle-3">
       <h3 class="circ-h3">STATUS</h3>
-      <div class="stat-3"></div>
+      <div class="stat-1" v-if="step == 5"><img src="~/@/assets/spinner.svg" width="36" class="spin" alt=""></div>      
+      <div class="stat-1" style="background:#B7EAC2;" v-if="step >= 6"><img src="~/@/assets/check.png" width="60" height="60" alt=""></div>
     </div>
 
   </div>
@@ -37,6 +40,7 @@
 
 
   </div>
+
 <!--
 <footer style="padding-bottom:2rem;height:100px;display:flex;flex-flow:column;justify-content: center;width:100%;">
 
@@ -108,16 +112,24 @@ export default {
   70%{background-color:white;}
   100%{background-color:white;}
 }
+@keyframes spinload{
+  0%{transform:rotate(0deg);}
+  100%{transform:rotate(360deg);}
+}
 canvas{mix-blend-mode:lighten;}
+.spin{animation:spinload 2s linear infinite;}
 .circ-h3{
   transform:translateY(-2rem);
   font-size:1rem!important;
+  position:absolute;
   transform-origin: center;text-align: center;
 }
 .circle-1, .circle-2, .circle-3{
-  display:flex;flex-flow:row;justify-content: center;
+  display:flex;flex-flow:wrap;justify-content: center;
   width:64px;height:64px;margin-top:auto;margin-bottom:auto;border-radius:5rem;border:2px solid white;
 }
+.stat-1, .stat-2, .stat-3{border-radius:4rem;width:60px;height:60px;
+  display:flex;flex-flow:wrap;justify-content: center;}
 .statushr{background-color:white;opacity:1;height:2px;margin-top:auto;margin-bottom:auto;width:200px;border:unset;}
 .orderbutton:hover{opacity:0.5;}
 .header{font-size:3rem;font-weight:bold;}
