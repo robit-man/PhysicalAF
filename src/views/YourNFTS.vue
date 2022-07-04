@@ -431,7 +431,6 @@ color:white;}
   70%{background-color:white;}
   100%{background-color:white;}
 }
-canvas{mix-blend-mode:lighten;}
 .orderbutton:hover{opacity:0.5;}
 .header{font-size:3rem;font-weight:bold;}
 .header> .s1{display:inline-block;}

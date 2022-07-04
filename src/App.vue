@@ -67,7 +67,10 @@ opacity:0.5;
   max-width:1920px;
   margin:auto;
   height:100vh;
-  font-weight: normal;
+  font-weight: normal;  
+  background-size:cover;
+  background-image: url('/src/assets/image52.png');
+  background-color:#242324;
 }
 
 header {

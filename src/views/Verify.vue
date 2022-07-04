@@ -1,31 +1,32 @@
 <template>
 
 <div class="fill-h-f column between">
-  <div class="row center auto">
-<h2 style="font-size:3rem;" v-on:click="step ++" >Verification {{step}}</h2>
-
+  <div class="row between auto">
+<h2 style="font-size:3rem;"  >Verification </h2>
+<h3 style="height: 3rem; cursor:pointer;margin:auto;margin-left:1rem;padding:1rem;background:#3F3C40;border-radius:0.5rem;line-height:1rem;border:1px solid #505050;" v-if="step < 7" v-on:click="step ++">{{step}}</h3>
+<h3 style="height: 3rem; cursor:pointer;margin:auto;margin-left:1rem;padding:1rem;background:#EAB7B7;border-radius:0.5rem;line-height:1rem;border:1px solid gray;" v-if="step > 6" v-on:click="step = 1">X</h3>
 <div class="verify-row" >
 
 
-<div class="verification-status" v-on:click="step = 1">
+<div class="verification-status">
 
   <div class="row">
     <div class="circle-1">
       <h3 class="circ-h3">SCAN</h3>
-      <div class="stat-1" v-if="step == 1"><img src="~/@/assets/spinner.svg" width="36" class="spin" alt=""></div>      
+      <div class="stat-1" v-if="step == 1"><img src="~/@/assets/spinner.svg" width="36"  height="36" class="spin" alt=""></div>      
       <div class="stat-1" style="background:#B7EAC2;" v-if="step >= 2"><img src="~/@/assets/check.png" width="60" height="60" alt=""></div>
     </div>
     <hr class="statushr">
     <div class="circle-2">
       <h3 class="circ-h3">PROCESS</h3>
-      <div class="stat-1" v-if="step == 3"><img src="~/@/assets/spinner.svg" width="36" class="spin" alt=""></div>      
+      <div class="stat-1" v-if="step == 3"><img src="~/@/assets/spinner.svg" width="36"  height="36" class="spin" alt=""></div>      
       <div class="stat-1" style="background:#B7EAC2;" v-if="step >= 4"><img src="~/@/assets/check.png" width="60" height="60" alt=""></div>
     </div>
     <hr class="statushr">
 
     <div class="circle-3">
       <h3 class="circ-h3">STATUS</h3>
-      <div class="stat-1" v-if="step == 5"><img src="~/@/assets/spinner.svg" width="36" class="spin" alt=""></div>      
+      <div class="stat-1" v-if="step == 5"><img src="~/@/assets/spinner.svg" width="36"  height="36" class="spin" alt=""></div>      
       <div class="stat-1" style="background:#B7EAC2;" v-if="step >= 6"><img src="~/@/assets/check.png" width="60" height="60" alt=""></div>
     </div>
 
@@ -116,8 +117,7 @@ export default {
   0%{transform:rotate(0deg);}
   100%{transform:rotate(360deg);}
 }
-canvas{mix-blend-mode:lighten;}
-.spin{animation:spinload 2s linear infinite;}
+.spin{animation:spinload 2s linear infinite;margin:auto;}
 .circ-h3{
   transform:translateY(-2rem);
   font-size:1rem!important;
@@ -128,8 +128,9 @@ canvas{mix-blend-mode:lighten;}
   display:flex;flex-flow:wrap;justify-content: center;
   width:64px;height:64px;margin-top:auto;margin-bottom:auto;border-radius:5rem;border:2px solid white;
 }
-.stat-1, .stat-2, .stat-3{border-radius:4rem;width:60px;height:60px;
-  display:flex;flex-flow:wrap;justify-content: center;}
+.stat-1{border-radius:4rem;width:60px;height:60px;
+  display:flex;flex-flow:column;justify-content: center;}
+  .stat-2 img{margin:auto;}
 .statushr{background-color:white;opacity:1;height:2px;margin-top:auto;margin-bottom:auto;width:200px;border:unset;}
 .orderbutton:hover{opacity:0.5;}
 .header{font-size:3rem;font-weight:bold;}
@@ -139,5 +140,5 @@ canvas{mix-blend-mode:lighten;}
 .header:hover > .s1{display:none;}
 .header:hover > .s2{display:inline-block;}
     .cardview{width:40vw;min-width:500px;height:calc(100vh - 200px);}
-.verify-row{transition:all 0.2s ease;margin:auto 0rem; margin-left:calc(50vw - 592px);display:flex;flex-flow:row;width:100%;justify-content: space-between;}
+.verify-row{transition:all 0.2s ease;margin:auto 0rem; display:flex;flex-flow:row;width:100%;justify-content: flex-end;}
 </style>

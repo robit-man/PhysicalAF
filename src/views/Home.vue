@@ -15,11 +15,10 @@
 
       <div class="cardview">
         <div class="price" style="">0.045  <img src="~/@/assets/icons/ethereum.svg" style="filter:invert(1);height:2.5rem;" alt=""></div>
-        <Renderer ref="renderer" resize antialias :orbit-ctrl="{ autoRotate: true, enableDamping: true, dampingFactor: 0.05 }">
+        <Renderer id="c" ref="renderer" resize antialias  :orbit-ctrl="{ autoRotate: true, enableDamping: true, dampingFactor: 0.05 }">
           <Camera :position="{ x: 0, y: 0, z: 10 }" />
-          <Scene background="#000000">
- 
-      <AmbientLight :intensity="0.2" />
+      <Scene  background="#333333">
+      <AmbientLight :intensity="0.25" />
       <PointLight color="#55ffff" :intensity="0.25" :position="{x: 100, y: -150, z: 120 }"  />
       <PointLight color="#ffff55" :intensity="0.25" :position="{x: -100, y: 150, z: 150 }"  />
       <PointLight color="#ff55ff" :intensity="0.25" :position="{x: 100, y: -100, z: -100 }" />
@@ -28,16 +27,15 @@
       <PointLight color="#ff55ff" :intensity="0.25" :position="{x: -100, y: 100, z: 100 }" />
         <Group>
                     <Box  cast-shadow ref="mesh"  :width="3" :height="4" :depth="0.05" :position="{x: 0, y:  0, z: 0}" :depthSegments="20" :width-segments="200" :height-segments="200" >
-                            <MatcapMaterial name="070B0C_B2C7CE_728FA3_5B748B" />
                           </Box>
 
-                    <Box ref="mesh"  :width="3" :height="4"  :depth="0" :position="{x: 0, y:  0, z: 0.0252}" :depthSegments="20" :width-segments="200" :height-segments="200" >
+                    <Box ref="mesh"  :width="3" :height="4"  :depth="0" :position="{x: 0, y:  0, z: 0.0253}" :depthSegments="20" :width-segments="200" :height-segments="200" >
                             <StandardMaterial :props="{ displacementScale: 1 }">
                               <Texture refraction :refraction-ratio="0.5" src="/card-front.png" />
                             </StandardMaterial>
                           </Box> 
                           
-                          <Box ref="mesh"  :width="3" :height="4"  :depth="0" :position="{x: 0, y:  0, z: -0.0252}" :depthSegments="20" :width-segments="200" :height-segments="200" >
+                          <Box ref="mesh"  :width="3" :height="4"  :depth="0" :position="{x: 0, y:  0, z: -0.0253}" :depthSegments="20" :width-segments="200" :height-segments="200" >
                             <BasicMaterial :props="{ displacementScale: 1 }">
                               <Texture refraction :refraction-ratio="0.5" src="/card-back.png" />
                             </BasicMaterial>
@@ -110,6 +108,7 @@ export default {
 </script>
 
 <style>
+#c{mix-blend-mode:hard-light;}
 .price{position:absolute;right:0px;top:50%;z-index:10;font-weight:100;font-size:3rem;color:white;}
 @keyframes flash{
   0%{background-color:white;}
@@ -118,7 +117,7 @@ export default {
   70%{background-color:white;}
   100%{background-color:white;}
 }
-canvas{mix-blend-mode:lighten;}
+canvas{background:transparent!important;}
 .orderbutton{cursor:pointer;line-height:1;height:100%;background-color:white;color:#3F3C40;border-radius:0.25rem;padding:0.5rem 2rem;display:flex;font-size:2rem;text-align:center;display:flex;flex-flow:column;justify-content:center;font-weight:bold;}
 .orderbutton:hover{opacity:0.5;}
 .homeheader{font-size:4rem;font-weight:bold;color:var(--vt-c-green);
