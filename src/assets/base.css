@@ -119,11 +119,16 @@ p{  line-height: 1.8;
   color:var(--vt-c-white);
 }
 body {   
+  font-weight: normal;  
+  background-size:cover;
+  background-image: url('/src/assets/image52.png');
+  background-color:#0c0c0c;
+  background-blend-mode:difference;
+  background-attachment: fixed;
   font-family: 'Montserrat', sans-serif;
   min-height: 100vh;
   overflow-x:hidden;
   color: var(--color-text);
-  background: var(--vt-c-black);
   transition: color 0.5s, background-color 0.5s;
   font-size: 1.5rem;
   line-height: 1.4;
