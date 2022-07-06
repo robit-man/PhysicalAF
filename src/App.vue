@@ -71,12 +71,6 @@ import { RouterLink, RouterView } from 'vue-router'
     opacity: 0.5;
 }
 
-#app {
-    width: 100%;
-    max-width: 1920px;
-    margin: auto;
-    height: 100vh;
-}
 
 header {
     height: 100%;
@@ -182,5 +176,8 @@ nav a:first-of-type {
         font-size: 1rem;
         padding: 1rem 0;
     }
+}
+
+@media (max-width: 1024px) {
 }
 </style>

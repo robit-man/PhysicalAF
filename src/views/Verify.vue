@@ -3,16 +3,19 @@
     
         <div class="row between ">
             <h1>Verification </h1>
-            <h3 style="height: 3rem; cursor:pointer;margin:auto;margin-left:1rem;padding:1rem;background:#3F3C40;border-radius:0.5rem;line-height:1rem;border:1px solid #505050;" v-if="step < 7" v-on:click="step ++">{{step}}</h3>
-            <h3 style="height: 3rem; cursor:pointer;margin:auto;margin-left:1rem;padding:1rem;background:#B7EAC2;border-radius:0.5rem;line-height:1rem;border:1px solid gray;" v-if="step > 6" v-on:click="vstat = true">V</h3>
-            <h3 style="height: 3rem; cursor:pointer;margin:auto;margin-left:1rem;padding:1rem;background:#EAB7B7;border-radius:0.5rem;line-height:1rem;border:1px solid gray;" v-if="step > 6" v-on:click="vstat = false">X</h3>
-            <h3 style="height: 3rem; cursor:pointer;margin:auto;margin-left:1rem;padding:1rem;background:#3F3C40;border-radius:0.5rem;line-height:1rem;border:1px solid gray;" v-if="step > 6" v-on:click="step = 0">!</h3>
-            <div class="verify-row">
+          <div style="display:flex;flex-flow:row;margin-bottom:2rem;">
+            <h3 style="height: 3rem; cursor:pointer;margin:auto;margin-left:1rem;padding:1rem;background:#3F3C40;border-radius:0.5rem;line-height:1rem;border:1px solid #505050;" v-if="step < 6" v-on:click="step ++">{{step}}</h3>
+            <h3 style="height: 3rem; cursor:pointer;margin:auto;margin-left:1rem;padding:1rem;background:#B7EAC2;border-radius:0.5rem;line-height:1rem;border:1px solid gray;" v-if="step > 4" v-on:click="vstat = true">V</h3>
+            <h3 style="height: 3rem; cursor:pointer;margin:auto;margin-left:1rem;padding:1rem;background:#EAB7B7;border-radius:0.5rem;line-height:1rem;border:1px solid gray;" v-if="step > 4" v-on:click="vstat = false">X</h3>
+            <h3 style="height: 3rem; cursor:pointer;margin:auto;margin-left:1rem;padding:1rem;background:#3F3C40;border-radius:0.5rem;line-height:1rem;border:1px solid gray;" v-if="step > 4" v-on:click="step = 0">!</h3>
+           </div>
+           
+           <div class="verify-row">
     
     
                 <div class="verification-status">
     
-                    <div class="row">
+                    <div class="row center">
                         <div class="circle-1">
                             <h3 class="circ-h3">SCAN</h3>
                             <div class="stat-1" v-if="step == 1"><img src="~/@/assets/spinner.svg" width="36" height="36" class="spin" alt=""></div>
@@ -43,7 +46,7 @@
     
         <div class="verify-sections">
     
-            <div class="upload section" v-if="step <= 2">">
+            <div class="upload section" v-if="step <= 2">
                 <div class="section-title">
                     <h2>Upload</h2>
                 </div>
@@ -58,7 +61,9 @@
     
                         <div class="action row">
     
-                            <div class="uploadbutton">UPLOAD IMAGE</div>
+                            <div v-if="step == 0" v-on:click="step ++" class="uploadbutton">UPLOAD IMAGE</div>
+                            <div v-if="step == 1" v-on:click="step ++" class="uploadbutton">UPLOADING...</div>
+                            <div v-if="step == 2" v-on:click="step ++" class="uploadbutton">DONE UPLOADING</div>
                             <p style="line-height:1;padding-left:1rem;font-size:1rem;line-height:2;font-weight:bold;">Or Visit On Mobile <br> Metamask Browser</p>
     
                         </div>
@@ -103,16 +108,16 @@
                         <div class="action row">
     
                             <div class="uploadbutton">IMAGE
-                                <h3 v-if="imageprocessed == false">PROCESSING</h3>
-                                <h3 v-if="imageprocessed == true">PROCESSED</h3>
+                                <h3 v-on:click="imageprocessed = true, step ++" v-if="imageprocessed == false">PROCESSING</h3>
+                                <h3 v-on:click="imageprocessed = false, step ++" v-if="imageprocessed == true">PROCESSED</h3>
                             </div>
     
                         </div>
                     </div>
                     <div class="processingsteps">
-                        <h3>Checking Card Validity on the Blockchain...</h3>
-                        <h3>Checking Owner and Connected Wallet...</h3>
-                        <h3>Generating Status Report...</h3>
+                        <h3 style="animation:opaque 1s ease;animation-delay: 0s;">Checking Card Validity on the Blockchain...</h3>
+                        <h3 style="animation:opaque 1s ease;animation-delay: 1s;">Checking Owner and Connected Wallet...</h3>
+                        <h3 style="animation:opaque 1s ease;animation-delay: 2s;">Generating Status Report...</h3>
                     </div>
                 </div>
             </div>
@@ -121,17 +126,133 @@
     
             <div class="verified section" v-if="vstat == true && step >= 5">
                 <div class="section-title">
-                    <h2>Success</h2>
+                    <h2 style="color:#B7EAC2">SUCCESS</h2>
+                    <h3 style="color:#B7EAC2">Card Validated</h3>
+
+                </div>
+
+
+                <div class="row between">
+    
+                    <div class="text-section">
+    
+                        <div class="instruction" style="margin:2rem 0rem;max-width:500px;">
+                            <h3>The Verification of your Physical NFT was a Success! </h3>
+                            <p></p>
+                        </div>
+
+                        <div class="action ">
+                                                               
+                            <p>Traits of the NFT scraped from Opensea</p>
+                            <div class="uploadbutton">OPENSEA
+                            </div>
+                        </div>
+                    </div><div class="cardviewverify">
+                <Renderer id="c" ref="renderer" resize antialias :orbit-ctrl="{ autoRotate: true, enableDamping: true, dampingFactor: 0.05 }">
+                    <Camera :position="{ x: 0, y: 0, z: 7}" />
+                    <Scene background="#333333">
+                        <AmbientLight :intensity="0.25" />
+                        <PointLight color="#55ffff" :intensity="0.25" :position="{x: 100, y: -150, z: 120 }" />
+                        <PointLight color="#ffff55" :intensity="0.25" :position="{x: -100, y: 150, z: 150 }" />
+                        <PointLight color="#ff55ff" :intensity="0.25" :position="{x: 100, y: -100, z: -100 }" />
+                        <PointLight color="#55ffff" :intensity="0.25" :position="{x: -100, y: 150, z: -120 }" />
+                        <PointLight color="#ffff55" :intensity="0.25" :position="{x: 100, y: -150, z: -150 }" />
+                        <PointLight color="#ff55ff" :intensity="0.25" :position="{x: -100, y: 100, z: 100 }" />
+                        <Group>
+                            <Box cast-shadow ref="mesh" :width="3" :height="4" :depth="0.05" :position="{x: 0, y:  0, z: 0}" :depthSegments="20" :width-segments="200" :height-segments="200">
+                            </Box>
+    
+                            <Box ref="mesh" :width="3" :height="4" :depth="0" :position="{x: 0, y:  0, z: 0.0253}" :depthSegments="20" :width-segments="200" :height-segments="200">
+                                <StandardMaterial :props="{ displacementScale: 1 }">
+                                    <Texture refraction :refraction-ratio="0.5" src="/card-front.png" />
+                                </StandardMaterial>
+                            </Box>
+    
+                            <Box ref="mesh" :width="3" :height="4" :depth="0" :position="{x: 0, y:  0, z: -0.0253}" :depthSegments="20" :width-segments="200" :height-segments="200">
+                                <BasicMaterial :props="{ displacementScale: 1 }">
+                                    <Texture refraction :refraction-ratio="0.5" src="/card-back.png" />
+                                </BasicMaterial>
+                            </Box>
+                        </Group>
+    
+                    </Scene>
+    
+                    <EffectComposer>
+                        <RenderPass />
+                        <UnrealBloomPass :strength="0.45" />
+                    </EffectComposer>
+    
+                </Renderer>                                
+                
+
+            </div>
                 </div>
     
     
             </div>
             <div class="failed section" v-if="vstat == false && step >= 5">
-                <div class="section-title">
-                    <h2>Failed</h2>
+                <div style="color:#EAB7B7" class="section-title">
+                    <h2 style="color:#EAB7B7">FAILED</h2>
+                    <h3 style="color:#EAB7B7">Not Today Buddy...</h3>
+                </div>
+
+                <div class="row between">
+    
+                    <div class="text-section">
+    
+                        <div class="instruction" style="margin:2rem 0rem;max-width:500px;">
+                            <h3>The Verification of your Physical NFT failed. </h3>
+                            <p></p>
+                        </div>
+
+                        <div class="action ">
+                                                               
+                            <p>MFER#6969 is no longer in your wallet.</p>
+                            <div class="failedbutton" v-on:click="step = 0">START OVER
+                            </div>
+                        </div>
+                    </div><div class="cardviewverify">
+                <Renderer id="c" ref="renderer" resize antialias :orbit-ctrl="{ autoRotate: true, enableDamping: true, dampingFactor: 0.05 }">
+                    <Camera :position="{ x: 0, y: 0, z: 7}" />
+                    <Scene background="#333333">
+                        <AmbientLight :intensity="0.25" />
+                        <PointLight color="#55ffff" :intensity="0.25" :position="{x: 100, y: -150, z: 120 }" />
+                        <PointLight color="#ffff55" :intensity="0.25" :position="{x: -100, y: 150, z: 150 }" />
+                        <PointLight color="#ff55ff" :intensity="0.25" :position="{x: 100, y: -100, z: -100 }" />
+                        <PointLight color="#55ffff" :intensity="0.25" :position="{x: -100, y: 150, z: -120 }" />
+                        <PointLight color="#ffff55" :intensity="0.25" :position="{x: 100, y: -150, z: -150 }" />
+                        <PointLight color="#ff55ff" :intensity="0.25" :position="{x: -100, y: 100, z: 100 }" />
+                        <Group>
+                            <Box cast-shadow ref="mesh" :width="3" :height="4" :depth="0.05" :position="{x: 0, y:  0, z: 0}" :depthSegments="20" :width-segments="200" :height-segments="200">
+                            </Box>
+    
+                            <Box ref="mesh" :width="3" :height="4" :depth="0" :position="{x: 0, y:  0, z: 0.0253}" :depthSegments="20" :width-segments="200" :height-segments="200">
+                                <StandardMaterial :props="{ displacementScale: 1 }">
+                                    <Texture refraction :refraction-ratio="0.5" src="/card-front.png" />
+                                </StandardMaterial>
+                            </Box>
+    
+                            <Box ref="mesh" :width="3" :height="4" :depth="0" :position="{x: 0, y:  0, z: -0.0253}" :depthSegments="20" :width-segments="200" :height-segments="200">
+                                <BasicMaterial :props="{ displacementScale: 1 }">
+                                    <Texture refraction :refraction-ratio="0.5" src="/card-back.png" />
+                                </BasicMaterial>
+                            </Box>
+                        </Group>
+    
+                    </Scene>
+    
+                    <EffectComposer>
+                        <RenderPass />
+                        <UnrealBloomPass :strength="0.45" />
+                    </EffectComposer>
+    
+                </Renderer>                                
+                
+
+            </div>
                 </div>
     
-    
+
             </div>
     
     
@@ -197,6 +318,15 @@ export default {
 </script>
 
 <style>
+
+@keyframes opaque{
+  0%{opacity:0.5;}
+  50%{opacity:1;}
+    100%{opacity:0.5;}
+
+
+}
+.cardviewverify{height:60vh;min-width:600px;margin-top:-100px;margin-right:20%;}
 .uploadbutton {
     height: auto;
     width: max-content;
@@ -211,8 +341,22 @@ export default {
     margin: auto 0;
     font-size: 1.5rem;
     font-weight: bold;
+}.failedbutton {
+    height: auto;
+    width: max-content;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    color: #030306;
+    background-color: #EAB7B7;
+    border-radius: 0.25rem;
+    margin: auto 0;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
-
+.verification-status{ margin-top:2rem;}
 .orderbutton {
     height: auto;
     width: max-content;
@@ -233,14 +377,13 @@ export default {
     font-weight: bold;
     font-size: 1.5rem;
     margin-left: 1rem;
-    background: url(https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2F33.media.tumblr.com%2F3061908a43fc1f72642c202c1080c964%2Ftumblr_nb0ticjU2A1scfauvo1_400.gif&f=1&nofb=1);
+    color:black;
     background-size: auto;
     background-clip: border-box;
     background-size: auto;
     background-clip: border-box;
     background-size: cover;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 .section-title {
@@ -372,5 +515,25 @@ export default {
     flex-flow: row;
     width: 100%;
     justify-content: flex-end;
+}
+.processingsteps > h3{opacity:0.5;}
+
+@media (max-width: 1024px) {
+.statushr {
+    background-color: white;
+    opacity: 1;
+    height: 2px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 20%;
+    border: unset;
+}.cardviewverify{height:60vh;min-width:600px;margin-top:0px;margin-right:auto;}
+
+.processingsteps > h3{font-size:1rem; text-align:center;margin-right:auto;}
+
+.verify-row {
+    flex-flow: column;
+}
+
 }
 </style>

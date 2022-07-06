@@ -88,9 +88,18 @@ h4{
   color:var(--vt-c-white);
 }
 .header{}
+
+#app {
+  width: 100%;
+  max-width: 1920px;
+  margin: auto;
+  height: 100vh;
+}
 @media (max-width: 1024px) {
   .row{flex-flow:wrap;}
-}
+}  
+#app{width:100% - 2rem;padding:1rem;}
+
 /*
 @media (prefers-color-scheme: dark) {
   :root {
