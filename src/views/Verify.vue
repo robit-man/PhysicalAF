@@ -53,7 +53,7 @@
                     <div class="text-section">
     
                         <div class="instruction" style="margin:2rem 0rem;max-width:500px;">
-                            <h3>Scan the QR on your PhysicalAF card to verifty!</h3>
+                            <h3>Scan the QR on your PhysicalAF card to verify!</h3>
                         </div>
     
                         <div class="action row">
