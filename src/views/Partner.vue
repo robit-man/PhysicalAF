@@ -4,58 +4,22 @@
     
             <div class="hero-text">
     
-                <h2 style="font-size:3rem;">Learn More!</h2>
-                <h1 class="header green" style="">PhysicalAF</h1>
+                <h2 style="font-size:3rem;">Partnership</h2>
+                <h1 class="header green" style="">Partner With PhysicalAF</h1>
                 <p style="margin-bottom:1rem;font-size:20px;width:800px;font-weight:bold;">What is a PhysicalAF card? </p>
                 <p style="margin-bottom:1rem;font-size:20px;width:800px;">The PhysicalAF card is a proof of NFT ownership (PoN), granting the ability to verify you own the NFT without having to connect your wallet. Verifying your own PhysicalAF card is quick and easy. To prove verification, simply scan the QR code
                     on the PhysicalAF card.</p>
-                <p style="margin-bottom:1rem;font-size:20px;width:800px;">PhysicalAF cards give you a unique way to prove ownership of your digital assets in the real world. </p>
-                <p style="margin-bottom:1rem;font-size:20px;width:800px;font-weight:bold;">How is it done? </p>
-                <p style="margin-bottom:1rem;font-size:20px;width:800px;">Our verification technology uses live onchain data to validate if the Ethereum address which purchased the PhysicalAF card still holds the NFT in their wallet. If the wallet that purchased the card still owns the NFT your verification will
-                    be successful. However, a transfer of the NFT to another wallet will deem the PhysicalAF card unverifiable and the verification will fail. This process ensures authenticity and validity of the digital goods.</p>
-                <p style="margin-bottom:1rem;font-size:20px;width:800px;">You can order as many copies of the same NFT as you like, but be aware that if your NFT doesnt remain in the wallet used to order, all your cards will become unverifiable. </p>
-    
+      
     
             </div>
-    
-            <div class="mintbox" style="display:flex;flex-flow:column;margin:auto;margin-top:5rem;">
-    
-                <div class="image-title">
-                    <p style="font-size:2.5rem;text-align:center;font-weight:bold;margin:auto;">Hover</p>
-                    <img src="~/@/assets/aboutcard.png" style="height:500px;" alt="">
-                </div>
-    
-                <div class="desc" style="display:flex;flex-flow:row;justify-content:space-between;">
-                    <p>Description</p>
-                    <p>QR Code</p>
-                </div>
-                <div class="desc" style="display:flex;flex-flow:row;position:absolute;width:400px;top:100px;right:-420px;transform-origin:0% 100%;transform:rotate(90deg);justify-content:space-between;">
-                    <p>NFT</p>
-                    <p>Date Of Purchase</p>
-                </div>
-            </div>
+       <div class="mintbox" style="display:flex;flex-flow:column;margin:auto;min-width:50%;">
+                        <img src="~/@/assets/wall.jpeg" style="mix-blend-mode:lighten;position:fixed;top:0px;max-height:100vh;right:0vw;width:auto;z-index:-1;" alt="">
+                   
     
     
         </div>
+        </div>
     
-        <footer style="padding-bottom:2rem;height:100px;display:flex;flex-flow:column;justify-content: center;width:100%;">
-    
-    
-            <div class="row" style="margin:auto;flex-flow:row;width:100%;justify-content: space-between;">
-    
-                <div class="copyright" style="margin-top:auto;font-weight:100;font-size:1rem;">© PhysicalAF, Inc. 2022. </div>
-                <div class="order-box" style="background-color:#3F3C40; width:auto;padding:0.5rem;border-radius:0.25rem;height:auto;display:flex;flex-flow:row;justify-content:space-between;">
-                    <div class="text" style="padding:0rem 2rem;display: flex;flex-flow: column;justify-content: center;">
-                        <h3 style="font-size:30px!important;">Pre-Order a Physical NFT </h3>
-                        <p style="font-size:20px!important;">And mint a #AFer entirely free!</p>
-                    </div>
-                    <div class="orderbutton" v-if="!modalLoginOpen" v-on:click="wallet = !wallet">Order</div>
-                    <RouterLink v-else class="orderbutton" style="animation:flash 1s linear infinite;" to="/mint">ORDER</RouterLink>
-                </div>
-    
-            </div>
-    
-        </footer>
     </div>
 </template>
 
