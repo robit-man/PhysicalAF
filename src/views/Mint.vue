@@ -1,52 +1,75 @@
 <template>
-    <div class="fill-h-f column center">
+    <div class="fill-h-f column ">
         <div class="row center auto">
     
             <div class="hero-text">
     
-                <h2 style="font-size:3rem;">AFers!</h2>
-                <h1 class="header red" style="">AS F<b class="s1">***</b><b class="s2">UNK</b>ERS</h1>
-                <p style="max-width:500px;">These dudes may not be the most sane, but they know how to be themselves. They are one-of-a-kind and live by a set of rules that only make sense to them. </p>
+                <h1 class="header red" style="">Alliance Of F<b class="s1">***</b><b class="s2">RANK</b>S</h1>
+                <p style="max-width:800px;">
+                These dudes may not be the most sane, but they know how to be themselves. They are one-of-a-kind and live by a set of rules that only make sense to them.
+                <br>
+                <br>
+                Franks are a collection of 10,000 unique NFTs, that can be minted for “0.05 ETH” or claimed for free with any purchase of a PhysicalAF NFT card.</p>
     
-                <p style="padding-top:1rem; "><b style="font-size:1.5rem;font-weight:bold;">Free Mint! </b>(with purchase of physical NFT)</p>
-                <p><b style="font-size:1.5rem;font-weight:bold;">Edition of 10,000</b></p>
-    
-    
-    
-                <div class="afmintprev" style="margin-top:2rem;display:flex;flex-flow:wrap;width:600px; height:400;justify-content: space-between;">
-                    <img src="~/@/assets/1af.png" style="height:172px;" alt="">
-                    <img src="~/@/assets/2af.png" style="height:172px;" alt="">
-                    <img src="~/@/assets/3af.png" style="height:172px;" alt="">
-    
-                </div>
-                <div class="afmintprev" style="display:flex;flex-flow:wrap;width:600px; height:auto;margin-top:2rem;justify-content: space-between;">
-    
-                    <img src="~/@/assets/4af.png" style="height:172px;" alt="">
-                    <img src="~/@/assets/5af.png" style="height:172px;" alt="">
-                    <img src="~/@/assets/6af.png" style="height:172px;" alt="">
-    
-                </div>
+
+    <div class="buttons row between">
+                    <div class="mintAf" v-on:click="showModal()">
+                    
+                    <div class="label">Mint AFer</div>
+                    <div class="data">
+                      <b>Remaining:</b>  <b>{{remaining}}</b>
+                    </div>
+                    </div>
+
+                                 <RouterLink to="/yournfts"> <div class="orderAf" v-on:click="showModal()">Order an NFT Card</div></RouterLink>
+
+
+    </div>
             </div>
     
-            <div class="mintbox" style="display:flex;flex-flow:column;margin:auto;">
+            <div class="mintbox" style="display:flex;flex-flow:column;margin:auto;min-width:50%;">
+                        <img src="~/@/assets/wall.jpeg" style="mix-blend-mode:lighten;position:fixed;top:0px;max-height:100vh;right:0vw;width:auto;z-index:-1;" alt="">
+                    <img src="~/@/assets/laying.jpeg" style="mix-blend-mode:lighten;position:fixed;bottom:-35vh;max-height:120vh;right:20vw;width:auto;z-index:-1;" alt="">
+                    <img src="~/@/assets/holding.jpeg" style="mix-blend-mode:lighten;position:fixed;top:0vh;max-height:80vh;right:25vw;width:auto;z-index:-2;" alt="">
+ 
+ <div class="mintcardview">
+ <Renderer id="c" style="margin-left:-10vw;position:fixed;right:0px;top:2px;" ref="renderer" resize antialias :orbit-ctrl="{ autoRotate: true, enableDamping: true, dampingFactor: 0.05 }">
+                    <Camera :position="{ x: 0, y: 0, z: 10 }" />
+                    <Scene background="black">
+                        <AmbientLight :intensity="0.25" />
+                        <PointLight color="#55ffff" :intensity="0.25" :position="{x: 100, y: -150, z: 120 }" />
+                        <PointLight color="#ffff55" :intensity="0.25" :position="{x: -100, y: 150, z: 150 }" />
+                        <PointLight color="#ff55ff" :intensity="0.25" :position="{x: 100, y: -100, z: -100 }" />
+                        <PointLight color="#55ffff" :intensity="0.25" :position="{x: -100, y: 150, z: -120 }" />
+                        <PointLight color="#ffff55" :intensity="0.25" :position="{x: 100, y: -150, z: -150 }" />
+                        <PointLight color="#ff55ff" :intensity="0.25" :position="{x: -100, y: 100, z: 100 }" />
+                        <Group>
+                            <Box cast-shadow ref="mesh" :width="3" :height="4" :depth="0.05" :position="{x: 0, y:  0, z: 0}" :depthSegments="20" :width-segments="200" :height-segments="200">
+                            </Box>
     
-                <div class="image-title">
-                    <p><b style="font-size:1.5rem;font-weight:bold;">AFer #4342</b></p>
-                    <img src="~/@/assets/7af.png" style="width:100%; margin:1rem 0rem;" alt="">
-                </div>
+                            <Box ref="mesh" :width="3" :height="4" :depth="0" :position="{x: 0, y:  0, z: 0.0253}" :depthSegments="20" :width-segments="200" :height-segments="200">
+                                <StandardMaterial :props="{ displacementScale: 1 }">
+                                    <Texture refraction :refraction-ratio="0.5" src="/card-front.png" />
+                                </StandardMaterial>
+                            </Box>
     
+                            <Box ref="mesh" :width="3" :height="4" :depth="0" :position="{x: 0, y:  0, z: -0.0253}" :depthSegments="20" :width-segments="200" :height-segments="200">
+                                <BasicMaterial :props="{ displacementScale: 1 }">
+                                    <Texture refraction :refraction-ratio="0.5" src="/card-back.png" />
+                                </BasicMaterial>
+                            </Box>
+                        </Group>
     
-                <div class="mint-button" style="display:flex;flex-flow:row;justify-content:space-between;">
-                    <div class="price">
-                        <p style="font-size:1.5rem;line-height:1;">0.045 ETH <img src="~/@/assets/icons/ethereum.svg" style="height:1.2rem;filter:invert(1);" alt=""> </p>
-                    </div>
-                    <div class="mintbutton" v-on:click="showModal()">MINT</div>
-                </div>
+                    </Scene>
     
-                <div class="mintdesc" style="margin-top:1rem; border-left:1px solid white; padding-left:1rem;line-height:1;">
-                    <p>Free with purchase of physical NFT</p><br>
-                    <h3>343 Remaining</h3>
-                </div>
+                    <EffectComposer>
+                        <RenderPass />
+                        <UnrealBloomPass :strength="0.45" />
+                    </EffectComposer>
+    
+                </Renderer>
+</div>
+
             </div>
     
     
@@ -58,7 +81,7 @@
     
         <ConnectWallet v-if="wallet" v-on:click="wallet = !wallet, modalLoginOpen = !modalLoginOpen">
         </ConnectWallet>
-    
+
     </div>
 </template>
 
@@ -71,6 +94,7 @@ export default {
     data() {
         return {
             wallet: false,
+            remaining: 1245,
             mint: false,
             isModalVisible: false,
             form: {
@@ -93,25 +117,66 @@ export default {
 </script>
 
 <style>
-.mintbutton {
-    height: 2.5rem;
-    width: auto;
+.mintcardview{    mix-blend-mode: lighten;
+position:fixed;top:20vh;right:25vw;}
+.mintAf {
+    height: auto;
+    width: 100%;
     display: flex;
     flex-flow: column;
     justify-content: center;
     cursor: pointer;
-    padding: 0.5rem 1rem;
-    color: #3F3C40;
-    background-color: white;
+    color: #030306;
     border-radius: 0.25rem;
-    margin: auto 0;
-    font-size: 1.5rem;
+    overflow:hidden;
+    margin: auto 0;   max-width:300px;
+
+    font-size: 2rem;
     font-weight: bold;
+
+}
+ .label{    
+   display: flex;
+
+    flex-flow: row;
+    justify-content: center;
+    padding: 0.5rem 1rem;    background-color: var(--vt-c-white);
+
+    font-size: 2rem;    
+    font-weight: bold;}
+ .data{
+    padding: 0.5rem 1rem;
+    border:2px solid #ffffff;
+   display: flex;
+    border-bottom-right-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+
+    flex-flow: row;
+    justify-content:space-between;
+   color:#ffffff;
+    font-size: 2rem;
+    font-weight: bold;}
+.orderAf {
+  margin-bottom:auto;
+  margin-top:unset;
+    height: auto;
+    width: max-content;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    color: #030306;
+    background-color: #ffffff;
+    border-radius: 0.25rem;
+    font-size: 2rem;
+    font-weight: bold;
+
 }
 
-.mintbutton:hover {
-    background-color: var(--vt-c-green);
-}
+.label:hover {
+background-color: #B7EAC2;}
+.buttons{margin-top:2rem;max-width:700px;}
 
 @keyframes flash {
     0% {
@@ -136,8 +201,8 @@ export default {
 }
 
 .header {
-    font-size: 3rem;
     font-weight: bold;
+    margin-bottom:2rem;
 }
 
 .header>.s1 {

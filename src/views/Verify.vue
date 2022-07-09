@@ -71,7 +71,7 @@
     
                         <div class="action " style="margin-top:4rem;">
                             <h3>Dont Have A PhysicalAF Card?</h3>
-                            <div class="orderbutton">ORDER NOW</div>
+                            <div class="orderbutton2">ORDER NOW</div>
                             <p style="line-height:1;font-size:1rem;line-height:2;font-weight:bold;">And mint a #AFer entirely free!</p>
     
                         </div>
@@ -272,8 +272,8 @@
                   <h3 style="font-size:30px!important;">Pre-Order a Physical NFT </h3>
                   <p style="font-size:20px!important;">And mint a #AFer entirely free!</p>
                 </div>
-                <div class="orderbutton" v-if="!modalLoginOpen" v-on:click="wallet = !wallet">Order</div>
-                <RouterLink v-else class="orderbutton" style="animation:flash 1s linear infinite;" to="/mint">ORDER</RouterLink>
+                <div class="orderbutton2" v-if="!modalLoginOpen" v-on:click="wallet = !wallet">Order</div>
+                <RouterLink v-else class="orderbutton2" style="animation:flash 1s linear infinite;" to="/mint">ORDER</RouterLink>
               </div>
         
           </div>
@@ -357,7 +357,7 @@ export default {
     font-weight: bold;
 }
 .verification-status{ margin-top:2rem;}
-.orderbutton {
+.orderbutton2 {
     height: auto;
     width: max-content;
     display: flex;
@@ -473,7 +473,7 @@ export default {
     border: unset;
 }
 
-.orderbutton:hover {
+.orderbutton2:hover {
     opacity: 0.5;
 }
 

@@ -9,7 +9,7 @@
               <img src="~/@/assets/icons/modalclose.svg" alt="">
             </button>
   <div class="column" style="margin:auto;width: max-content;">
-            <div class="image-title" style="">
+            <div class="image-title" style="margin:auto;">
                 <p ><b style="font-size:1.5rem;font-weight:bold;text-align:center!important;width:max-content;margin:1rem;">AFer #4342</b></p>
                 <div class="image-stack" style="width:300px;height:300px;position:relative;display:flex;overflow:hidden;margin:1rem;">
                    <img src="~/@/assets/7af.png" style="position:absolute;height:300px;top:0px;filter:blur(10px);" alt="">

@@ -9,7 +9,10 @@
                 <h3 style="margin-bottom:1rem;transform-origin: 10% -50%;transform:rotate(-3deg);font-size:2.5rem;">1 of 1 Physical NFT cards.</h3>
                 <p>Your NFT on the blockchain is just one side of the equation. <br> Using onchain data PhysicalAF enables you to prove in the <br>real world that you are the owner of the digital asset. </p>
                 <a href="">
-                    <div style="padding:0.5rem 1rem;margin:1rem 0rem;background-color:#3F3C40;border-radius:0.25rem;width:max-content;font-size:1.5rem;font-weight:bold;" class="cta-button">Learn More</div>
+                   
+                <RouterLink to="/about">
+                    <div style="padding:0.5rem 1rem;margin:1rem 0rem;background-color:#3F3C40;border-radius:0.25rem;width:max-content;font-size:1.5rem;font-weight:bold;" class="cta-button">Learn More</div> 
+                </RouterLink>
                 </a>
     
             </div>
@@ -51,6 +54,7 @@
                     </EffectComposer>
     
                 </Renderer>
+                <img src="~/@/assets/holding.jpeg" style="mix-blend-mode:lighten;position:fixed;top:0px;right:20vw;height:150vh;filter:brightness(0.5);z-index:-1;" alt="">
             </div>
     
     
