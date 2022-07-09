@@ -34,7 +34,7 @@
     
     
     
-                    <div class="nftlist">
+                    <div class="nftlist-gallery">
     
                         <div class="nft">
                             <div class="nft-img"><img src="@/assets/mf.png"></div>
@@ -347,20 +347,6 @@
     
     
                     </div>
-    
-    
-                    <div class="row center">
-    
-                        <div class="column">
-                            <div class="row" style="margin-bottom:1rem;margin-top:2rem;">
-                                <p style="margin-right:0.5rem;">Nx NFTs Selected</p> <button style="  height: 2rem;
-          margin: auto;">Clear</button></div>
-    
-                            <div class="confirm-button" v-on:click="preview = !preview" style="">Confirm</div>
-                            <div style="margin-top:1rem" class="confirm-button" v-on:click="checkout = !checkout">Checkout</div>
-                        </div>
-                    </div>
-    
     
     
     
@@ -433,12 +419,11 @@ export default {
     margin: auto;
 }
 
-.nftlist {
+.nftlist-gallery {
     display: flex;
     flex-flow: wrap;
-    width: 100%;
+    width: auto;
     margin-top: 1rem;
-    max-height: 40vh;
     overflow-y: auto;
     margin-left: -0.5rem;
     margin-right: -0.5rem;
