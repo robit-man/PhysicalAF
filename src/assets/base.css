@@ -128,7 +128,7 @@ p{  line-height: 1.8;
   color:var(--vt-c-white);
 }
 body {   
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   font-weight: normal;  
   background-size:cover;
   background-image: url('/src/assets/image52.png');

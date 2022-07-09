@@ -91,7 +91,7 @@ import ConnectWallet from '@/components/ConnectWallet.vue';
 
 import { Box, Camera, StandardMaterial, BasicMaterial, SubSurfaceMaterial, RenderPass, PhongMaterial, FilmPass, EffectComposer, UnrealBloomPass, CubeTexture, MatcapMaterial, Texture, Renderer, Scene } from 'troisjs';
 export default {
-    data2() {
+    data() {
         return {
             wallet: false,
             remaining: 1245,
@@ -156,6 +156,7 @@ position:fixed;top:20vh;right:25vw;}
    color:#ffffff;
     font-size: 2rem;
     font-weight: bold;}
+    .data2 > b{font-size:1.5rem;}
 .orderAf {
   margin-bottom:auto;
   margin-top:unset;
