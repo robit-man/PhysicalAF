@@ -3,6 +3,8 @@ import Home from '../views/Home.vue'
 import Mint from '../views/Mint.vue'
 import About from '../views/About.vue'
 import Profile from '../views/Profile.vue'
+import Partner from '../views/Partner.vue'
+import Gallery from '../views/Gallery.vue'
 import YourNFTS from '../views/YourNFTS.vue'
 import Verify from '../views/Verify.vue'
 
@@ -28,6 +30,16 @@ const router = createRouter({
       path: '/profile',
       name: 'profile',
       component: Profile
+    },
+    {
+      path: '/partner',
+      name: 'partner',
+      component: Partner
+    },
+    {
+      path: '/gallery',
+      name: 'gallery',
+      component: Gallery
     },
     {
       path: '/yournfts',

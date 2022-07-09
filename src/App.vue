@@ -18,7 +18,19 @@ import { RouterLink, RouterView } from 'vue-router'
                 <RouterLink to="/mint">
                     <div class="menubutton">AFers</div>
                 </RouterLink>
-                <div class="menubutton">More</div>
+                <div class=" more">More
+              
+                <RouterLink to="/gallery">
+                    <div class="">Gallery</div>
+                </RouterLink>
+                <RouterLink to="/Verify">
+                    <div class="">Verify</div>
+                </RouterLink>
+                <RouterLink to="/partner">
+                    <div class="">Partner</div>
+                </RouterLink>
+
+                </div>
                 <div class="menubutton"><img src="@/assets/icons/twitter.svg" alt=""></div>
                 <div class="menubutton"><img src="@/assets/icons/discord.svg" alt=""></div>
                 <div class="menubutton"><img src="@/assets/icons/opensea.svg" alt=""></div>
@@ -90,6 +102,7 @@ header {
     margin: auto 0.5rem;
     display: flex;
     flex-flow: wrap;
+    position:relative;
     justify-content: center;
     border-radius: .5rem;
     background-color: #3F3C40;
@@ -103,6 +116,32 @@ header {
 .menubutton:hover {
     border-color: white;
     background-color: transparent;
+}
+
+.more {
+    line-height: 30px;
+    height: 30px;
+    padding: 0rem 1rem;
+  margin-top:0.5rem;
+  margin-bottom:0.5rem;
+    display: flex;
+    overflow:hidden;
+    flex-flow: column;
+    justify-content: flex-start;
+    border-radius: .5rem;
+    background-color: #3F3C40;
+    border: 1px solid;
+    color: white;
+    cursor: pointer;
+    border-color: #3F3C40;
+    box-shadow: 0px 2px 5px #0005;
+}
+
+.more:hover {  
+  margin-top:0.5rem;
+  margin-bottom:-90rem;
+  height: 120px;
+    border-color: white;
 }
 
 nav {

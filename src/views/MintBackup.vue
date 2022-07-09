@@ -103,7 +103,7 @@ export default {
     padding: 0.5rem 1rem;
     color: #3F3C40;
     background-color: white;
-    border-radius: 0.25rem;
+    border-radius: .5rem;
     margin: auto 0;
     font-size: 1.5rem;
     font-weight: bold;

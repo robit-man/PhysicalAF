@@ -1,20 +1,36 @@
 <template>
     <div class="fill-h-f column ">
-        <div class="row  auto">
+        <div class="row between auto">
             <div class="hero-text" style="">
-                <h1 >Your NFTs</h1>
+                <h1>Gallery Of C***S</h1>
             </div>
+                    <div class="search row">
+                    <div class="column">
+                  <label for="collection-search" style="color:white;font-size:1rem;">Filter By Collection:</label>
+                    <input class="searchbox2" list="collection-name" id="collection-search" name="collection-search" />
+
+                    <datalist id="collection-name">
+                        <option value="Bored Apes"></option>
+                        <option value="Mfers"></option>
+                        <option value="Fidenzas"></option>
+                        <option value="Strings"></option>
+                        <option value="Sticks"></option>
+                    </datalist>
+                    </div>
+                        <input class="searchbox" type="text" placeholder="Sort By Newest/Oldest">
+
+                        <input class="searchbox" type="search" placeholder="Search">
+                    </div>
+
+
         </div>
     
     
         <div class="column center auto">
     
-            <h1 style="text-align:center;margin-bottom:1rem;font-size:3rem;">Select NFT/s you want to make physical!</h1>
+            <h1 style="text-align:center;margin-bottom:1rem;font-size:3rem;"></h1>
             <div class="nft-box">
                 <div class="column">
-                    <div class="search">
-                        <input class="searchbox" type="text" placeholder="Search">
-                    </div>
     
     
     
@@ -429,6 +445,18 @@ export default {
 }
 
 .searchbox {
+    margin-top:auto;
+    max-height:2rem;
+    margin-left:1rem;
+    padding: 0.5rem;
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+}
+.search{max-height:4rem;}
+.searchbox2 {
+    margin-top:auto;
+    max-height:2rem;
     padding: 0.5rem;
     background: transparent;
     color: white;

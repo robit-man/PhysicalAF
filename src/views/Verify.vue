@@ -337,7 +337,7 @@ export default {
     padding: 0.5rem 1rem;
     color: #030306;
     background-color: #B7EAC2;
-    border-radius: 0.25rem;
+    border-radius: .5rem;
     margin: auto 0;
     font-size: 1.5rem;
     font-weight: bold;
@@ -351,7 +351,7 @@ export default {
     padding: 0.5rem 1rem;
     color: #030306;
     background-color: #EAB7B7;
-    border-radius: 0.25rem;
+    border-radius: .5rem;
     margin: auto 0;
     font-size: 1.5rem;
     font-weight: bold;
@@ -367,7 +367,7 @@ export default {
     padding: 0.5rem 1rem;
     color: #030306;
     background-color: #ffffff;
-    border-radius: 0.25rem;
+    border-radius: .5rem;
     margin: 1rem 0;
     font-size: 1.5rem;
     font-weight: bold;
