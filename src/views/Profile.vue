@@ -157,8 +157,8 @@ export default {
 .inputbutton>button {
     border: 1px solid white;
     min-width: 50px;
-    border-top-right-radius: 0.25rem;
-    border-bottom-right-radius: 0.25rem;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
 }
 
 .viewbutton {
@@ -167,7 +167,7 @@ export default {
     color: black;
     cursor: pointer;
     min-width: 50px;
-    border-radius: 0.25rem;
+    border-radius: .5rem;
 }
 
 .viewbutton:hover {

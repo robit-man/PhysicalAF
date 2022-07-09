@@ -16,7 +16,7 @@
                     <div class="mintAf" v-on:click="showModal()">
                     
                     <div class="label">Mint AFer</div>
-                    <div class="data">
+                    <div class="data2">
                       <b>Remaining:</b>  <b>{{remaining}}</b>
                     </div>
                     </div>
@@ -91,7 +91,7 @@ import ConnectWallet from '@/components/ConnectWallet.vue';
 
 import { Box, Camera, StandardMaterial, BasicMaterial, SubSurfaceMaterial, RenderPass, PhongMaterial, FilmPass, EffectComposer, UnrealBloomPass, CubeTexture, MatcapMaterial, Texture, Renderer, Scene } from 'troisjs';
 export default {
-    data() {
+    data2() {
         return {
             wallet: false,
             remaining: 1245,
@@ -127,7 +127,7 @@ position:fixed;top:20vh;right:25vw;}
     justify-content: center;
     cursor: pointer;
     color: #030306;
-    border-radius: 0.25rem;
+    border-radius: .5rem;
     overflow:hidden;
     margin: auto 0;   max-width:300px;
 
@@ -144,12 +144,12 @@ position:fixed;top:20vh;right:25vw;}
 
     font-size: 2rem;    
     font-weight: bold;}
- .data{
+ .data2{
     padding: 0.5rem 1rem;
     border:2px solid #ffffff;
    display: flex;
-    border-bottom-right-radius: 0.25rem;
-    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
 
     flex-flow: row;
     justify-content:space-between;
@@ -168,13 +168,15 @@ position:fixed;top:20vh;right:25vw;}
     padding: 0.5rem 1rem;
     color: #030306;
     background-color: #ffffff;
-    border-radius: 0.25rem;
+    border-radius: .5rem;
     font-size: 2rem;
     font-weight: bold;
 
 }
 
 .label:hover {
+background-color: #B7EAC2;}
+.orderAf:hover {
 background-color: #B7EAC2;}
 .buttons{margin-top:2rem;max-width:700px;}
 
