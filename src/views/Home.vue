@@ -66,7 +66,7 @@
             <div class="row" style="margin:auto;flex-flow:row;width:100%;justify-content: space-between;">
     
                 <div class="copyright" style="font-size:1rem;margin-top:auto;font-weight:100;">© PhysicalAF, Inc. 2022. </div>
-                <div class="order-box" style="background-color:#3F3C40; width:auto;padding:0.5rem;border-radius:0.5rem;height:auto;display:flex;flex-flow:row;justify-content:space-between;">
+                <div class="order-box" style="background-color:#3F3C40; width:auto;padding:0.5rem;border-radius:0.25rem;height:auto;display:flex;flex-flow:row;justify-content:space-between;">
                     <div class="text" style="padding:0rem 2rem;padding-left:1rem;display: flex;flex-flow: column;justify-content: center;">
                         <h3 style="font-size:30px!important;">Pre-Order a Physical NFT </h3>
                         <p style="font-size:20px!important;">And mint a #AFer entirely free!</p>
@@ -82,7 +82,7 @@
         <ConnectWallet v-if="wallet" v-on:click="wallet = !wallet, modalLoginOpen = !modalLoginOpen">
     
         </ConnectWallet>
-        <div style="z-index:100;font-weight:bold;cursor:pointer;padding:0.5rem;position:fixed;top:1rem;right:1rem;background:white;color:black;border-radius:0.5rem;" v-if="wallet" v-on:click="wallet = !wallet">CLOSE</div>
+        <div style="z-index:100;font-weight:bold;cursor:pointer;padding:0.5rem;position:fixed;top:1rem;right:1rem;background:white;color:black;border-radius:0.25rem;" v-if="wallet" v-on:click="wallet = !wallet">CLOSE</div>
     
     </div>
 </template>
@@ -110,8 +110,8 @@ export default {
 #c {
     mix-blend-mode: hard-light;
 }
-.cta-button-lm{padding:0.5rem 1rem;margin:1rem 0rem;background-color:#3F3C40;border-radius:0.5rem;width:max-content;font-size:1.5rem;font-weight:bold;}
-.cta-button-lm:hover{padding:0.5rem 1rem;margin:1rem 0rem;color:#3F3C40;background-color:white;border-radius:0.5rem;width:max-content;font-size:1.5rem;font-weight:bold;}
+.cta-button-lm{padding:0.5rem 1rem;margin:1rem 0rem;background-color:#3F3C40;border-radius:0.25rem;width:max-content;font-size:1.5rem;font-weight:bold;}
+.cta-button-lm:hover{padding:0.5rem 1rem;margin:1rem 0rem;color:#3F3C40;background-color:white;border-radius:0.25rem;width:max-content;font-size:1.5rem;font-weight:bold;}
 .price {
     position: absolute;
     right: 0px;
@@ -150,7 +150,7 @@ canvas {
     height: 100%;
     background-color: white;
     color: #3F3C40;
-    border-radius: .5rem;
+    border-radius: 0.25rem;
     padding: 0.5rem 2rem;
     display: flex;
     font-size: 2rem;

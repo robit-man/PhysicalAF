@@ -55,7 +55,7 @@ import { RouterLink, RouterView } from 'vue-router'
     display: flex;
     padding: 0.5rem;
     background: var(--vt-c-white);
-    border-radius: .5rem;
+    border-radius: 0.25rem;
     margin: auto 0.5rem;
     cursor: pointer;
 }
@@ -70,7 +70,7 @@ import { RouterLink, RouterView } from 'vue-router'
     background: var(--vt-c-white);
     margin: auto 0.5rem;
     font-weight: bold;
-    border-radius: .5rem;
+    border-radius: 0.25rem;
     margin-right: 0rem;
     cursor: pointer;
 }
@@ -104,7 +104,7 @@ header {
     flex-flow: wrap;
     position:relative;
     justify-content: center;
-    border-radius: .5rem;
+    border-radius: 0.25rem;
     background-color: #3F3C40;
     border: 1px solid;
     color: white;
@@ -128,7 +128,7 @@ header {
     overflow:hidden;
     flex-flow: column;
     justify-content: flex-start;
-    border-radius: .5rem;
+    border-radius: 0.25rem;
     background-color: #3F3C40;
     border: 1px solid;
     color: white;

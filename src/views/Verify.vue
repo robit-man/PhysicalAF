@@ -4,10 +4,10 @@
         <div class="row between ">
             <h1>Verification </h1>
           <div style="display:flex;flex-flow:row;margin-bottom:2rem;">
-            <h3 style="height: 3rem; cursor:pointer;margin:auto;margin-left:1rem;padding:1rem;background:#3F3C40;border-radius:0.5rem;line-height:1rem;border:1px solid #505050;" v-if="step < 6" v-on:click="step ++">{{step}}</h3>
-            <h3 style="height: 3rem; cursor:pointer;margin:auto;margin-left:1rem;padding:1rem;background:#B7EAC2;border-radius:0.5rem;line-height:1rem;border:1px solid gray;" v-if="step > 4" v-on:click="vstat = true">V</h3>
-            <h3 style="height: 3rem; cursor:pointer;margin:auto;margin-left:1rem;padding:1rem;background:#EAB7B7;border-radius:0.5rem;line-height:1rem;border:1px solid gray;" v-if="step > 4" v-on:click="vstat = false">X</h3>
-            <h3 style="height: 3rem; cursor:pointer;margin:auto;margin-left:1rem;padding:1rem;background:#3F3C40;border-radius:0.5rem;line-height:1rem;border:1px solid gray;" v-if="step > 4" v-on:click="step = 0">!</h3>
+            <h3 style="height: 3rem; cursor:pointer;margin:auto;margin-left:1rem;padding:1rem;background:#3F3C40;border-radius:0.25rem;line-height:1rem;border:1px solid #505050;" v-if="step < 6" v-on:click="step ++">{{step}}</h3>
+            <h3 style="height: 3rem; cursor:pointer;margin:auto;margin-left:1rem;padding:1rem;background:#B7EAC2;border-radius:0.25rem;line-height:1rem;border:1px solid gray;" v-if="step > 4" v-on:click="vstat = true">V</h3>
+            <h3 style="height: 3rem; cursor:pointer;margin:auto;margin-left:1rem;padding:1rem;background:#EAB7B7;border-radius:0.25rem;line-height:1rem;border:1px solid gray;" v-if="step > 4" v-on:click="vstat = false">X</h3>
+            <h3 style="height: 3rem; cursor:pointer;margin:auto;margin-left:1rem;padding:1rem;background:#3F3C40;border-radius:0.25rem;line-height:1rem;border:1px solid gray;" v-if="step > 4" v-on:click="step = 0">!</h3>
            </div>
            
            <div class="verify-row">
@@ -337,7 +337,7 @@ export default {
     padding: 0.5rem 1rem;
     color: #030306;
     background-color: #B7EAC2;
-    border-radius: .5rem;
+    border-radius: 0.25rem;
     margin: auto 0;
     font-size: 1.5rem;
     font-weight: bold;
@@ -351,7 +351,7 @@ export default {
     padding: 0.5rem 1rem;
     color: #030306;
     background-color: #EAB7B7;
-    border-radius: .5rem;
+    border-radius: 0.25rem;
     margin: auto 0;
     font-size: 1.5rem;
     font-weight: bold;
@@ -367,7 +367,7 @@ export default {
     padding: 0.5rem 1rem;
     color: #030306;
     background-color: #ffffff;
-    border-radius: .5rem;
+    border-radius: 0.25rem;
     margin: 1rem 0;
     font-size: 1.5rem;
     font-weight: bold;

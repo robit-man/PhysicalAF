@@ -61,10 +61,10 @@ export default {
 
 
 <style scoped>
-.cardbutton{cursor:pointer;margin:auto;width:max-content;margin-top:0.5rem;padding:0.5rem 2rem;border:1px solid white;border-radius:0.5rem;}
-.confirm-button{margin-top:1rem;background:#B7EAC2;text-align:center;font-size:1.5rem;padding:0.5rem 2rem;cursor:pointer;color:#3F3C40;font-weight:600;border-radius:0.5rem;width:max-content;margin:auto;}
+.cardbutton{cursor:pointer;margin:auto;width:max-content;margin-top:0.5rem;padding:0.5rem 2rem;border:1px solid white;border-radius:0.25rem;}
+.confirm-button{margin-top:1rem;background:#B7EAC2;text-align:center;font-size:1.5rem;padding:0.5rem 2rem;cursor:pointer;color:#3F3C40;font-weight:600;border-radius:0.25rem;width:max-content;margin:auto;}
 .buttondesc{margin-bottom:0.5rem;}
-.mintmodal{width:100%;max-width:720px;padding:2rem;background:#1F1E1E;border-radius:0.5rem;height: max-content;
+.mintmodal{width:100%;max-width:720px;padding:2rem;background:#1F1E1E;border-radius:0.25rem;height: max-content;
 margin: auto;}
 .backdrop{z-index:100;left:0px;top:0px;background-color:#0005;height:100vh;width:100vw;display:flex;flex-flow:wrap;justify-content:center;position:fixed;}
 

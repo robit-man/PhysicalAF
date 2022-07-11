@@ -167,7 +167,7 @@ export default {
     color: black;
     cursor: pointer;
     min-width: 50px;
-    border-radius: .5rem;
+    border-radius: 0.25rem;
 }
 
 .viewbutton:hover {

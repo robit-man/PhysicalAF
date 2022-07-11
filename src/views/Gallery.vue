@@ -414,7 +414,7 @@ export default {
     cursor: pointer;
     color: #3F3C40;
     font-weight: 600;
-    border-radius: .5rem;
+    border-radius: 0.25rem;
     width: max-content;
     margin: auto;
 }
@@ -474,7 +474,7 @@ export default {
     padding: 0.5rem 1rem;
     color: #3F3C40;
     background-color: white;
-    border-radius: .5rem;
+    border-radius: 0.25rem;
     margin: auto 0;
     font-size: 1.5rem;
     font-weight: bold;

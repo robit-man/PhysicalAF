@@ -127,7 +127,7 @@ position:fixed;top:20vh;right:25vw;}
     justify-content: center;
     cursor: pointer;
     color: #030306;
-    border-radius: .5rem;
+    border-radius: 0.25rem;
     overflow:hidden;
     margin: auto 0;   max-width:300px;
 
@@ -169,7 +169,7 @@ position:fixed;top:20vh;right:25vw;}
     padding: 0.5rem 1rem;
     color: #030306;
     background-color: #ffffff;
-    border-radius: .5rem;
+    border-radius: 0.25rem;
     font-size: 2rem;
     font-weight: bold;
 
