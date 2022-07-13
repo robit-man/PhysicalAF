@@ -30,7 +30,7 @@
             <div class="mintbox" style="display:flex;flex-flow:column;margin:auto;min-width:50%;">
                         <img src="~/@/assets/af-transparent/wall3.png" style="pointer-events:none;position:fixed;top:0px;max-height:100vh;right:0vw;width:auto;z-index:-2;" alt="">
                     <img src="~/@/assets/af-transparent/laying.png" style="pointer-events:none;position:fixed;bottom:-35vh;max-height:120vh;right:20vw;width:auto;z-index:-1;" alt="">
-                    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fs3.amazonaws.com%2Fgdsgiffile.gamedeveloperstudio.com%2FSmokewhispanimated2dgameeffect--1v5t1170239z296w9u.gif&f=1&nofb=1" style="mix-blend-mode:lighten;pointer-events:none;position:fixed;bottom:32vh;max-height:10vh;right:33.5vw;width:auto;z-index:-1;" alt="">
+                    <img src="~/@/assets/smoke.gif" style="mix-blend-mode:lighten;pointer-events:none;position:fixed;bottom:32vh;max-height:10vh;right:33.5vw;width:auto;z-index:-1;" alt="">
                     <img src="~/@/assets/af-transparent/holding.png" style="pointer-events:none;position:fixed;top:-5vh;max-height:100vh;right:35vw;width:auto;z-index:-3;" alt="">
  
  <div class="mintcardview">
