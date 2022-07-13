@@ -4,25 +4,30 @@
     
             <div class="hero-text">
     
-                <h2 style="font-size:4rem;transform-origin:10% 150%;transform:rotate(-14deg);">Verifiable</h2>
-                <h1 class="homeheader" style="transform-origin:0% 150%;transform:rotate(-8deg);">Physical As F<b class="s1">*</b><b class="s2">U</b>CK</h1>
-                <h3 style="margin-bottom:1rem;transform-origin: 10% -50%;transform:rotate(-3deg);font-size:2.5rem;">1 of 1 Physical NFT cards.</h3>
-                <p>Your NFT on the blockchain is just one side of the equation. <br> Using onchain data PhysicalAF enables you to prove in the <br>real world that you are the owner of the digital asset. </p>
-                <a href="">
+                <h2 style="font-size:4rem;">Verifiable</h2>
+                <h1 class="homeheader" style="margin-bottom:1rem;">Physical As F<b class="s1">*</b><b class="s2">U</b>CK</h1>
+                <p><b>Your NFT on the blockchain is just one side of the equation.</b> <br><br> Using onchain data PhysicalAF enables you to prove, in the real world that you own the digital asset attached to the card without having to connect your wallet. </p>
     
+                <div class="row between" style="max-width:500px;margin:1rem 0rem;">
+    
+                     <div class="cta-button-or" v-if="!modalLoginOpen" v-on:click="wallet = !wallet">Order</div>
+                    <RouterLink v-else class="cta-button-or" style="animation:flash 1s linear infinite;" to="/mint">ORDER</RouterLink>
                     <RouterLink to="/about">
                         <div style="" class="cta-button-lm">Learn More</div>
                     </RouterLink>
-                </a>
+    
+                </div>
+                
+                <h3 style="font-size:30px!important;">Pre-Order a Physical NFT </h3>
+                <p style="font-size:20px!important;">And mint a #AFer entirely free!</p>
     
             </div>
     
             <div class="cardview">
-                <div class="price" style="">0.045 <img src="~/@/assets/icons/ethereum.svg" style="filter:invert(1);height:2.5rem;" alt=""></div>
-                <Renderer id="c" ref="renderer" resize antialias :orbit-ctrl="{ autoRotate: true, enableDamping: true, dampingFactor: 0.05 }">
-                    <Camera :position="{ x: 0, y: 0, z: 10 }" />
-                    <Scene background="#333333">
-                        <AmbientLight :intensity="0.25" />
+                <Renderer id="c" ref="renderer" resize antialias :orbit-ctrl="{ autoRotate: true, enablePan: false, enableDamping: true, dampingFactor: 0.05 }">
+                    <Camera :position="{ x: 0, y: 0, z: 6 }" />
+                    <Scene background="#1F1E1E">
+                        <AmbientLight :intensity="0.65" />
                         <PointLight color="#55ffff" :intensity="0.25" :position="{x: 100, y: -150, z: 120 }" />
                         <PointLight color="#ffff55" :intensity="0.25" :position="{x: -100, y: 150, z: 150 }" />
                         <PointLight color="#ff55ff" :intensity="0.25" :position="{x: 100, y: -100, z: -100 }" />
@@ -50,13 +55,14 @@
     
                     <EffectComposer>
                         <RenderPass />
-                        <UnrealBloomPass :strength="0.45" />
                     </EffectComposer>
     
                 </Renderer>
-                <img src="~/@/assets/holding.jpeg" style="mix-blend-mode:lighten;position:fixed;top:0px;right:20vw;height:150vh;filter:brightness(0.5);z-index:-1;" alt="">
             </div>
-    
+            <div class="focusbox">
+            <img class="focus" src="~/@/assets/af-transparent/wall2.png" style="pointer-events:none;z-index:2;position:fixed;top:0px;max-height:100vh;right:0vw;width:auto;" alt="">
+            <img class="focus2" src="~/@/assets/af-transparent/laying.png" style="pointer-events:none;z-index:3;position:fixed;bottom:-35vh;;max-height:120vh;right:5vw;width:auto;" alt="">
+            </div>
     
         </div>
     
@@ -65,15 +71,8 @@
     
             <div class="row" style="margin:auto;flex-flow:row;width:100%;justify-content: space-between;">
     
-                <div class="copyright" style="font-size:1rem;margin-top:auto;font-weight:100;">© PhysicalAF, Inc. 2022. </div>
-                <div class="order-box" style="background-color:#3F3C40; width:auto;padding:0.5rem;border-radius:0.25rem;height:auto;display:flex;flex-flow:row;justify-content:space-between;">
-                    <div class="text" style="padding:0rem 2rem;padding-left:1rem;display: flex;flex-flow: column;justify-content: center;">
-                        <h3 style="font-size:30px!important;">Pre-Order a Physical NFT </h3>
-                        <p style="font-size:20px!important;">And mint a #AFer entirely free!</p>
-                    </div>
-                    <div class="orderbutton" v-if="!modalLoginOpen" v-on:click="wallet = !wallet">Order</div>
-                    <RouterLink v-else class="orderbutton" style="animation:flash 1s linear infinite;" to="/mint">ORDER</RouterLink>
-                </div>
+                <div class="copyright" style="font-size:1rem;margin-top:auto;font-weight:100;color:white;">© PhysicalAF, Inc. 2022. </div>
+               
     
             </div>
     
@@ -107,11 +106,58 @@ export default {
 </script>
 
 <style>
-#c {
-    mix-blend-mode: hard-light;
+#c {}
+
+.focusbox{width:50vw;right:0px;}
+
+.focusbox > .focus{filter:blur(5px);}
+.focusbox > .focus2{filter:blur(0px);}
+
+.focusbox:hover > .focus2{filter:blur(5px);}
+.focusbox:hover > .focus{filter:blur(0px);}
+
+.cta-button-or {
+    padding: 0.5rem 1rem;
+    margin: 1rem 0rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 3px;
+    background-color: var(--vt-c-green);
+    height: 54px;
+    width: 226px;
+    line-height: 36px;
+    font-size: 32px;
+    color: black;
+    text-align: center;
+    cursor:pointer;
 }
-.cta-button-lm{padding:0.5rem 1rem;margin:1rem 0rem;background-color:#3F3C40;border-radius:0.25rem;width:max-content;font-size:1.5rem;font-weight:bold;}
-.cta-button-lm:hover{padding:0.5rem 1rem;margin:1rem 0rem;color:#3F3C40;background-color:white;border-radius:0.25rem;width:max-content;font-size:1.5rem;font-weight:bold;}
+
+.cta-button-or:hover {
+    color: #3F3C40;
+    background-color: white;
+}
+
+.cta-button-lm {
+    cursor:pointer;
+    padding: 0.5rem 1rem;
+    margin: 1rem 0rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 3px;
+    background-color: var(--vt-c-white);
+    height: 54px;
+    width: 226px;
+    line-height: 36px;
+    font-size: 32px;
+    color: black;
+    text-align: center;
+}
+
+.cta-button-lm:hover {
+    color: white;
+    background-color: #3F3C40;
+}
+
 .price {
     position: absolute;
     right: 0px;
@@ -192,12 +238,14 @@ canvas {
 }
 
 .cardview {
-    width: 40vw;
-    min-width: 500px;
+    width: 20vw;
+    margin-right: auto;
+    min-width: 400px;
     height: calc(100vh - 200px);
 }
 
 .hero-text {
+    max-width: 600px;
     margin: auto 0rem;
 }
 </style>

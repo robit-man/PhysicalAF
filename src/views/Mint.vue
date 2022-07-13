@@ -21,22 +21,23 @@
                     </div>
                     </div>
 
-                                 <RouterLink to="/yournfts"> <div class="orderAf" v-on:click="showModal()">Order an NFT Card</div></RouterLink>
+                                 <RouterLink to="/yournfts"> <div class="orderAf" v-on:click="showModal()">Order A Card</div></RouterLink>
 
 
     </div>
             </div>
     
             <div class="mintbox" style="display:flex;flex-flow:column;margin:auto;min-width:50%;">
-                        <img src="~/@/assets/wall.jpeg" style="mix-blend-mode:lighten;position:fixed;top:0px;max-height:100vh;right:0vw;width:auto;z-index:-1;" alt="">
-                    <img src="~/@/assets/laying.jpeg" style="mix-blend-mode:lighten;position:fixed;bottom:-35vh;max-height:120vh;right:20vw;width:auto;z-index:-1;" alt="">
-                    <img src="~/@/assets/holding.jpeg" style="mix-blend-mode:lighten;position:fixed;top:0vh;max-height:80vh;right:25vw;width:auto;z-index:-2;" alt="">
+                        <img src="~/@/assets/af-transparent/wall3.png" style="pointer-events:none;position:fixed;top:0px;max-height:100vh;right:0vw;width:auto;z-index:-2;" alt="">
+                    <img src="~/@/assets/af-transparent/laying.png" style="pointer-events:none;position:fixed;bottom:-35vh;max-height:120vh;right:20vw;width:auto;z-index:-1;" alt="">
+                    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fs3.amazonaws.com%2Fgdsgiffile.gamedeveloperstudio.com%2FSmokewhispanimated2dgameeffect--1v5t1170239z296w9u.gif&f=1&nofb=1" style="mix-blend-mode:lighten;pointer-events:none;position:fixed;bottom:32vh;max-height:10vh;right:33.5vw;width:auto;z-index:-1;" alt="">
+                    <img src="~/@/assets/af-transparent/holding.png" style="pointer-events:none;position:fixed;top:-5vh;max-height:100vh;right:35vw;width:auto;z-index:-3;" alt="">
  
  <div class="mintcardview">
- <Renderer id="c" style="margin-left:-10vw;position:fixed;right:0px;top:2px;" ref="renderer" resize antialias :orbit-ctrl="{ autoRotate: true, enableDamping: true, dampingFactor: 0.05 }">
-                    <Camera :position="{ x: 0, y: 0, z: 10 }" />
-                    <Scene background="black">
-                        <AmbientLight :intensity="0.25" />
+ <Renderer id="c" style="margin-left:-10vw;position:fixed;right:0px;top:2px;" ref="renderer" resize antialias :orbit-ctrl="{ autoRotate: true, enablePan: false, enableDamping: true, dampingFactor: 0.05 }">
+                    <Camera :position="{ x: 0, y: 0, z: 6 }" />
+                    <Scene background="#1F1E1E">
+                        <AmbientLight :intensity="0.75" />
                         <PointLight color="#55ffff" :intensity="0.25" :position="{x: 100, y: -150, z: 120 }" />
                         <PointLight color="#ffff55" :intensity="0.25" :position="{x: -100, y: 150, z: 150 }" />
                         <PointLight color="#ff55ff" :intensity="0.25" :position="{x: 100, y: -100, z: -100 }" />
@@ -64,7 +65,6 @@
     
                     <EffectComposer>
                         <RenderPass />
-                        <UnrealBloomPass :strength="0.45" />
                     </EffectComposer>
     
                 </Renderer>
@@ -117,8 +117,13 @@ export default {
 </script>
 
 <style>
-.mintcardview{    mix-blend-mode: lighten;
-position:fixed;top:20vh;right:25vw;}
+@keyframes float{
+    0%{transform:translatey(0px);}
+    50%{transform:translatey(20px);}
+    100%{transform:translatey(0px);}
+}
+.mintcardview{   z-index:3;animation:float 5s ease infinite;
+position:fixed;top:25vh;right:42vw;width:120px;height:120px;}
 .mintAf {
     height: auto;
     width: 100%;
@@ -137,47 +142,53 @@ position:fixed;top:20vh;right:25vw;}
 }
  .label{    
    display: flex;
+    height: 54px;
+    line-height: 54px;
 
     flex-flow: row;
     justify-content: center;
-    padding: 0.5rem 1rem;    background-color: var(--vt-c-white);
+       background-color: var(--vt-c-white);
 
     font-size: 2rem;    
     font-weight: bold;}
  .data2{
-    padding: 0.5rem 1rem;
+    padding: 0.5rem;
     border:2px solid #ffffff;
    display: flex;
-    border-bottom-right-radius: 0.5rem;
-    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
 
     flex-flow: row;
     justify-content:space-between;
    color:#ffffff;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: bold;}
     .data2 > b{font-size:1.5rem;}
-.orderAf {
-  margin-bottom:auto;
-  margin-top:unset;
-    height: auto;
-    width: max-content;
-    display: flex;
-    flex-flow: row;
-    justify-content: center;
-    cursor: pointer;
-    padding: 0.5rem 1rem;
-    color: #030306;
-    background-color: #ffffff;
-    border-radius: 0.25rem;
-    font-size: 2rem;
-    font-weight: bold;
 
+.orderAf {
+    padding: 0.5rem 1rem;
+    margin: 1rem 0rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 3px;
+    background-color: var(--vt-c-green);
+    height: 54px;
+    width: auto;
+    margin-bottom:auto;
+    margin-top:unset;
+    line-height: 36px;
+    font-size: 32px;
+    color: black;
+    text-align: center;
+    cursor:pointer;
+}
+
+.orderAf:hover {
+    color: #3F3C40;
+    background-color: white;
 }
 
 .label:hover {
-background-color: #B7EAC2;}
-.orderAf:hover {
 background-color: #B7EAC2;}
 .buttons{margin-top:2rem;max-width:700px;}
 
@@ -199,42 +210,9 @@ background-color: #B7EAC2;}
     }
 }
 
-.orderbutton:hover {
-    opacity: 0.5;
-}
-
 .header {
     font-weight: bold;
     margin-bottom:2rem;
 }
 
-.header>.s1 {
-    display: inline-block;
-}
-
-.header>.s2 {
-    display: none;
-}
-
-.header>b {
-    font-weight: bold;
-}
-
-.header:hover>.s1 {
-    display: none;
-}
-
-.header:hover>.s2 {
-    display: inline-block;
-}
-
-.cardview {
-    width: 40vw;
-    min-width: 500px;
-    height: calc(100vh - 200px);
-}
-
-.hero-text {
-    margin: auto 0rem;
-}
 </style>
