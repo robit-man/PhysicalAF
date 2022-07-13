@@ -2,11 +2,11 @@
     <div class="dust" style="">
     </div>
     <div class="fill-h-f column center">
-        <div class="row between auto">
+        <div class="row reverse center auto">
     
             <div class="hero-text">
     
-                <h2 style="font-size:4rem;margin-bottom:-0.5rem;">Verifiable</h2>
+                <h1 style="">Verifiable</h1>
                 <h1 class="homeheader">Physical As F<b class="s1">*</b><b class="s2">U</b>CK</h1>
                 <h2>1 of 1 Physical NFT cards.</h2>
     
@@ -28,7 +28,7 @@
             </div>
     
             <div class="cardview">
-                <Renderer id="c" ref="renderer" resize antialias alpha :orbit-ctrl="{ autoRotate: true, enablePan: false, enableDamping: true, dampingFactor: 0.05 }">
+                <Renderer id="c" ref="renderer" resize antialias alpha  :orbit-ctrl="{ autoRotate: true, enableZoom: false, enablePan: false,  enableDamping: true, dampingFactor: 0.05 }">
                     <Camera :position="{ x: 0, y: 0, z: 7 }" />
                     <Scene>
                         <AmbientLight :intensity="0.65" />
@@ -64,9 +64,9 @@
                 </Renderer>
             </div>
             <div class="focusbox">
-                <img class="focus" src="~/@/assets/af-transparent/wall2.png" style="pointer-events:none;z-index:-1;position:fixed;top:0px;max-height:100vh;right:0vw;width:auto;" alt="">
-                <img class="focus2" src="~/@/assets/af-transparent/laying.png" style="pointer-events:none;z-index:3;position:fixed;bottom:-35vh;;max-height:120vh;right:5vw;width:auto;" alt="">
-                <img class="focus2" src="~/@/assets/smoke.gif" style="mix-blend-mode:lighten;pointer-events:none;position:fixed;bottom:32vh;max-height:10vh;right:18.5vw;width:auto;z-index:5;" alt="">
+                <img class="focus wall" src="~/@/assets/af-transparent/wall2.png" style="" alt="">
+                <img class="focus2 lay" src="~/@/assets/af-transparent/laying.png" style="" alt="">
+                <img class="focus2 smonk" src="~/@/assets/smoke.gif" style="" alt="">
     
             </div>
     
@@ -114,7 +114,8 @@ export default {
 <style scoped>
 #c {}
 
-.dust {opacity:0.7;
+.dust {
+    opacity: 0.7;
     position: fixed;
     width: 100vw;
     height: 100vh;
@@ -154,6 +155,38 @@ export default {
 
 .focusbox:hover>.focus {
     filter: blur(0px);
+}
+
+.wall {
+    pointer-events: none;
+    z-index: -1;
+    position: fixed;
+    top: 0px;
+    max-height: 100vh;
+    right: 0vw;
+    width: auto;
+}
+
+.lay {
+    pointer-events: none;
+    z-index: 3;
+    position: fixed;
+    bottom: -35vh;
+    ;
+    max-height: 120vh;
+    right: 5vw;
+    width: auto;
+}
+
+.smonk {
+    mix-blend-mode: lighten;
+    pointer-events: none;
+    position: fixed;
+    bottom: 32vh;
+    max-height: 10vh;
+    right: 18.5vw;
+    width: auto;
+    z-index: 5;
 }
 
 .cta-button-or {
@@ -250,7 +283,6 @@ canvas {}
 }
 
 .homeheader {
-    font-size: 4rem;
     font-weight: bold;
     color: var(--vt-c-green);
 }
@@ -276,14 +308,56 @@ canvas {}
 }
 
 .cardview {
-    width: 800px;
+    width: 620px;
     margin-right: auto;
-    margin-left: 2rem;
+    margin-left: 0rem;
     margin-top: -100px;
     height: 800px;
 }
 
 .hero-text {
     max-width: 600px;
+}
+
+@media (max-width: 1024px) {
+    .reverse{flex-flow:column-reverse}
+    .cardview {
+        width: 100vw;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: -5vh;
+        height: 40vh;
+    }
+.wall {
+    pointer-events: none;
+    z-index: -1;
+    position: fixed;
+    top: 0px;
+    max-height: 100vh;
+    right: -70vw;
+    width: auto;opacity:0.5;
+    filter:blur(0px)!important;
+}
+
+.lay {
+    pointer-events: none;
+    z-index: 3;
+    position: absolute;
+    bottom: 0vh;
+    max-height: 100vw;
+    right: 0vw;
+    width: 100vw;
+}
+
+.smonk {display:none;
+    mix-blend-mode: lighten;
+    pointer-events: none;
+    position: fixed;
+    bottom: 32vh;
+    max-height: 10vh;
+    right: 18.5vw;
+    width: auto;
+    z-index: 5;
+}
 }
 </style>

@@ -19,17 +19,17 @@ import { RouterLink, RouterView } from 'vue-router'
                     <div class="menubutton">AFers</div>
                 </RouterLink>
                 <div class=" more">More
-              
-                <RouterLink to="/gallery">
-                    <div class="">Gallery</div>
-                </RouterLink>
-                <RouterLink to="/Verify">
-                    <div class="">Verify</div>
-                </RouterLink>
-                <RouterLink to="/partner">
-                    <div class="">Partner</div>
-                </RouterLink>
-
+    
+                    <RouterLink to="/gallery">
+                        <div class="">Gallery</div>
+                    </RouterLink>
+                    <RouterLink to="/Verify">
+                        <div class="">Verify</div>
+                    </RouterLink>
+                    <RouterLink to="/partner">
+                        <div class="">Partner</div>
+                    </RouterLink>
+    
                 </div>
                 <div class="menubutton"><img src="@/assets/icons/twitter.svg" alt=""></div>
                 <div class="menubutton"><img src="@/assets/icons/discord.svg" alt=""></div>
@@ -83,7 +83,6 @@ import { RouterLink, RouterView } from 'vue-router'
     opacity: 0.5;
 }
 
-
 header {
     height: 100%;
     z-index: 100;
@@ -102,7 +101,7 @@ header {
     margin: auto 0.5rem;
     display: flex;
     flex-flow: wrap;
-    position:relative;
+    position: relative;
     justify-content: center;
     border-radius: 0.25rem;
     background-color: #3F3C40;
@@ -122,10 +121,10 @@ header {
     line-height: 30px;
     height: 30px;
     padding: 0rem 1rem;
-  margin-top:0.5rem;
-  margin-bottom:0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
     display: flex;
-    overflow:hidden;
+    overflow: hidden;
     flex-flow: column;
     justify-content: flex-start;
     border-radius: 0.25rem;
@@ -137,10 +136,10 @@ header {
     box-shadow: 0px 2px 5px #0005;
 }
 
-.more:hover {  
-  margin-top:0.5rem;
-  margin-bottom:-90rem;
-  height: 120px;
+.more:hover {
+    margin-top: 0.5rem;
+    margin-bottom: -90rem;
+    height: 120px;
     border-color: white;
 }
 
@@ -218,5 +217,7 @@ nav a:first-of-type {
 }
 
 @media (max-width: 1024px) {
+
+    nav{display: none;}
 }
 </style>
