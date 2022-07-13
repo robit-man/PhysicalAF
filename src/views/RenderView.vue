@@ -22,7 +22,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .cardview {
     width: 512px;
     height: 512px;

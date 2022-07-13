@@ -44,7 +44,7 @@
 }
 
 .fill-h-f{
-  padding-top:2rem;
+  margin-top:4rem;
   height:calc(100vh - 200px - 2rem);
 }
 .fill-h{
@@ -79,6 +79,7 @@ h2{
   font-size:3rem;
   font-weight:bold;
   color:var(--vt-c-white);
+
 }
 h3{
   font-size:2rem;
@@ -125,10 +126,11 @@ h4{
   position: relative;
   font-weight: normal;
 }
-p{  line-height: 1.2;
-  font-size:1.5rem;font-weight:lighter;
+p{  line-height: 1.5;
+  font-size:1.5rem;font-weight:normal;
   color:var(--vt-c-white);
 }
+b {font-weight:bold;}
 body {   
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   font-weight: normal;  
@@ -143,8 +145,8 @@ body {
   color: var(--color-text);
   transition: color 0.5s, background-color 0.5s;
   font-size: 1.5rem;
-  line-height: 1.2;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.05rem;
 }

@@ -196,7 +196,7 @@ nav a:first-of-type {
         place-items: center;
     }
     #app {
-        padding: 0 4rem;
+        padding: 0 6rem;
     }
     header {
         display: flex;

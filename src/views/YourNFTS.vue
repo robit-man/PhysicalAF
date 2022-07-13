@@ -402,7 +402,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .confirm-button {
     margin-top: 1rem;
     background: #B7EAC2;

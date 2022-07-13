@@ -116,7 +116,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 @keyframes float{
     0%{transform:translatey(0px);}
     50%{transform:translatey(20px);}

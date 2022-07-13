@@ -92,7 +92,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .mintbutton {
     height: 2.5rem;
     width: auto;
@@ -131,42 +131,4 @@ export default {
     }
 }
 
-.orderbutton:hover {
-    opacity: 0.5;
-}
-
-.header {
-    font-size: 3rem;
-    font-weight: bold;
-}
-
-.header>.s1 {
-    display: inline-block;
-}
-
-.header>.s2 {
-    display: none;
-}
-
-.header>b {
-    font-weight: bold;
-}
-
-.header:hover>.s1 {
-    display: none;
-}
-
-.header:hover>.s2 {
-    display: inline-block;
-}
-
-.cardview {
-    width: 40vw;
-    min-width: 500px;
-    height: calc(100vh - 200px);
-}
-
-.hero-text {
-    margin: auto 0rem;
-}
 </style>

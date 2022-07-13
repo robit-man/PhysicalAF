@@ -1,17 +1,20 @@
 <template>
+<div class="dust" style="position:fixed;width:100vw;height:100vh;left:0px;top:0px;z-index:-1;background-image:url('/src/assets/Dust 5.png');background-size:cover;"></div>
     <div class="fill-h-f column center">
-        <div class="row center auto">
+        <div class="row between auto">
     
             <div class="hero-text">
     
-                <h2 style="font-size:4rem;">Verifiable</h2>
-                <h1 class="homeheader" style="margin-bottom:1rem;">Physical As F<b class="s1">*</b><b class="s2">U</b>CK</h1>
-                <p><b>Your NFT on the blockchain is just one side of the equation.</b> <br><br> Using onchain data PhysicalAF enables you to prove, in the real world that you own the digital asset attached to the card without having to connect your wallet. </p>
+                <h2 style="font-size:4rem;margin-bottom:-0.5rem;">Verifiable</h2>
+                <h1 class="homeheader" >Physical As F<b class="s1">*</b><b class="s2">U</b>CK</h1>
+                <h2>1 of 1 Physical  NFT cards.</h2>
+                
+                <p style="margin-top:2rem;"><b>Your NFT on the blockchain is just one side of the equation.</b> Using onchain data PhysicalAF enables you to prove, in the real world that you own the digital asset attached to the card without having to connect your wallet. </p>
     
                 <div class="row between" style="max-width:500px;margin:1rem 0rem;">
     
-                     <div class="cta-button-or" v-if="!modalLoginOpen" v-on:click="wallet = !wallet">Order</div>
-                    <RouterLink v-else class="cta-button-or" style="animation:flash 1s linear infinite;" to="/mint">ORDER</RouterLink>
+                     <div class="cta-button-or" v-if="!modalLoginOpen" v-on:click="wallet = !wallet">Order Now</div>
+                    <RouterLink v-else class="cta-button-or" style="animation:flash 1s linear infinite;" to="/mint">Order Now</RouterLink>
                     <RouterLink to="/about">
                         <div style="" class="cta-button-lm">Learn More</div>
                     </RouterLink>
@@ -25,8 +28,8 @@
     
             <div class="cardview">
                 <Renderer id="c" ref="renderer" resize antialias :orbit-ctrl="{ autoRotate: true, enablePan: false, enableDamping: true, dampingFactor: 0.05 }">
-                    <Camera :position="{ x: 0, y: 0, z: 6 }" />
-                    <Scene background="#1F1E1E">
+                    <Camera :position="{ x: 0, y: 0, z: 7 }" />
+                    <Scene>
                         <AmbientLight :intensity="0.65" />
                         <PointLight color="#55ffff" :intensity="0.25" :position="{x: 100, y: -150, z: 120 }" />
                         <PointLight color="#ffff55" :intensity="0.25" :position="{x: -100, y: 150, z: 150 }" />
@@ -60,7 +63,7 @@
                 </Renderer>
             </div>
             <div class="focusbox">
-            <img class="focus" src="~/@/assets/af-transparent/wall2.png" style="pointer-events:none;z-index:2;position:fixed;top:0px;max-height:100vh;right:0vw;width:auto;" alt="">
+            <img class="focus" src="~/@/assets/af-transparent/wall2.png" style="pointer-events:none;z-index:-1;position:fixed;top:0px;max-height:100vh;right:0vw;width:auto;" alt="">
             <img class="focus2" src="~/@/assets/af-transparent/laying.png" style="pointer-events:none;z-index:3;position:fixed;bottom:-35vh;;max-height:120vh;right:5vw;width:auto;" alt="">
             <img class="focus2" src="~/@/assets/smoke.gif" style="mix-blend-mode:lighten;pointer-events:none;position:fixed;bottom:32vh;max-height:10vh;right:18.5vw;width:auto;z-index:5;" alt="">
 
@@ -102,12 +105,20 @@ export default {
             modalLoginOpen: false,
         };
     },
-    mounted() {},
+    mounted() {
+
+    const canvas = document.querySelector('#c');
+    Renderer({
+      canvas,
+      alpha: true,  
+      premultipliedAlpha: false,
+    });    
+    },
     components: { Box, Camera, ConnectWallet, StandardMaterial, BasicMaterial, SubSurfaceMaterial, FilmPass, PhongMaterial, EffectComposer, UnrealBloomPass, RenderPass, MatcapMaterial, CubeTexture, Texture, Renderer, Scene },
 };
 </script>
 
-<style>
+<style scoped>
 #c {}
 
 .focusbox{width:50vw;right:0px;}
@@ -189,7 +200,6 @@ export default {
 }
 
 canvas {
-    background: transparent !important;
 }
 
 .orderbutton {
@@ -240,14 +250,14 @@ canvas {
 }
 
 .cardview {
-    width: 20vw;
+    width: 800px;
     margin-right: auto;
-    min-width: 400px;
-    height: calc(100vh - 200px);
+    margin-left:2rem;margin-top:-100px;
+    height: 800px;
+    mix-blend-mode: lighten;
 }
 
 .hero-text {
     max-width: 600px;
-    margin: auto 0rem;
 }
 </style>

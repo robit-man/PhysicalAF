@@ -317,7 +317,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 
 @keyframes opaque{
   0%{opacity:0.5;}
