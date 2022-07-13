@@ -27,7 +27,7 @@
             </div>
     
             <div class="cardview">
-                <Renderer id="c" ref="renderer" resize antialias :orbit-ctrl="{ autoRotate: true, enablePan: false, enableDamping: true, dampingFactor: 0.05 }">
+                <Renderer id="c" ref="renderer" resize antialias alpha :orbit-ctrl="{ autoRotate: true, enablePan: false, enableDamping: true, dampingFactor: 0.05 }">
                     <Camera :position="{ x: 0, y: 0, z: 7 }" />
                     <Scene>
                         <AmbientLight :intensity="0.65" />
@@ -106,13 +106,6 @@ export default {
         };
     },
     mounted() {
-
-    const canvas = document.querySelector('#c');
-    Renderer({
-      canvas,
-      alpha: true,  
-      premultipliedAlpha: false,
-    });    
     },
     components: { Box, Camera, ConnectWallet, StandardMaterial, BasicMaterial, SubSurfaceMaterial, FilmPass, PhongMaterial, EffectComposer, UnrealBloomPass, RenderPass, MatcapMaterial, CubeTexture, Texture, Renderer, Scene },
 };
@@ -254,7 +247,6 @@ canvas {
     margin-right: auto;
     margin-left:2rem;margin-top:-100px;
     height: 800px;
-    mix-blend-mode: lighten;
 }
 
 .hero-text {
