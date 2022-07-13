@@ -135,9 +135,9 @@ body {
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   font-weight: normal;  
   background-size:cover;
-  /*background-image: url('/src/assets/image52.png');*/
+  background-image: url('/src/assets/backimg.png');
   background-color:#1F1E1E;
-  background-blend-mode:difference;
+  background-blend-mode:darken;
   background-attachment: fixed;
   font-family: 'Montserrat', sans-serif;
   min-height: 100vh;

@@ -1,26 +1,27 @@
 <template>
-<div class="dust" style="position:fixed;width:100vw;height:100vh;left:0px;top:0px;z-index:-1;background-image:url('/src/assets/Dust 5.png');background-size:cover;"></div>
+    <div class="dust" style="">
+    </div>
     <div class="fill-h-f column center">
         <div class="row between auto">
     
             <div class="hero-text">
     
                 <h2 style="font-size:4rem;margin-bottom:-0.5rem;">Verifiable</h2>
-                <h1 class="homeheader" >Physical As F<b class="s1">*</b><b class="s2">U</b>CK</h1>
-                <h2>1 of 1 Physical  NFT cards.</h2>
-                
+                <h1 class="homeheader">Physical As F<b class="s1">*</b><b class="s2">U</b>CK</h1>
+                <h2>1 of 1 Physical NFT cards.</h2>
+    
                 <p style="margin-top:2rem;"><b>Your NFT on the blockchain is just one side of the equation.</b> Using onchain data PhysicalAF enables you to prove, in the real world that you own the digital asset attached to the card without having to connect your wallet. </p>
     
                 <div class="row between" style="max-width:500px;margin:1rem 0rem;">
     
-                     <div class="cta-button-or" v-if="!modalLoginOpen" v-on:click="wallet = !wallet">Order Now</div>
+                    <div class="cta-button-or" v-if="!modalLoginOpen" v-on:click="wallet = !wallet">Order Now</div>
                     <RouterLink v-else class="cta-button-or" style="animation:flash 1s linear infinite;" to="/mint">Order Now</RouterLink>
                     <RouterLink to="/about">
                         <div style="" class="cta-button-lm">Learn More</div>
                     </RouterLink>
     
                 </div>
-                
+    
                 <h3 style="font-size:30px!important;">Pre-Order a Physical NFT </h3>
                 <p style="font-size:20px!important;">And mint a #AFer entirely free!</p>
     
@@ -63,10 +64,10 @@
                 </Renderer>
             </div>
             <div class="focusbox">
-            <img class="focus" src="~/@/assets/af-transparent/wall2.png" style="pointer-events:none;z-index:-1;position:fixed;top:0px;max-height:100vh;right:0vw;width:auto;" alt="">
-            <img class="focus2" src="~/@/assets/af-transparent/laying.png" style="pointer-events:none;z-index:3;position:fixed;bottom:-35vh;;max-height:120vh;right:5vw;width:auto;" alt="">
-            <img class="focus2" src="~/@/assets/smoke.gif" style="mix-blend-mode:lighten;pointer-events:none;position:fixed;bottom:32vh;max-height:10vh;right:18.5vw;width:auto;z-index:5;" alt="">
-
+                <img class="focus" src="~/@/assets/af-transparent/wall2.png" style="pointer-events:none;z-index:-1;position:fixed;top:0px;max-height:100vh;right:0vw;width:auto;" alt="">
+                <img class="focus2" src="~/@/assets/af-transparent/laying.png" style="pointer-events:none;z-index:3;position:fixed;bottom:-35vh;;max-height:120vh;right:5vw;width:auto;" alt="">
+                <img class="focus2" src="~/@/assets/smoke.gif" style="mix-blend-mode:lighten;pointer-events:none;position:fixed;bottom:32vh;max-height:10vh;right:18.5vw;width:auto;z-index:5;" alt="">
+    
             </div>
     
         </div>
@@ -77,7 +78,7 @@
             <div class="row" style="margin:auto;flex-flow:row;width:100%;justify-content: space-between;">
     
                 <div class="copyright" style="font-size:1rem;margin-top:auto;font-weight:100;color:white;">© PhysicalAF, Inc. 2022. </div>
-               
+    
     
             </div>
     
@@ -105,8 +106,7 @@ export default {
             modalLoginOpen: false,
         };
     },
-    mounted() {
-    },
+    mounted() {},
     components: { Box, Camera, ConnectWallet, StandardMaterial, BasicMaterial, SubSurfaceMaterial, FilmPass, PhongMaterial, EffectComposer, UnrealBloomPass, RenderPass, MatcapMaterial, CubeTexture, Texture, Renderer, Scene },
 };
 </script>
@@ -114,13 +114,47 @@ export default {
 <style scoped>
 #c {}
 
-.focusbox{width:50vw;right:0px;}
+.dust {opacity:0.7;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+    background-image: url('/src/assets/Dust 5.png');
+    background-size: cover;
+    animation: dustfall 10s linear infinite;
+}
 
-.focusbox > .focus{filter:blur(5px);}
-.focusbox > .focus2{filter:blur(0px);}
+@keyframes dustfall {
+    0% {
+        background-position-y: 0vh;
+    }
+    100% {
+        background-position-y: 100vh;
+    }
+}
 
-.focusbox:hover > .focus2{filter:blur(5px);}
-.focusbox:hover > .focus{filter:blur(0px);}
+.focusbox {
+    width: 50vw;
+    right: 0px;
+}
+
+.focusbox>.focus {
+    filter: blur(5px);
+}
+
+.focusbox>.focus2 {
+    filter: blur(0px);
+}
+
+.focusbox:hover>.focus2 {
+    filter: blur(5px);
+}
+
+.focusbox:hover>.focus {
+    filter: blur(0px);
+}
 
 .cta-button-or {
     padding: 0.5rem 1rem;
@@ -135,7 +169,7 @@ export default {
     font-size: 32px;
     color: black;
     text-align: center;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .cta-button-or:hover {
@@ -144,7 +178,7 @@ export default {
 }
 
 .cta-button-lm {
-    cursor:pointer;
+    cursor: pointer;
     padding: 0.5rem 1rem;
     margin: 1rem 0rem;
     font-size: 1.5rem;
@@ -192,8 +226,7 @@ export default {
     }
 }
 
-canvas {
-}
+canvas {}
 
 .orderbutton {
     cursor: pointer;
@@ -245,7 +278,8 @@ canvas {
 .cardview {
     width: 800px;
     margin-right: auto;
-    margin-left:2rem;margin-top:-100px;
+    margin-left: 2rem;
+    margin-top: -100px;
     height: 800px;
 }
 

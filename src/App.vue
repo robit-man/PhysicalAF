@@ -38,7 +38,7 @@ import { RouterLink, RouterView } from 'vue-router'
                 <RouterLink to="/profile">
                     <div class="profilebutton"><img src="@/assets/icons/profile.svg" alt=""></div>
                 </RouterLink>
-                <div class="walletbutton"><b style="margin:auto;font-weight:bold;margin-right:0.5rem;">Connect</b><img src="@/assets/icons/wallet.svg" alt=""></div>
+                <div class="walletbutton"><b style="margin:auto;font-weight:bold;margin-right:0.5rem;font-size:1.5rem;line-height:1rem;">Connect</b><img src="@/assets/icons/wallet.svg" alt=""></div>
     
             </nav>
         </div>
