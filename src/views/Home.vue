@@ -62,6 +62,8 @@
             <div class="focusbox">
             <img class="focus" src="~/@/assets/af-transparent/wall2.png" style="pointer-events:none;z-index:2;position:fixed;top:0px;max-height:100vh;right:0vw;width:auto;" alt="">
             <img class="focus2" src="~/@/assets/af-transparent/laying.png" style="pointer-events:none;z-index:3;position:fixed;bottom:-35vh;;max-height:120vh;right:5vw;width:auto;" alt="">
+            <img class="focus2" src="~/@/assets/smoke.gif" style="mix-blend-mode:lighten;pointer-events:none;position:fixed;bottom:32vh;max-height:10vh;right:18.5vw;width:auto;z-index:5;" alt="">
+
             </div>
     
         </div>
