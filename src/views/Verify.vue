@@ -1,7 +1,7 @@
 <template>
     <div class="fill-h-f column ">
     
-        <div class="row between ">
+        <div class="row between " style="margin-bottom:2rem;">
             <h1>Verification </h1>
           <div style="display:flex;flex-flow:row;margin-bottom:2rem;">
             <h3 style="height: 3rem; cursor:pointer;margin:auto;margin-left:1rem;padding:1rem;background:#3F3C40;border-radius:0.25rem;line-height:1rem;border:1px solid #505050;" v-if="step < 6" v-on:click="step ++">{{step}}</h3>
@@ -47,42 +47,69 @@
         <div class="verify-sections">
     
             <div class="upload section" v-if="step <= 2">
-                <div class="section-title">
-                    <h2>Upload</h2>
-                </div>
+             
     
                 <div class="row between">
     
                     <div class="text-section">
-    
-                        <div class="instruction" style="margin:2rem 0rem;max-width:500px;">
-                            <h3>Scan the QR on your PhysicalAF card to verify!</h3>
-                        </div>
+                 <div class="row">
+                    <div class="arrows column center" style="height:200px;margin-top:auto;margin-bottom:auto;border-right:3px solid white; margin-right:2rem;padding-right:2rem;">
+                            <img v-if="sectionNum == 1" src="~/@/assets/arrow-up.svg" alt="" style="opacity:0.5;">
+                            <img v-if="sectionNum == 1" v-on:click="sectionNum = 2" src="~/@/assets/arrow-down.svg" alt="" style="margin-top:2rem;">
+                            
+                            <img v-if="sectionNum == 2" v-on:click="sectionNum = 1" src="~/@/assets/arrow-up.svg" alt="" style="">
+                            <img v-if="sectionNum == 2"  src="~/@/assets/arrow-down.svg" alt="" style="margin-top:2rem;opacity:0.5;">
+                    </div>
+                <div class="scrollsection">
+
+                    <div v-if="sectionNum == 1" class="section1">
+                         <h2 style="margin-bottom:1rem;">How to Verify</h2>
+                            <p style="margin-bottom:1rem;font-size:20px;width:800px;">Verifying your PhysicalAF card is quick and easy. <b>To prove verification, simply scan the QR code on the bottom right of your PhysicalAF card.</b> This should direct you to our mobile website where you can begin mobile verification.  </p>
+                        <h2 style="margin-bottom:1rem;">Non-Mobile Verification </h2>
+                            <p style="margin-bottom:1rem;font-size:20px;width:800px;">To verify your card on a computer or other non-mobile device, simply upload an image of your PhysicalAF cards QR. </p>
+                        
+                        
+                        
     
                         <div class="action row">
     
-                            <div v-if="step == 0" v-on:click="step ++" class="uploadbutton">UPLOAD IMAGE</div>
+                            <div v-if="step == 0" v-on:click="step ++" class="uploadbutton">UPLOAD QR IMAGE</div>
                             <div v-if="step == 1" v-on:click="step ++" class="uploadbutton">UPLOADING...</div>
                             <div v-if="step == 2" v-on:click="step ++" class="uploadbutton">DONE UPLOADING</div>
-                            <p style="line-height:1;padding-left:1rem;font-size:1rem;line-height:2;font-weight:bold;">Or Visit On Mobile <br> Metamask Browser</p>
+                            <div v-if="step == 2" class="" style="width:32px;">  </div>
+                            <div v-if="step == 2" v-on:click="step = 0" class="uploadbutton" style="background-color:#EAB7B7">RESTART</div>
     
                         </div>
     
+                        </div>
+                        <div v-if="sectionNum == 2" class="section2">
+                            <h2 style="margin-bottom:1rem;">Link your Card to it’s NFT</h2>
+
+                            <p style="margin-bottom:1rem;font-size:20px;width:800px;">If you own both a PhysicalAF card and the NFT displayed on that card but you are not the original purchaser of the card. You will need to connect your card to your NFT to be able to verify them. </p>  
+
+                               <p style="margin-bottom:1rem;font-size:20px;width:800px;"><b>Connecting a PhysicalAF card to an NFT:</b><br>1. Scan or upload the QR of your Physical Card.<br>2. Connect your wallet.<br>3. Select “link”. <br>4. If you own the NFT and PhysicalAF card this process will link them.<br>5. You can now verify your PhysicalAF card.  </p>
+                         
+
+                         
     
-                        <div class="action " style="margin-top:4rem;">
-                            <h3>Dont Have A PhysicalAF Card?</h3>
-                            <div class="orderbutton2">ORDER NOW</div>
-                            <p style="line-height:1;font-size:1rem;line-height:2;font-weight:bold;">And mint a #AFer entirely free!</p>
+                        <div class="action row">
+    
+                            <div v-if="step == 0" v-on:click="step ++" class="uploadbutton">LINK</div>
     
                         </div>
+    
+                         </div>
+                    </div>
+                </div>
+
     
                     </div>
+
+
     
-                    <div class="image-title row">
-                        <img src="~/@/assets/aboutcard.png" style="height:500px;" alt="">
-                        <div class="arrow" style="margin-top:auto;">
-                            <h1>🡄 QR</h1>
-                        </div>
+                    <div class="image-title row center" style="margin:auto;">
+                        <img src="~/@/assets/guide.png" style="height:600px;" alt="">
+                      
                     </div>
     
                 </div>
@@ -148,10 +175,10 @@
                             </div>
                         </div>
                     </div><div class="cardviewverify">
-                <Renderer id="c" ref="renderer" resize antialias :orbit-ctrl="{ autoRotate: true, enableDamping: true, dampingFactor: 0.05 }">
-                    <Camera :position="{ x: 0, y: 0, z: 7}" />
-                    <Scene background="#333333">
-                        <AmbientLight :intensity="0.25" />
+                <Renderer id="c" ref="renderer" resize antialias alpha  :orbit-ctrl="{ autoRotate: true, enableZoom: false, enablePan: false,  enableDamping: true, dampingFactor: 0.05 }">
+                    <Camera :position="{ x: 0, y: 0, z: 6 }" />
+                    <Scene>
+                        <AmbientLight :intensity="0.65" />
                         <PointLight color="#55ffff" :intensity="0.25" :position="{x: 100, y: -150, z: 120 }" />
                         <PointLight color="#ffff55" :intensity="0.25" :position="{x: -100, y: 150, z: 150 }" />
                         <PointLight color="#ff55ff" :intensity="0.25" :position="{x: 100, y: -100, z: -100 }" />
@@ -160,17 +187,18 @@
                         <PointLight color="#ff55ff" :intensity="0.25" :position="{x: -100, y: 100, z: 100 }" />
                         <Group>
                             <Box cast-shadow ref="mesh" :width="3" :height="4" :depth="0.05" :position="{x: 0, y:  0, z: 0}" :depthSegments="20" :width-segments="200" :height-segments="200">
+                              <MatcapMaterial name="3B3C3F_DAD9D5_929290_ABACA8" />
                             </Box>
     
                             <Box ref="mesh" :width="3" :height="4" :depth="0" :position="{x: 0, y:  0, z: 0.0253}" :depthSegments="20" :width-segments="200" :height-segments="200">
                                 <StandardMaterial :props="{ displacementScale: 1 }">
-                                    <Texture refraction :refraction-ratio="0.5" src="/card-front.png" />
+                                    <Texture antialias refraction :refraction-ratio="0.5" src="/card-front.png" />
                                 </StandardMaterial>
                             </Box>
     
                             <Box ref="mesh" :width="3" :height="4" :depth="0" :position="{x: 0, y:  0, z: -0.0253}" :depthSegments="20" :width-segments="200" :height-segments="200">
                                 <BasicMaterial :props="{ displacementScale: 1 }">
-                                    <Texture refraction :refraction-ratio="0.5" src="/card-back.png" />
+                                    <Texture  refraction :refraction-ratio="0.2" src="/card-back.png" />
                                 </BasicMaterial>
                             </Box>
                         </Group>
@@ -179,10 +207,9 @@
     
                     <EffectComposer>
                         <RenderPass />
-                        <UnrealBloomPass :strength="0.45" />
                     </EffectComposer>
     
-                </Renderer>                                
+                </Renderer>                              
                 
 
             </div>
@@ -212,10 +239,10 @@
                             </div>
                         </div>
                     </div><div class="cardviewverify">
-                <Renderer id="c" ref="renderer" resize antialias :orbit-ctrl="{ autoRotate: true, enableDamping: true, dampingFactor: 0.05 }">
-                    <Camera :position="{ x: 0, y: 0, z: 7}" />
-                    <Scene background="#333333">
-                        <AmbientLight :intensity="0.25" />
+               <Renderer id="c" ref="renderer" resize antialias alpha  :orbit-ctrl="{ autoRotate: true, enableZoom: false, enablePan: false,  enableDamping: true, dampingFactor: 0.05 }">
+                    <Camera :position="{ x: 0, y: 0, z: 6 }" />
+                    <Scene>
+                        <AmbientLight :intensity="0.65" />
                         <PointLight color="#55ffff" :intensity="0.25" :position="{x: 100, y: -150, z: 120 }" />
                         <PointLight color="#ffff55" :intensity="0.25" :position="{x: -100, y: 150, z: 150 }" />
                         <PointLight color="#ff55ff" :intensity="0.25" :position="{x: 100, y: -100, z: -100 }" />
@@ -224,17 +251,18 @@
                         <PointLight color="#ff55ff" :intensity="0.25" :position="{x: -100, y: 100, z: 100 }" />
                         <Group>
                             <Box cast-shadow ref="mesh" :width="3" :height="4" :depth="0.05" :position="{x: 0, y:  0, z: 0}" :depthSegments="20" :width-segments="200" :height-segments="200">
+                              <MatcapMaterial name="3B3C3F_DAD9D5_929290_ABACA8" />
                             </Box>
     
                             <Box ref="mesh" :width="3" :height="4" :depth="0" :position="{x: 0, y:  0, z: 0.0253}" :depthSegments="20" :width-segments="200" :height-segments="200">
                                 <StandardMaterial :props="{ displacementScale: 1 }">
-                                    <Texture refraction :refraction-ratio="0.5" src="/card-front.png" />
+                                    <Texture antialias refraction :refraction-ratio="0.5" src="/card-front.png" />
                                 </StandardMaterial>
                             </Box>
     
                             <Box ref="mesh" :width="3" :height="4" :depth="0" :position="{x: 0, y:  0, z: -0.0253}" :depthSegments="20" :width-segments="200" :height-segments="200">
                                 <BasicMaterial :props="{ displacementScale: 1 }">
-                                    <Texture refraction :refraction-ratio="0.5" src="/card-back.png" />
+                                    <Texture  refraction :refraction-ratio="0.2" src="/card-back.png" />
                                 </BasicMaterial>
                             </Box>
                         </Group>
@@ -243,10 +271,9 @@
     
                     <EffectComposer>
                         <RenderPass />
-                        <UnrealBloomPass :strength="0.45" />
                     </EffectComposer>
     
-                </Renderer>                                
+                </Renderer>                             
                 
 
             </div>
@@ -292,7 +319,8 @@ import { Box, Camera, StandardMaterial, BasicMaterial, SubSurfaceMaterial, Rende
 export default {
     data() {
         return {
-            step: 1,
+            sectionNum: 1,
+            step: 0,
             vstat: false,
             imageprocessed: false,
             wallet: false,
@@ -328,20 +356,22 @@ export default {
 }
 .cardviewverify{height:60vh;min-width:600px;margin-top:-100px;margin-right:20%;}
 .uploadbutton {
-    height: auto;
-    width: max-content;
-    display: flex;
-    flex-flow: row;
-    justify-content: center;
-    cursor: pointer;
     padding: 0.5rem 1rem;
-    color: #030306;
-    background-color: #B7EAC2;
-    border-radius: 0.25rem;
-    margin: auto 0;
+    margin: 1rem 0rem;
     font-size: 1.5rem;
     font-weight: bold;
-}.failedbutton {
+    border-radius: 3px;
+    background-color: var(--vt-c-white);
+    height: 54px;
+    width: auto;
+    line-height: 36px;
+    font-size: 32px;
+    color: black;
+    text-align: center;
+    cursor: pointer;
+}
+.uploadbutton:hover{color:var(--vt-c-white);background-color:var(--vt-c-black-soft);}
+.failedbutton {
     height: auto;
     width: max-content;
     display: flex;
@@ -356,7 +386,7 @@ export default {
     font-size: 1.5rem;
     font-weight: bold;
 }
-.verification-status{ margin-top:2rem;}
+.verification-status{}
 .orderbutton2 {
     height: auto;
     width: max-content;
@@ -424,6 +454,7 @@ export default {
 }
 
 .circ-h3 {
+    display: none;
     transform: translateY(-2rem);
     font-size: 1rem !important;
     position: absolute;
@@ -513,8 +544,8 @@ export default {
     margin: auto 0rem;
     display: flex;
     flex-flow: row;
+    justify-content: center;
     width: 100%;
-    justify-content: flex-end;
 }
 .processingsteps > h3{opacity:0.5;}
 

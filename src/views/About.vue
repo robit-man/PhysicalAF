@@ -4,7 +4,7 @@
     
             <div class="hero-text">
     
-                <h2 style="font-size:3rem;">Learn More</h2>
+                <h1 >Learn More</h1>
                 <h1 class="header green" style="">PhysicalAF</h1>
 
                 <div class="column center" style="padding:2rem 0rem;">

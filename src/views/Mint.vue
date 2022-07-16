@@ -265,7 +265,7 @@ export default {
 }
 
 .orderAf:hover {
-    color: #3F3C40;
+    color: black;
     background-color: var(--vt-c-green);
 }
 

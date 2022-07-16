@@ -40,7 +40,9 @@
                         <PointLight color="#ff55ff" :intensity="0.25" :position="{x: -100, y: 100, z: 100 }" />
                         <Group>
                             <Box cast-shadow ref="mesh" :width="3" :height="4" :depth="0.05" :position="{x: 0, y:  0, z: 0}" :depthSegments="20" :width-segments="200" :height-segments="200">
-                            </Box>
+                                                         <MatcapMaterial name="3B3C3F_DAD9D5_929290_ABACA8" />
+
+                           </Box>
     
                             <Box ref="mesh" :width="3" :height="4" :depth="0" :position="{x: 0, y:  0, z: 0.0253}" :depthSegments="20" :width-segments="200" :height-segments="200">
                                 <StandardMaterial :props="{ displacementScale: 1 }">

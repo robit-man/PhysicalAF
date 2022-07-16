@@ -95,13 +95,14 @@ header {
 }
 
 .menubutton {
-    line-height: 30px;
+    line-height: 1.5;
     height: 30px;
     padding: 0rem 1rem;
     margin: auto 0.5rem;
     display: flex;
     flex-flow: wrap;
     position: relative;
+    text-align: center;
     justify-content: center;
     border-radius: 0.25rem;
     background-color: #3F3C40;
@@ -118,7 +119,8 @@ header {
 }
 
 .more {
-    line-height: 30px;
+    line-height: 1.5;
+    text-align: center;
     height: 30px;
     padding: 0rem 1rem;
     margin-top: 0.5rem;
@@ -139,7 +141,7 @@ header {
 .more:hover {
     margin-top: 0.5rem;
     margin-bottom: -90rem;
-    height: 120px;
+    height: 100px;
     border-color: white;
 }
 
