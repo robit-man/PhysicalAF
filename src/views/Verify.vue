@@ -76,8 +76,8 @@
                             <div v-if="step == 0" v-on:click="step ++" class="uploadbutton">UPLOAD QR IMAGE</div>
                             <div v-if="step == 1" v-on:click="step ++" class="uploadbutton">UPLOADING...</div>
                             <div v-if="step == 2" v-on:click="step ++" class="uploadbutton">DONE UPLOADING</div>
-                            <div v-if="step == 2" class="" style="width:32px;">  </div>
-                            <div v-if="step == 2" v-on:click="step = 0" class="uploadbutton" style="background-color:#EAB7B7">RESTART</div>
+                            <div v-if="step == 2" class="" style="width:16px;">  </div>
+                            <div v-if="step == 2" v-on:click="step = 0" class="uploadbutton" style="background-color:#EAB7B7;height:54px;width:54px;display:flex;flex-flow:row;justify-content: center;"><img src="~/@/assets/reload.svg" width="32" alt=""></div>
     
                         </div>
     

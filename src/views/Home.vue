@@ -12,10 +12,12 @@
     
                 <p style="margin-top:2rem;"><b>Your NFT on the blockchain is just one side of the equation.</b> Using onchain data PhysicalAF enables you to prove, in the real world that you own the digital asset attached to the card without having to connect your wallet. </p>
     
-                <div class="row between" style="max-width:500px;margin:1rem 0rem;">
+                <div class="row " style="max-width:500px;margin:1rem 0rem;">
     
                     <div class="cta-button-or" v-if="!modalLoginOpen" v-on:click="wallet = !wallet">Order Now</div>
-                    <RouterLink v-else class="cta-button-or" style="animation:flash 1s linear infinite;" to="/mint">Order Now</RouterLink>
+                    <RouterLink v-else class="cta-button-or" style="animation:flash 1s linear infinite;" to="/mint">Order Now</RouterLink>                    
+                    <div class="" style="width:48px;">  </div>
+
                     <RouterLink to="/about">
                         <div style="" class="cta-button-lm">Learn More</div>
                     </RouterLink>

@@ -11,14 +11,16 @@
                     <br> Franks are a collection of 10,000 unique NFTs, that can be minted for “0.05 ETH” or claimed for free with any purchase of a PhysicalAF NFT card.</p>
     
     
-                <div class="buttons row between">
+                <div class="buttons row ">
                     <div class="mintAf" v-on:click="showModal()">
     
                         <div class="label">Mint A Frank</div>
                         <div class="data2">
                             <b>Remaining:</b> <b>{{remaining}}</b>
                         </div>
-                    </div>
+                    </div>                            
+                    <div class="" style="width:48px;">  </div>
+
     
                     <RouterLink to="/yournfts">
                         <div class="orderAf" v-on:click="showModal()">Order A NFT Card</div>
