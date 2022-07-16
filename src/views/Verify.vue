@@ -78,9 +78,9 @@
                             <div v-if="step == 2" v-on:click="step ++" class="uploadbutton">DONE UPLOADING</div>
                             <div v-if="step == 2" class="" style="width:16px;">  </div>
                             <div v-if="step == 2" v-on:click="step = 0" class="uploadbutton" style="background-color:#EAB7B7;height:54px;width:54px;display:flex;flex-flow:row;justify-content: center;"><img src="~/@/assets/reload.svg" width="32" alt=""></div>
-    
                         </div>
-    
+        <p v-on:click="sectionNum = 2" style="cursor:pointer;">Click here to Link a PhysicalAF Card to it’s NFT</p>
+
                         </div>
                         <div v-if="sectionNum == 2" class="section2">
                             <h2 style="margin-bottom:1rem;">Link your Card to it’s NFT</h2>
@@ -134,7 +134,7 @@
     
                         <div class="action row">
     
-                            <div class="uploadbutton">IMAGE
+                            <div class="uploadbutton">
                                 <h3 v-on:click="imageprocessed = true, step ++" v-if="imageprocessed == false">PROCESSING</h3>
                                 <h3 v-on:click="imageprocessed = false, step ++" v-if="imageprocessed == true">PROCESSED</h3>
                             </div>
@@ -192,7 +192,7 @@
     
                             <Box ref="mesh" :width="3" :height="4" :depth="0" :position="{x: 0, y:  0, z: 0.0253}" :depthSegments="20" :width-segments="200" :height-segments="200">
                                 <StandardMaterial :props="{ displacementScale: 1 }">
-                                    <Texture antialias refraction :refraction-ratio="0.5" src="/card-front.png" />
+                                    <Texture antialias refraction :refraction-ratio="0.5" src="/success.png" />
                                 </StandardMaterial>
                             </Box>
     
@@ -234,8 +234,8 @@
 
                         <div class="action ">
                                                                
-                            <p>MFER#6969 is no longer in your wallet.</p>
-                            <div class="failedbutton" v-on:click="step = 0">START OVER
+                            <p style="margin-bottom:1rem;">MFER#6969 is no longer in your wallet.</p>
+                            <div class="uploadbutton" v-on:click="step = 0">START OVER
                             </div>
                         </div>
                     </div><div class="cardviewverify">
@@ -256,7 +256,7 @@
     
                             <Box ref="mesh" :width="3" :height="4" :depth="0" :position="{x: 0, y:  0, z: 0.0253}" :depthSegments="20" :width-segments="200" :height-segments="200">
                                 <StandardMaterial :props="{ displacementScale: 1 }">
-                                    <Texture antialias refraction :refraction-ratio="0.5" src="/card-front.png" />
+                                    <Texture antialias refraction :refraction-ratio="0.5" src="/failed.png" />
                                 </StandardMaterial>
                             </Box>
     
@@ -363,7 +363,7 @@ export default {
     border-radius: 3px;
     background-color: var(--vt-c-white);
     height: 54px;
-    width: auto;
+    width: fit-content;
     line-height: 36px;
     font-size: 32px;
     color: black;
