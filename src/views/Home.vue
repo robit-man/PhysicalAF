@@ -142,19 +142,19 @@ export default {
 }
 
 .focusbox>.focus {
-    filter: blur(5px);
+    filter: brightness(0.5);
 }
 
 .focusbox>.focus2 {
-    filter: blur(0px);
+    filter: brightness(1);
 }
 
 .focusbox:hover>.focus2 {
-    filter: blur(5px);
+    filter: brightness(0.5);
 }
 
 .focusbox:hover>.focus {
-    filter: blur(0px);
+    filter: brightness(1);
 }
 
 .wall {
@@ -308,11 +308,11 @@ canvas {}
 }
 
 .cardview {
-    width: 620px;
+    width: 650px;
     margin-right: auto;
     margin-left: 0rem;
     margin-top: -100px;
-    height: 800px;
+    height: 700px;
 }
 
 .hero-text {
@@ -335,8 +335,8 @@ canvas {}
     top: 0px;
     max-height: 100vh;
     right: -70vw;
-    width: auto;opacity:0.5;
-    filter:blur(0px)!important;
+    width: auto;
+    filter:blur(0px)brightness(0.5)!important;
 }
 
 .lay {

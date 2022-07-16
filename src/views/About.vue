@@ -4,50 +4,46 @@
     
             <div class="hero-text">
     
-                <h2 style="font-size:3rem;">Learn More!</h2>
+                <h2 style="font-size:3rem;">Learn More</h2>
                 <h1 class="header green" style="">PhysicalAF</h1>
-                <p style="margin-bottom:1rem;font-size:20px;width:800px;font-weight:bold;">What is a PhysicalAF card? </p>
-                <p style="margin-bottom:1rem;font-size:20px;width:800px;">The PhysicalAF card is a proof of NFT ownership (PoN), granting the ability to verify you own the NFT without having to connect your wallet. Verifying your own PhysicalAF card is quick and easy. To prove verification, simply scan the QR code
-                    on the PhysicalAF card.</p>
-                <p style="margin-bottom:1rem;font-size:20px;width:800px;">PhysicalAF cards give you a unique way to prove ownership of your digital assets in the real world. </p>
-                <p style="margin-bottom:1rem;font-size:20px;width:800px;font-weight:bold;">How is it done? </p>
-                <p style="margin-bottom:1rem;font-size:20px;width:800px;">Our verification technology uses live onchain data to validate if the Ethereum address which purchased the PhysicalAF card still holds the NFT in their wallet. If the wallet that purchased the card still owns the NFT your verification will
-                    be successful. However, a transfer of the NFT to another wallet will deem the PhysicalAF card unverifiable and the verification will fail. This process ensures authenticity and validity of the digital goods.</p>
-                <p style="margin-bottom:1rem;font-size:20px;width:800px;">You can order as many copies of the same NFT as you like, but be aware that if your NFT doesnt remain in the wallet used to order, all your cards will become unverifiable. </p>
-    
-    
+
+                <div class="column center" style="padding:2rem 0rem;">
+                <div class="row">
+                    <div class="arrows column center" style="height:200px;margin-top:auto;margin-bottom:auto;border-right:3px solid white; margin-right:2rem;padding-right:2rem;">
+                            <img v-if="sectionNum == 1" src="~/@/assets/arrow-up.svg" alt="" style="opacity:0.5;">
+                            <img v-if="sectionNum == 1" v-on:click="sectionNum = 2" src="~/@/assets/arrow-down.svg" alt="" style="margin-top:2rem;">
+                            
+                            <img v-if="sectionNum == 2" v-on:click="sectionNum = 1" src="~/@/assets/arrow-up.svg" alt="" style="">
+                            <img v-if="sectionNum == 2"  src="~/@/assets/arrow-down.svg" alt="" style="margin-top:2rem;opacity:0.5;">
+                    </div>
+                <div class="scrollsection">
+
+                    <div v-if="sectionNum == 1" class="section1">
+                         <h2 style="margin-bottom:1rem;">What is a PhysicalAF card? </h2>
+                            <p style="margin-bottom:1rem;font-size:20px;width:800px;">The PhysicalAF card is a <b>proof of NFT ownership (PoN)</b>, granting the ability to verify you own the NFT without having to connect your wallet. </p>
+                            <p style="margin-bottom:1rem;font-size:20px;width:800px;">Verifying your own PhysicalAF card is quick and easy. To <b>prove verification</b>, simply <b>scan the QR code
+                                on the PhysicalAF card</b>.</p>
+
+                            <p style="margin-bottom:1rem;font-size:20px;width:800px;">PhysicalAF cards give you a unique way to <b>prove ownership of your digital assets in the real world.</b> </p>
+                        </div>
+                        <div v-if="sectionNum == 2" class="section2">
+                            <h2 style="margin-bottom:1rem;">How is it done? </h2>
+                            <p style="margin-bottom:1rem;font-size:20px;width:800px;">Our verification technology uses <b>live onchain data to validate</b> if the Ethereum address which purchased the PhysicalAF card still holds the NFT in their wallet. <b>If the wallet that purchased the card still owns the NFT</b> your verification will
+                                be successful. </p>   <p style="margin-bottom:1rem;font-size:20px;width:800px;"> However, a <b>transfer of the NFT to another wallet will deem the PhysicalAF card unverifiable</b> and the verification will fail. This process ensures authenticity and validity of the digital goods.
+                            </p>
+
+                               <p style="margin-bottom:1rem;font-size:20px;width:800px;">You can order as many copies of the same NFT as you like, but be aware that <b>if your NFT doesnt remain in the wallet used to order, all your cards will become unverifiable</b>. </p>
+                         </div>
+                    </div>
+                </div>
             </div>
+
+            <div class="row" style="margin:auto;flex-flow:row;width:100%;justify-content: flex-start;">
     
-            <div class="mintbox" style="display:flex;flex-flow:column;margin:auto;margin-top:5rem;">
-    
-                <div class="image-title">
-                    <p style="font-size:2.5rem;text-align:center;font-weight:bold;margin:auto;">Hover</p>
-                    <img src="~/@/assets/aboutcard.png" style="height:500px;" alt="">
-                </div>
-    
-                <div class="desc" style="display:flex;flex-flow:row;justify-content:space-between;">
-                    <p>Description</p>
-                    <p>QR Code</p>
-                </div>
-                <div class="desc" style="display:flex;flex-flow:row;position:absolute;width:400px;top:100px;right:-420px;transform-origin:0% 100%;transform:rotate(90deg);justify-content:space-between;">
-                    <p>NFT</p>
-                    <p>Date Of Purchase</p>
-                </div>
-            </div>
-    
-    
-        </div>
-    
-        <footer style="padding-bottom:2rem;height:100px;display:flex;flex-flow:column;justify-content: center;width:100%;">
-    
-    
-            <div class="row" style="margin:auto;flex-flow:row;width:100%;justify-content: space-between;">
-    
-                <div class="copyright" style="margin-top:auto;font-weight:100;font-size:1rem;">© PhysicalAF, Inc. 2022. </div>
-                <div class="order-box" style="background-color:#3F3C40; width:auto;padding:0.5rem;border-radius:0.25rem;height:auto;display:flex;flex-flow:row;justify-content:space-between;">
-                    <div class="text" style="padding:0rem 2rem;display: flex;flex-flow: column;justify-content: center;">
-                        <h3 style="font-size:30px!important;">Pre-Order a Physical NFT </h3>
-                        <p style="font-size:20px!important;">And mint a #AFer entirely free!</p>
+                <div class="order-box" style="background-color:white; width:auto;padding:0.5rem;border-radius:0.25rem;height:auto;display:flex;flex-flow:row;justify-content:space-between;">
+                    <div class="text" style="padding:0rem 2rem;padding-left:1rem;display: flex;flex-flow: column;justify-content: center;">
+                        <h3 style="font-size:30px!important;color:#3F3C40!important;">Pre-Order a Physical NFT </h3>
+                        <p style="font-size:20px!important;color:#3F3C40!important;">And mint a #AFer entirely free!</p>
                     </div>
                     <div class="orderbutton" v-if="!modalLoginOpen" v-on:click="wallet = !wallet">Order</div>
                     <RouterLink v-else class="orderbutton" style="animation:flash 1s linear infinite;" to="/mint">ORDER</RouterLink>
@@ -55,7 +51,54 @@
     
             </div>
     
-        </footer>
+            </div>
+    
+            <div class="mintbox" style="display:flex;flex-flow:column;margin:auto;margin-top:5rem;">
+    
+               
+            <div class="aboutcard">
+                <Renderer id="c" ref="renderer" resize antialias alpha  :orbit-ctrl="{ autoRotate: false, enableZoom: false, enablePan: false,  enableDamping: true, dampingFactor: 0.05 }">
+                    <Camera :position="{ x: 0, y: 0, z: 6 }" />
+                    <Scene>
+                        <AmbientLight :intensity="0.65" />
+                        <PointLight color="#55ffff" :intensity="0.25" :position="{x: 100, y: -150, z: 120 }" />
+                        <PointLight color="#ffff55" :intensity="0.25" :position="{x: -100, y: 150, z: 150 }" />
+                        <PointLight color="#ff55ff" :intensity="0.25" :position="{x: 100, y: -100, z: -100 }" />
+                        <PointLight color="#55ffff" :intensity="0.25" :position="{x: -100, y: 150, z: -120 }" />
+                        <PointLight color="#ffff55" :intensity="0.25" :position="{x: 100, y: -150, z: -150 }" />
+                        <PointLight color="#ff55ff" :intensity="0.25" :position="{x: -100, y: 100, z: 100 }" />
+                        <Group>
+                            <Box cast-shadow ref="mesh" :width="3" :height="4" :depth="0.05" :position="{x: 0, y:  0, z: 0}" :depthSegments="20" :width-segments="200" :height-segments="200">
+                              <MatcapMaterial name="3B3C3F_DAD9D5_929290_ABACA8" />
+                            </Box>
+    
+                            <Box ref="mesh" :width="3" :height="4" :depth="0" :position="{x: 0, y:  0, z: 0.0253}" :depthSegments="20" :width-segments="200" :height-segments="200">
+                                <StandardMaterial :props="{ displacementScale: 1 }">
+                                    <Texture antialias refraction :refraction-ratio="0.5" src="/guide.png" />
+                                </StandardMaterial>
+                            </Box>
+    
+                            <Box ref="mesh" :width="3" :height="4" :depth="0" :position="{x: 0, y:  0, z: -0.0253}" :depthSegments="20" :width-segments="200" :height-segments="200">
+                                <BasicMaterial :props="{ displacementScale: 1 }">
+                                    <Texture  refraction :refraction-ratio="0.2" src="/card-back.png" />
+                                </BasicMaterial>
+                            </Box>
+                        </Group>
+    
+                    </Scene>
+    
+                    <EffectComposer>
+                        <RenderPass />
+                    </EffectComposer>
+    
+                </Renderer>
+            </div>
+            
+            </div>
+    
+    
+        </div>
+    
     </div>
 </template>
 
@@ -67,6 +110,7 @@ import { Box, Camera, StandardMaterial, BasicMaterial, SubSurfaceMaterial, Rende
 export default {
     data() {
         return {
+            sectionNum: 1,
             wallet: false,
             mint: false,
             isModalVisible: false,
@@ -90,6 +134,27 @@ export default {
 </script>
 
 <style scoped>
+.scrollsection{transition:all 0.2s ease;height:auto;}
+.orderbutton {
+    cursor: pointer;
+    line-height: 1;
+    height: 100%;
+    background-color: #3F3C40;
+    color: white;
+    border-radius: 0.25rem;
+    padding: 0.5rem 2rem;
+    display: flex;
+    font-size: 2rem;
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.orderbutton:hover {
+    opacity: 0.5;
+}.aboutcard{height:calc(100vh - 200px - 10rem);width:600px;margin-right:auto;margin-left:-5rem;}
 .mintbutton {
     height: 2.5rem;
     width: auto;

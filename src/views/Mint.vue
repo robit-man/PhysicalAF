@@ -4,8 +4,8 @@
     
             <div class="hero-text">
     
-                <h1 class="header red" style="">Alliance Of F<b class="s1">***</b><b class="s2">RANK</b>S</h1>
-                <p style="max-width:600px;">
+                <h1 class="header" style="">Alliance Of F<b class="s1">***</b><b class="s2">RANK</b>S</h1>
+                <p style="max-width:800px;">
                     These dudes may not be the most sane, but they know how to be themselves. They are one-of-a-kind and live by a set of rules that only make sense to them.
                     <br>
                     <br> Franks are a collection of 10,000 unique NFTs, that can be minted for “0.05 ETH” or claimed for free with any purchase of a PhysicalAF NFT card.</p>
@@ -14,14 +14,14 @@
                 <div class="buttons row between">
                     <div class="mintAf" v-on:click="showModal()">
     
-                        <div class="label">Mint AFer</div>
+                        <div class="label">Mint A Frank</div>
                         <div class="data2">
                             <b>Remaining:</b> <b>{{remaining}}</b>
                         </div>
                     </div>
     
                     <RouterLink to="/yournfts">
-                        <div class="orderAf" v-on:click="showModal()">Order A Card</div>
+                        <div class="orderAf" v-on:click="showModal()">Order A NFT Card</div>
                     </RouterLink>
     
     
@@ -29,15 +29,15 @@
             </div>
     
             <div class="mintbox" style="display:flex;flex-flow:column;margin:auto;min-width:50%;">
-                <img src="~/@/assets/af-transparent/wall3.png" style="pointer-events:none;position:fixed;top:0px;max-height:100vh;right:0vw;width:auto;z-index:-2;" alt="">
-                <img src="~/@/assets/af-transparent/laying.png" style="pointer-events:none;position:fixed;bottom:-35vh;max-height:120vh;right:20vw;width:auto;z-index:-1;" alt="">
-                <img src="~/@/assets/smoke.gif" style="mix-blend-mode:lighten;pointer-events:none;position:fixed;bottom:32vh;max-height:10vh;right:33.5vw;width:auto;z-index:-1;" alt="">
-                <img src="~/@/assets/af-transparent/holding.png" style="pointer-events:none;position:fixed;top:-5vh;max-height:100vh;right:35vw;width:auto;z-index:-3;" alt="">
+                <img src="~/@/assets/af-transparent/wall3.png" class="wall" alt="">
+                <img src="~/@/assets/af-transparent/laying.png" class="lay" alt="">
+                <img src="~/@/assets/smoke.gif" class="smonk" alt="">
+             <!-- <img src="~/@/assets/af-transparent/holding.png" class="holding" alt="">
     
                 <div class="mintcardview">
-                    <Renderer id="c" style="margin-left:-10vw;position:fixed;right:0px;top:2px;" ref="renderer" resize antialias :orbit-ctrl="{ autoRotate: true, enablePan: false, enableDamping: true, dampingFactor: 0.05 }">
+                    <Renderer id="c" style="margin-left:-10vw;position:fixed;right:0px;top:2px;" ref="renderer" resize antialias alpha :orbit-ctrl="{ autoRotate: true, enablePan: false, enableDamping: true, dampingFactor: 0.05 }">
                         <Camera :position="{ x: 0, y: 0, z: 6 }" />
-                        <Scene background="#1F1E1E">
+                        <Scene>
                             <AmbientLight :intensity="0.75" />
                             <PointLight color="#55ffff" :intensity="0.25" :position="{x: 100, y: -150, z: 120 }" />
                             <PointLight color="#ffff55" :intensity="0.25" :position="{x: -100, y: 150, z: 150 }" />
@@ -69,7 +69,7 @@
                         </EffectComposer>
     
                     </Renderer>
-                </div>
+                </div>-->  
     
             </div>
     
@@ -130,12 +130,53 @@ export default {
     }
 }
 
+.wall {
+    pointer-events: none;
+    position: fixed;
+    top: 0px;
+    max-height: 100vh;
+    right: 0vw;
+    width: auto;
+    z-index: -2;
+}
+
+.lay {
+    pointer-events: none;
+    position: fixed;
+    bottom: -35vh;
+    max-height: 120vh;
+    right: 20vw;
+    width: auto;
+    z-index: -1;
+}
+
+.smonk {
+    mix-blend-mode: lighten;
+    pointer-events: none;
+    position: fixed;
+    bottom: 32vh;
+    max-height: 10vh;
+    right: 33.5vw;
+    width: auto;
+    z-index: -1;
+}
+
+.holding {
+    pointer-events: none;
+    position: fixed;
+    top: -5vh;
+    max-height: 100vh;
+    right: 30vw;
+    width: auto;
+    z-index: -3;
+}
+
 .mintcardview {
     z-index: 3;
     animation: float 5s ease infinite;
     position: fixed;
     top: 25vh;
-    right: 42vw;
+    right: 38vw;
     width: 120px;
     height: 120px;
 }
@@ -155,6 +196,7 @@ export default {
     font-size: 2rem;
     font-weight: bold;
 }
+.mintAf:hover > .data2{color:#B7EAC2;border-color:#B7EAC2;}
 
 .header>.s1 {
     display: inline-block;
@@ -210,7 +252,7 @@ export default {
     font-size: 1.5rem;
     font-weight: bold;
     border-radius: 3px;
-    background-color: var(--vt-c-green);
+    background-color: white;
     height: 54px;
     width: auto;
     margin-bottom: auto;
@@ -224,7 +266,7 @@ export default {
 
 .orderAf:hover {
     color: #3F3C40;
-    background-color: white;
+    background-color: var(--vt-c-green);
 }
 
 .label:hover {
@@ -233,7 +275,7 @@ export default {
 
 .buttons {
     margin-top: 2rem;
-    max-width: 600px;
+    max-width: 680px;
 }
 
 @keyframes flash {

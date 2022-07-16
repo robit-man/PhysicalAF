@@ -217,7 +217,7 @@ nav a:first-of-type {
 }
 
 @media (max-width: 1024px) {
-
+    #app{overflow-x:hidden;}
     nav{display: none;}
 }
 </style>
