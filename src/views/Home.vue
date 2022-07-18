@@ -15,9 +15,9 @@
                 <div class="row " style="max-width:500px;margin:1rem 0rem;">
     
                     <div class="cta-button-or" v-if="!modalLoginOpen" v-on:click="wallet = !wallet">Order Now</div>
-                    <RouterLink v-else class="cta-button-or" style="animation:flash 1s linear infinite;" to="/mint">Order Now</RouterLink>                    
-                    <div class="" style="width:48px;">  </div>
-
+                    <RouterLink v-else class="cta-button-or" style="animation:flash 1s linear infinite;" to="/mint">Order Now</RouterLink>
+                    <div class="" style="width:48px;"> </div>
+    
                     <RouterLink to="/about">
                         <div style="" class="cta-button-lm">Learn More</div>
                     </RouterLink>
@@ -30,7 +30,7 @@
             </div>
     
             <div class="cardview">
-                <Renderer id="c" ref="renderer" resize antialias alpha  :orbit-ctrl="{ autoRotate: true, enableZoom: false, enablePan: false,  enableDamping: true, dampingFactor: 0.05 }">
+                <Renderer id="c" ref="renderer" resize antialias alpha :orbit-ctrl="{ autoRotate: true, enableZoom: false, enablePan: false,  enableDamping: true, dampingFactor: 0.05 }">
                     <Camera :position="{ x: 0, y: 0, z: 7 }" />
                     <Scene>
                         <AmbientLight :intensity="0.65" />
@@ -42,9 +42,9 @@
                         <PointLight color="#ff55ff" :intensity="0.25" :position="{x: -100, y: 100, z: 100 }" />
                         <Group>
                             <Box cast-shadow ref="mesh" :width="3" :height="4" :depth="0.05" :position="{x: 0, y:  0, z: 0}" :depthSegments="20" :width-segments="200" :height-segments="200">
-                                                         <MatcapMaterial name="3B3C3F_DAD9D5_929290_ABACA8" />
-
-                           </Box>
+                                <MatcapMaterial name="3B3C3F_DAD9D5_929290_ABACA8" />
+    
+                            </Box>
     
                             <Box ref="mesh" :width="3" :height="4" :depth="0" :position="{x: 0, y:  0, z: 0.0253}" :depthSegments="20" :width-segments="200" :height-segments="200">
                                 <StandardMaterial :props="{ displacementScale: 1 }">
@@ -124,9 +124,10 @@ export default {
     width: 100vw;
     height: 100vh;
     left: 0px;
+    mix-blend-mode: color;
     top: 0px;
+    background-image: linear-gradient(to bottom, transparent, black, transparent);
     z-index: -1;
-    background-image: url('/src/assets/Dust 5.png');
     background-size: cover;
     animation: dustfall 10s linear infinite;
 }
@@ -200,7 +201,7 @@ export default {
     font-weight: bold;
     border-radius: 3px;
     background-color: var(--vt-c-green);
-    height: 54px;
+    height: 64px;
     width: 226px;
     line-height: 36px;
     font-size: 32px;
@@ -222,7 +223,7 @@ export default {
     font-weight: bold;
     border-radius: 3px;
     background-color: var(--vt-c-white);
-    height: 54px;
+    height: 64px;
     width: 226px;
     line-height: 36px;
     font-size: 32px;
@@ -324,7 +325,9 @@ canvas {}
 }
 
 @media (max-width: 1024px) {
-    .reverse{flex-flow:column-reverse}
+    .reverse {
+        flex-flow: column-reverse
+    }
     .cardview {
         width: 100vw;
         margin-right: auto;
@@ -332,36 +335,35 @@ canvas {}
         margin-top: -5vh;
         height: 40vh;
     }
-.wall {
-    pointer-events: none;
-    z-index: -1;
-    position: fixed;
-    top: 0px;
-    max-height: 100vh;
-    right: -70vw;
-    width: auto;
-    filter:blur(0px)brightness(0.5)!important;
-}
-
-.lay {
-    pointer-events: none;
-    z-index: 3;
-    position: absolute;
-    bottom: 0vh;
-    max-height: 100vw;
-    right: 0vw;
-    width: 100vw;
-}
-
-.smonk {display:none;
-    mix-blend-mode: lighten;
-    pointer-events: none;
-    position: fixed;
-    bottom: 32vh;
-    max-height: 10vh;
-    right: 18.5vw;
-    width: auto;
-    z-index: 5;
-}
+    .wall {
+        pointer-events: none;
+        z-index: -1;
+        position: fixed;
+        top: 0px;
+        max-height: 100vh;
+        right: -70vw;
+        width: auto;
+        filter: blur(0px)brightness(0.5) !important;
+    }
+    .lay {
+        pointer-events: none;
+        z-index: 3;
+        position: absolute;
+        bottom: 0vh;
+        max-height: 100vw;
+        right: 0vw;
+        width: 100vw;
+    }
+    .smonk {
+        display: none;
+        mix-blend-mode: lighten;
+        pointer-events: none;
+        position: fixed;
+        bottom: 32vh;
+        max-height: 10vh;
+        right: 18.5vw;
+        width: auto;
+        z-index: 5;
+    }
 }
 </style>

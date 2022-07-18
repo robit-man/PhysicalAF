@@ -1,7 +1,7 @@
 <template>
     <div class="fill-h-f column ">
     
-        <div class="row between " style="margin-bottom:2rem;">
+        <div class="row between " style="margin-bottom:0rem;">
             <h1>Verification </h1>
           <div style="display:flex;flex-flow:row;margin-bottom:2rem;">
             <h3 style="height: 3rem; cursor:pointer;margin:auto;margin-left:1rem;padding:1rem;background:#3F3C40;border-radius:0.25rem;line-height:1rem;border:1px solid #505050;" v-if="step < 6" v-on:click="step ++">{{step}}</h3>
@@ -77,13 +77,13 @@
                             <div v-if="step == 1" v-on:click="step ++" class="uploadbutton">UPLOADING...</div>
                             <div v-if="step == 2" v-on:click="step ++" class="uploadbutton">DONE UPLOADING</div>
                             <div v-if="step == 2" class="" style="width:16px;">  </div>
-                            <div v-if="step == 2" v-on:click="step = 0" class="uploadbutton" style="background-color:#EAB7B7;height:54px;width:54px;display:flex;flex-flow:row;justify-content: center;"><img src="~/@/assets/reload.svg" width="32" alt=""></div>
+                            <div v-if="step == 2" v-on:click="step = 0" class="uploadbutton" style="background-color:#EAB7B7;height:64px;width:64px;display:flex;flex-flow:row;justify-content: center;"><img src="~/@/assets/reload.svg" width="32" alt=""></div>
                         </div>
         <p v-on:click="sectionNum = 2" style="cursor:pointer;">Click here to Link a PhysicalAF Card to it’s NFT</p>
 
                         </div>
                         <div v-if="sectionNum == 2" class="section2">
-                            <h2 style="margin-bottom:1rem;">Link your Card to it’s NFT</h2>
+                            <h2 style="margin-bottom:1rem;">Link your Card to its NFT</h2>
 
                             <p style="margin-bottom:1rem;font-size:20px;width:800px;">If you own both a PhysicalAF card and the NFT displayed on that card but you are not the original purchaser of the card. You will need to connect your card to your NFT to be able to verify them. </p>  
 
@@ -94,7 +94,7 @@
     
                         <div class="action row">
     
-                            <div v-if="step == 0" v-on:click="step ++" class="uploadbutton">LINK</div>
+                            <div v-on:click="step ++" class="uploadbutton">LINK</div>
     
                         </div>
     
@@ -142,11 +142,13 @@
                         </div>
                     </div>
                     <div class="processingsteps">
-                        <h3 style="animation:opaque 1s ease;animation-delay: 0s;">Checking Card Validity on the Blockchain...</h3>
-                        <h3 style="animation:opaque 1s ease;animation-delay: 1s;">Checking Owner and Connected Wallet...</h3>
+                        <h3 style="margin-bottom:2rem;animation:opaque 1s ease;animation-delay: 0s;">Checking Card Validity on the Blockchain...</h3>
+                        <h3 style="margin-bottom:2rem;animation:opaque 1s ease;animation-delay: 1s;">Checking Owner and Connected Wallet...</h3>
                         <h3 style="animation:opaque 1s ease;animation-delay: 2s;">Generating Status Report...</h3>
                     </div>
                 </div>
+
+                
             </div>
     
     
@@ -354,6 +356,9 @@ export default {
 
 
 }
+
+.processingsteps{  width: 100%;
+  text-align: center;}
 .cardviewverify{height:60vh;min-width:600px;margin-top:-100px;margin-right:20%;}
 .uploadbutton {
     padding: 0.5rem 1rem;
@@ -362,9 +367,9 @@ export default {
     font-weight: bold;
     border-radius: 3px;
     background-color: var(--vt-c-white);
-    height: 54px;
+    height: 64px;
     width: fit-content;
-    line-height: 36px;
+    line-height: 3rem;
     font-size: 32px;
     color: black;
     text-align: center;
@@ -406,7 +411,6 @@ export default {
 .uploadbutton>h3 {
     font-weight: bold;
     font-size: 1.5rem;
-    margin-left: 1rem;
     color:black;
     background-size: auto;
     background-clip: border-box;

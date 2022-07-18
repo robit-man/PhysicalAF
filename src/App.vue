@@ -90,7 +90,7 @@ header {
     flex-flow: row;
     justify-content: space-between;
     line-height: 1.5;
-    max-height: 100px;
+    max-height: 6rem;
     width: 100%;
 }
 

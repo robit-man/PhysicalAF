@@ -5,22 +5,23 @@
             <div class="hero-text">
     
                 <h1 class="header" style="">Alliance Of F<b class="s1">***</b><b class="s2">RANK</b>S</h1>
-                <p style="max-width:800px;">
+                <p style="max-width:740px;">
                     These dudes may not be the most sane, but they know how to be themselves. They are one-of-a-kind and live by a set of rules that only make sense to them.
                     <br>
-                    <br> Franks are a collection of 10,000 unique NFTs, that can be minted for “0.05 ETH” or claimed for free with any purchase of a PhysicalAF NFT card.</p>
+                    <br> Franks are a collection of 10,000 unique NFTs, that can be minted for “0.05 ETH” or claimed for free with any purchase of a PhysicalAF NFT card.
+    <br><br>Your Frank will grant you early access to future editions.</p>
     
-    
-                <div class="buttons row ">
+                <div class="buttons column ">
                     <div class="mintAf" v-on:click="showModal()">
-    
+                        <div class="smallaf" ><img src="~/@/assets/afsmall.png" alt=""></div>
+
                         <div class="label">Mint A Frank</div>
                         <div class="data2">
                             <b>Remaining:</b> <b>{{remaining}}</b>
                         </div>
-                    </div>                            
-                    <div class="" style="width:48px;">  </div>
-
+                    </div>
+                    <div class="" style="width:48px;"> </div>
+    
     
                     <RouterLink to="/yournfts">
                         <div class="orderAf" v-on:click="showModal()">Order A NFT Card</div>
@@ -32,46 +33,45 @@
     
             <div class="mintbox" style="display:flex;flex-flow:column;margin:auto;min-width:50%;">
                 <img src="~/@/assets/af-transparent/wall3.png" class="wall" alt="">
-                <img src="~/@/assets/af-transparent/laying.png" class="lay" alt="">
-                <img src="~/@/assets/smoke.gif" class="smonk" alt="">
-             <!-- <img src="~/@/assets/af-transparent/holding.png" class="holding" alt="">
-    
-                <div class="mintcardview">
-                    <Renderer id="c" style="margin-left:-10vw;position:fixed;right:0px;top:2px;" ref="renderer" resize antialias alpha :orbit-ctrl="{ autoRotate: true, enablePan: false, enableDamping: true, dampingFactor: 0.05 }">
-                        <Camera :position="{ x: 0, y: 0, z: 6 }" />
-                        <Scene>
-                            <AmbientLight :intensity="0.75" />
-                            <PointLight color="#55ffff" :intensity="0.25" :position="{x: 100, y: -150, z: 120 }" />
-                            <PointLight color="#ffff55" :intensity="0.25" :position="{x: -100, y: 150, z: 150 }" />
-                            <PointLight color="#ff55ff" :intensity="0.25" :position="{x: 100, y: -100, z: -100 }" />
-                            <PointLight color="#55ffff" :intensity="0.25" :position="{x: -100, y: 150, z: -120 }" />
-                            <PointLight color="#ffff55" :intensity="0.25" :position="{x: 100, y: -150, z: -150 }" />
-                            <PointLight color="#ff55ff" :intensity="0.25" :position="{x: -100, y: 100, z: 100 }" />
-                            <Group>
-                                <Box cast-shadow ref="mesh" :width="3" :height="4" :depth="0.05" :position="{x: 0, y:  0, z: 0}" :depthSegments="20" :width-segments="200" :height-segments="200">
-                                </Box>
-    
-                                <Box ref="mesh" :width="3" :height="4" :depth="0" :position="{x: 0, y:  0, z: 0.0253}" :depthSegments="20" :width-segments="200" :height-segments="200">
-                                    <StandardMaterial :props="{ displacementScale: 1 }">
-                                        <Texture refraction :refraction-ratio="0.5" src="/card-front.png" />
-                                    </StandardMaterial>
-                                </Box>
-    
-                                <Box ref="mesh" :width="3" :height="4" :depth="0" :position="{x: 0, y:  0, z: -0.0253}" :depthSegments="20" :width-segments="200" :height-segments="200">
-                                    <BasicMaterial :props="{ displacementScale: 1 }">
-                                        <Texture refraction :refraction-ratio="0.5" src="/card-back.png" />
-                                    </BasicMaterial>
-                                </Box>
-                            </Group>
-    
-                        </Scene>
-    
-                        <EffectComposer>
-                            <RenderPass />
-                        </EffectComposer>
-    
-                    </Renderer>
-                </div>-->  
+                <img src="~/@/assets/standing-left.png" class="standing" alt="">
+                <!-- <img src="~/@/assets/af-transparent/holding.png" class="holding" alt="">
+        
+                    <div class="mintcardview">
+                        <Renderer id="c" style="margin-left:-10vw;position:fixed;right:0px;top:2px;" ref="renderer" resize antialias alpha :orbit-ctrl="{ autoRotate: true, enablePan: false, enableDamping: true, dampingFactor: 0.05 }">
+                            <Camera :position="{ x: 0, y: 0, z: 6 }" />
+                            <Scene>
+                                <AmbientLight :intensity="0.75" />
+                                <PointLight color="#55ffff" :intensity="0.25" :position="{x: 100, y: -150, z: 120 }" />
+                                <PointLight color="#ffff55" :intensity="0.25" :position="{x: -100, y: 150, z: 150 }" />
+                                <PointLight color="#ff55ff" :intensity="0.25" :position="{x: 100, y: -100, z: -100 }" />
+                                <PointLight color="#55ffff" :intensity="0.25" :position="{x: -100, y: 150, z: -120 }" />
+                                <PointLight color="#ffff55" :intensity="0.25" :position="{x: 100, y: -150, z: -150 }" />
+                                <PointLight color="#ff55ff" :intensity="0.25" :position="{x: -100, y: 100, z: 100 }" />
+                                <Group>
+                                    <Box cast-shadow ref="mesh" :width="3" :height="4" :depth="0.05" :position="{x: 0, y:  0, z: 0}" :depthSegments="20" :width-segments="200" :height-segments="200">
+                                    </Box>
+        
+                                    <Box ref="mesh" :width="3" :height="4" :depth="0" :position="{x: 0, y:  0, z: 0.0253}" :depthSegments="20" :width-segments="200" :height-segments="200">
+                                        <StandardMaterial :props="{ displacementScale: 1 }">
+                                            <Texture refraction :refraction-ratio="0.5" src="/card-front.png" />
+                                        </StandardMaterial>
+                                    </Box>
+        
+                                    <Box ref="mesh" :width="3" :height="4" :depth="0" :position="{x: 0, y:  0, z: -0.0253}" :depthSegments="20" :width-segments="200" :height-segments="200">
+                                        <BasicMaterial :props="{ displacementScale: 1 }">
+                                            <Texture refraction :refraction-ratio="0.5" src="/card-back.png" />
+                                        </BasicMaterial>
+                                    </Box>
+                                </Group>
+        
+                            </Scene>
+        
+                            <EffectComposer>
+                                <RenderPass />
+                            </EffectComposer>
+        
+                        </Renderer>
+                    </div>-->
     
             </div>
     
@@ -135,19 +135,19 @@ export default {
 .wall {
     pointer-events: none;
     position: fixed;
-    top: 0px;
-    max-height: 100vh;
+    bottom: 0px;
+    max-height: 120vh;
     right: 0vw;
     width: auto;
     z-index: -2;
 }
 
-.lay {
+.standing {
     pointer-events: none;
     position: fixed;
-    bottom: -35vh;
-    max-height: 120vh;
-    right: 20vw;
+    bottom: -20vh;
+    max-height: 100vh;
+    right: 35vw;
     width: auto;
     z-index: -1;
 }
@@ -194,11 +194,25 @@ export default {
     border-radius: 0.25rem;
     overflow: hidden;
     margin: auto 0;
-    max-width: 300px;
+    max-width: 350px;
     font-size: 2rem;
     font-weight: bold;
 }
-.mintAf:hover > .data2{color:#B7EAC2;border-color:#B7EAC2;}
+
+.smallaf{cursor:pointer;}
+.smallaf>img {
+    margin-bottom: -2rem;
+    z-index: 10;
+}
+
+.mintAf:hover>.data2 {
+    color: #B7EAC2;
+    border-color: #B7EAC2;
+}
+.mintAf:hover>.label {
+    background-color: #B7EAC2;
+    border-color: #B7EAC2;
+}
 
 .header>.s1 {
     display: inline-block;
@@ -222,13 +236,15 @@ export default {
 
 .label {
     display: flex;
-    height: 54px;
-    line-height: 54px;
+    height: 64px;
+    line-height: 64px;
     flex-flow: row;
     justify-content: center;
     background-color: var(--vt-c-white);
     font-size: 2rem;
     font-weight: bold;
+    border-top-right-radius: 0.25rem;
+    border-top-left-radius: 0.25rem;
 }
 
 .data2 {
@@ -255,11 +271,12 @@ export default {
     font-weight: bold;
     border-radius: 3px;
     background-color: white;
-    height: 54px;
-    width: auto;
+    height: 64px;
+    width: 100%;
+    max-width: 350px;
     margin-bottom: auto;
-    margin-top: unset;
-    line-height: 36px;
+    margin-top: 2rem;
+    line-height: 1.5;
     font-size: 32px;
     color: black;
     text-align: center;

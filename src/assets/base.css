@@ -91,7 +91,7 @@ h4{
   color:var(--vt-c-white);
 }
 .header{}
-
+.arrow>img{cursor:pointer;}
 #app {
   width: 100%;
   max-width: 1920px;
@@ -135,9 +135,9 @@ body {
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   font-weight: normal;  
   background-size:cover;
-  background-image: url('/src/assets/backimg.png');
+  background-image: url('/src/assets/blurwave.png');
   background-color:#1F1E1E;
-  background-blend-mode:darken;
+  background-blend-mode:normal;
   background-attachment: fixed;
   font-family: 'Montserrat', sans-serif;
   min-height: 100vh;

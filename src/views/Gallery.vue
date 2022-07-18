@@ -37,7 +37,7 @@
                     <div class="nftlist-gallery">
     
                         <div class="nft">
-                            <div class="nft-img"><img src="@/assets/mf.png"></div>
+                            <div class="nft-img"><img src="@/assets/card-front.png"></div>
                             <div class="row between">
     
                                 <div class="nft-desc">
@@ -45,13 +45,13 @@
                                     <div class="nft-number">#4312</div>
                                 </div>
     
-                                <a href=""><img src="@/assets/icons/opensea.svg" alt=""></a>
+                                <a href="" class="nft-link"><img src="@/assets/icons/opensea-black.svg" alt=""></a>
                             </div>
     
                         </div>
     
                         <div class="nft">
-                            <div class="nft-img"><img src="@/assets/mf.png"></div>
+                            <div class="nft-img"><img src="@/assets/card-front.png"></div>
                             <div class="row between">
     
                                 <div class="nft-desc">
@@ -59,13 +59,13 @@
                                     <div class="nft-number">#4312</div>
                                 </div>
     
-                                <a href=""><img src="@/assets/icons/opensea.svg" alt=""></a>
+                                <a href="" class="nft-link"><img src="@/assets/icons/opensea-black.svg" alt=""></a>
                             </div>
     
                         </div>
     
                         <div class="nft">
-                            <div class="nft-img"><img src="@/assets/mf.png"></div>
+                            <div class="nft-img"><img src="@/assets/card-front.png"></div>
                             <div class="row between">
     
                                 <div class="nft-desc">
@@ -73,13 +73,13 @@
                                     <div class="nft-number">#4312</div>
                                 </div>
     
-                                <a href=""><img src="@/assets/icons/opensea.svg" alt=""></a>
+                                <a href="" class="nft-link"><img src="@/assets/icons/opensea-black.svg" alt=""></a>
                             </div>
     
                         </div>
     
                         <div class="nft">
-                            <div class="nft-img"><img src="@/assets/mf.png"></div>
+                            <div class="nft-img"><img src="@/assets/card-front.png"></div>
                             <div class="row between">
     
                                 <div class="nft-desc">
@@ -87,13 +87,13 @@
                                     <div class="nft-number">#4312</div>
                                 </div>
     
-                                <a href=""><img src="@/assets/icons/opensea.svg" alt=""></a>
+                                <a href="" class="nft-link"><img src="@/assets/icons/opensea-black.svg" alt=""></a>
                             </div>
     
                         </div>
     
                         <div class="nft">
-                            <div class="nft-img"><img src="@/assets/mf.png"></div>
+                            <div class="nft-img"><img src="@/assets/card-front.png"></div>
                             <div class="row between">
     
                                 <div class="nft-desc">
@@ -101,13 +101,13 @@
                                     <div class="nft-number">#4312</div>
                                 </div>
     
-                                <a href=""><img src="@/assets/icons/opensea.svg" alt=""></a>
+                                <a href="" class="nft-link"><img src="@/assets/icons/opensea-black.svg" alt=""></a>
                             </div>
     
                         </div>
     
                         <div class="nft">
-                            <div class="nft-img"><img src="@/assets/mf.png"></div>
+                            <div class="nft-img"><img src="@/assets/card-front.png"></div>
                             <div class="row between">
     
                                 <div class="nft-desc">
@@ -115,13 +115,13 @@
                                     <div class="nft-number">#4312</div>
                                 </div>
     
-                                <a href=""><img src="@/assets/icons/opensea.svg" alt=""></a>
+                                <a href="" class="nft-link"><img src="@/assets/icons/opensea-black.svg" alt=""></a>
                             </div>
     
                         </div>
     
                         <div class="nft">
-                            <div class="nft-img"><img src="@/assets/mf.png"></div>
+                            <div class="nft-img"><img src="@/assets/card-front.png"></div>
                             <div class="row between">
     
                                 <div class="nft-desc">
@@ -129,13 +129,13 @@
                                     <div class="nft-number">#4312</div>
                                 </div>
     
-                                <a href=""><img src="@/assets/icons/opensea.svg" alt=""></a>
+                                <a href="" class="nft-link"><img src="@/assets/icons/opensea-black.svg" alt=""></a>
                             </div>
     
                         </div>
     
                         <div class="nft">
-                            <div class="nft-img"><img src="@/assets/mf.png"></div>
+                            <div class="nft-img"><img src="@/assets/card-front.png"></div>
                             <div class="row between">
     
                                 <div class="nft-desc">
@@ -143,13 +143,13 @@
                                     <div class="nft-number">#4312</div>
                                 </div>
     
-                                <a href=""><img src="@/assets/icons/opensea.svg" alt=""></a>
+                                <a href="" class="nft-link"><img src="@/assets/icons/opensea-black.svg" alt=""></a>
                             </div>
     
                         </div>
     
                         <div class="nft">
-                            <div class="nft-img"><img src="@/assets/mf.png"></div>
+                            <div class="nft-img"><img src="@/assets/card-front.png"></div>
                             <div class="row between">
     
                                 <div class="nft-desc">
@@ -157,13 +157,13 @@
                                     <div class="nft-number">#4312</div>
                                 </div>
     
-                                <a href=""><img src="@/assets/icons/opensea.svg" alt=""></a>
+                                <a href="" class="nft-link"><img src="@/assets/icons/opensea-black.svg" alt=""></a>
                             </div>
     
                         </div>
     
                         <div class="nft">
-                            <div class="nft-img"><img src="@/assets/mf.png"></div>
+                            <div class="nft-img"><img src="@/assets/card-front.png"></div>
                             <div class="row between">
     
                                 <div class="nft-desc">
@@ -171,13 +171,13 @@
                                     <div class="nft-number">#4312</div>
                                 </div>
     
-                                <a href=""><img src="@/assets/icons/opensea.svg" alt=""></a>
+                                <a href="" class="nft-link"><img src="@/assets/icons/opensea-black.svg" alt=""></a>
                             </div>
     
                         </div>
     
                         <div class="nft">
-                            <div class="nft-img"><img src="@/assets/mf.png"></div>
+                            <div class="nft-img"><img src="@/assets/card-front.png"></div>
                             <div class="row between">
     
                                 <div class="nft-desc">
@@ -185,13 +185,13 @@
                                     <div class="nft-number">#4312</div>
                                 </div>
     
-                                <a href=""><img src="@/assets/icons/opensea.svg" alt=""></a>
+                                <a href="" class="nft-link"><img src="@/assets/icons/opensea-black.svg" alt=""></a>
                             </div>
     
                         </div>
     
                         <div class="nft">
-                            <div class="nft-img"><img src="@/assets/mf.png"></div>
+                            <div class="nft-img"><img src="@/assets/card-front.png"></div>
                             <div class="row between">
     
                                 <div class="nft-desc">
@@ -199,13 +199,13 @@
                                     <div class="nft-number">#4312</div>
                                 </div>
     
-                                <a href=""><img src="@/assets/icons/opensea.svg" alt=""></a>
+                                <a href="" class="nft-link"><img src="@/assets/icons/opensea-black.svg" alt=""></a>
                             </div>
     
                         </div>
     
                         <div class="nft">
-                            <div class="nft-img"><img src="@/assets/mf.png"></div>
+                            <div class="nft-img"><img src="@/assets/card-front.png"></div>
                             <div class="row between">
     
                                 <div class="nft-desc">
@@ -213,13 +213,13 @@
                                     <div class="nft-number">#4312</div>
                                 </div>
     
-                                <a href=""><img src="@/assets/icons/opensea.svg" alt=""></a>
+                                <a href="" class="nft-link"><img src="@/assets/icons/opensea-black.svg" alt=""></a>
                             </div>
     
                         </div>
     
                         <div class="nft">
-                            <div class="nft-img"><img src="@/assets/mf.png"></div>
+                            <div class="nft-img"><img src="@/assets/card-front.png"></div>
                             <div class="row between">
     
                                 <div class="nft-desc">
@@ -227,13 +227,13 @@
                                     <div class="nft-number">#4312</div>
                                 </div>
     
-                                <a href=""><img src="@/assets/icons/opensea.svg" alt=""></a>
+                                <a href="" class="nft-link"><img src="@/assets/icons/opensea-black.svg" alt=""></a>
                             </div>
     
                         </div>
     
                         <div class="nft">
-                            <div class="nft-img"><img src="@/assets/mf.png"></div>
+                            <div class="nft-img"><img src="@/assets/card-front.png"></div>
                             <div class="row between">
     
                                 <div class="nft-desc">
@@ -241,13 +241,13 @@
                                     <div class="nft-number">#4312</div>
                                 </div>
     
-                                <a href=""><img src="@/assets/icons/opensea.svg" alt=""></a>
+                                <a href="" class="nft-link"><img src="@/assets/icons/opensea-black.svg" alt=""></a>
                             </div>
     
                         </div>
     
                         <div class="nft">
-                            <div class="nft-img"><img src="@/assets/mf.png"></div>
+                            <div class="nft-img"><img src="@/assets/card-front.png"></div>
                             <div class="row between">
     
                                 <div class="nft-desc">
@@ -255,13 +255,13 @@
                                     <div class="nft-number">#4312</div>
                                 </div>
     
-                                <a href=""><img src="@/assets/icons/opensea.svg" alt=""></a>
+                                <a href="" class="nft-link"><img src="@/assets/icons/opensea-black.svg" alt=""></a>
                             </div>
     
                         </div>
     
                         <div class="nft">
-                            <div class="nft-img"><img src="@/assets/mf.png"></div>
+                            <div class="nft-img"><img src="@/assets/card-front.png"></div>
                             <div class="row between">
     
                                 <div class="nft-desc">
@@ -269,13 +269,13 @@
                                     <div class="nft-number">#4312</div>
                                 </div>
     
-                                <a href=""><img src="@/assets/icons/opensea.svg" alt=""></a>
+                                <a href="" class="nft-link"><img src="@/assets/icons/opensea-black.svg" alt=""></a>
                             </div>
     
                         </div>
     
                         <div class="nft">
-                            <div class="nft-img"><img src="@/assets/mf.png"></div>
+                            <div class="nft-img"><img src="@/assets/card-front.png"></div>
                             <div class="row between">
     
                                 <div class="nft-desc">
@@ -283,13 +283,13 @@
                                     <div class="nft-number">#4312</div>
                                 </div>
     
-                                <a href=""><img src="@/assets/icons/opensea.svg" alt=""></a>
+                                <a href="" class="nft-link"><img src="@/assets/icons/opensea-black.svg" alt=""></a>
                             </div>
     
                         </div>
     
                         <div class="nft">
-                            <div class="nft-img"><img src="@/assets/mf.png"></div>
+                            <div class="nft-img"><img src="@/assets/card-front.png"></div>
                             <div class="row between">
     
                                 <div class="nft-desc">
@@ -297,13 +297,13 @@
                                     <div class="nft-number">#4312</div>
                                 </div>
     
-                                <a href=""><img src="@/assets/icons/opensea.svg" alt=""></a>
+                                <a href="" class="nft-link"><img src="@/assets/icons/opensea-black.svg" alt=""></a>
                             </div>
     
                         </div>
     
                         <div class="nft">
-                            <div class="nft-img"><img src="@/assets/mf.png"></div>
+                            <div class="nft-img"><img src="@/assets/card-front.png"></div>
                             <div class="row between">
     
                                 <div class="nft-desc">
@@ -311,13 +311,13 @@
                                     <div class="nft-number">#4312</div>
                                 </div>
     
-                                <a href=""><img src="@/assets/icons/opensea.svg" alt=""></a>
+                                <a href="" class="nft-link"><img src="@/assets/icons/opensea-black.svg" alt=""></a>
                             </div>
     
                         </div>
     
                         <div class="nft">
-                            <div class="nft-img"><img src="@/assets/mf.png"></div>
+                            <div class="nft-img"><img src="@/assets/card-front.png"></div>
                             <div class="row between">
     
                                 <div class="nft-desc">
@@ -325,13 +325,13 @@
                                     <div class="nft-number">#4312</div>
                                 </div>
     
-                                <a href=""><img src="@/assets/icons/opensea.svg" alt=""></a>
+                                <a href="" class="nft-link"><img src="@/assets/icons/opensea-black.svg" alt=""></a>
                             </div>
     
                         </div>
     
                         <div class="nft">
-                            <div class="nft-img"><img src="@/assets/mf.png"></div>
+                            <div class="nft-img"><img src="@/assets/card-front.png"></div>
                             <div class="row between">
     
                                 <div class="nft-desc">
@@ -339,7 +339,7 @@
                                     <div class="nft-number">#4312</div>
                                 </div>
     
-                                <a href=""><img src="@/assets/icons/opensea.svg" alt=""></a>
+                                <a href="" class="nft-link"><img src="@/assets/icons/opensea-black.svg" alt=""></a>
                             </div>
     
                         </div>
@@ -448,22 +448,31 @@ export default {
     border: 1px solid white;
 }
 
-.nft-title {
-    font-size: 0.8rem;
-    color: white;
+.nft-title {     line-height:1;
+   padding:0.5rem;
+padding-bottom:0rem;
+    font-weight:bold;
+    font-size: 1rem;
+    color: rgb(0, 0, 0);
 }
 
 .nft-number {
+    line-height:1;
+    padding:0.5rem;
     font-size: 0.8rem;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .nft {
-    max-width: 200px;
-    background: black;
+    max-width: 300px;
+    background: rgb(255, 255, 255);
     margin: 0.5rem;
 }
-
+.nft-link{
+    display:flex;flex-flow:column;justify-content: center;padding:0.5rem;
+}
+.nft-img{width:100%;}
+.nft-img>img{width:100%;}
 .mintbutton {
     height: 2.5rem;
     width: auto;

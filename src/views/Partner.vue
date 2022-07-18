@@ -4,7 +4,7 @@
     
             <div class="hero-text">
     
-                <h2 style="font-size:3rem;">Partnership</h2>
+                <h1 >Partnership</h1>
                 <h1 class="header green" style="">Partner With PhysicalAF</h1>
                 <p style="margin-bottom:1rem;font-size:20px;width:800px;font-weight:bold;">What is a PhysicalAF card? </p>
                 <p style="margin-bottom:1rem;font-size:20px;width:800px;">The PhysicalAF card is a proof of NFT ownership (PoN), granting the ability to verify you own the NFT without having to connect your wallet. Verifying your own PhysicalAF card is quick and easy. To prove verification, simply scan the QR code

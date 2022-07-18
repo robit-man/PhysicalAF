@@ -2,12 +2,12 @@
     <div class="fill-h-f column between">
         <div class="row center auto">
     
-            <div class="hero-text">
-    
+            <div class="hero-text column between">
+    <div>
                 <h1 >Learn More</h1>
                 <h1 class="header green" style="">PhysicalAF</h1>
-
-                <div class="column center" style="padding:2rem 0rem;">
+</div>
+                <div class="column " style="padding:2rem 0rem;">
                 <div class="row">
                     <div class="arrows column center" style="height:200px;margin-top:auto;margin-bottom:auto;border-right:3px solid white; margin-right:2rem;padding-right:2rem;">
                             <img v-if="sectionNum == 1" src="~/@/assets/arrow-up.svg" alt="" style="opacity:0.5;">
@@ -38,18 +38,16 @@
                 </div>
             </div>
 
-            <div class="row" style="margin:auto;flex-flow:row;width:100%;justify-content: flex-start;">
-    
-                <div class="order-box" style="background-color:white; width:auto;padding:0.5rem;border-radius:0.25rem;height:auto;display:flex;flex-flow:row;justify-content:space-between;">
-                    <div class="text" style="padding:0rem 2rem;padding-left:1rem;display: flex;flex-flow: column;justify-content: center;">
-                        <h3 style="font-size:30px!important;color:#3F3C40!important;">Pre-Order a Physical NFT </h3>
-                        <p style="font-size:20px!important;color:#3F3C40!important;">And mint a #AFer entirely free!</p>
-                    </div>
-                    <div class="orderbutton" v-if="!modalLoginOpen" v-on:click="wallet = !wallet">Order</div>
-                    <RouterLink v-else class="orderbutton" style="animation:flash 1s linear infinite;" to="/mint">ORDER</RouterLink>
-                </div>
-    
-            </div>
+<div class="socials column">
+    <div class="row">
+        <a href=""><img width="60px" height="60px" src="~/@/assets/Twitter.svg" alt=""></a>`
+        <a href=""><img width="60px" height="60px" src="~/@/assets/Discord.svg" alt=""></a>`
+        <a href=""><img width="60px" height="60px" src="~/@/assets/Instagram.svg" alt=""></a>`
+        <a href=""><img width="60px" height="60px" src="~/@/assets/Opensea.svg" alt=""></a>`
+    </div>
+    <p>You can reach the team on Discord</p>
+</div>
+
     
             </div>
     
@@ -135,6 +133,8 @@ export default {
 
 <style scoped>
 .scrollsection{transition:all 0.2s ease;height:auto;}
+
+.socials{margin-left:5rem;}
 .orderbutton {
     cursor: pointer;
     line-height: 1;
