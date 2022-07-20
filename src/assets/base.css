@@ -132,7 +132,7 @@ h4{
 }
 p{  line-height: 1.2;
   font-size:1.25rem;font-weight:300;
-  color:var(--vt-c-white);
+  color:var(--vt-c-white);max-width:calc(100vw - 2rem);
 }
 b {font-weight:bold;}
 body {   

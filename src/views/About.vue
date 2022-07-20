@@ -10,11 +10,12 @@
                 <div class="column " style="padding:2rem 0rem;">
                 <div class="row">
                     <div class="arrows column center" style="height:200px;margin-top:auto;margin-bottom:auto;border-right:3px solid white; margin-right:2rem;padding-right:2rem;">
-                            <img v-if="sectionNum == 1" src="~/@/assets/arrow-up.svg" alt="" style="opacity:0.5;">
-                            <img v-if="sectionNum == 1" v-on:click="sectionNum = 2" src="~/@/assets/arrow-down.svg" alt="" style="margin-top:2rem;">
-                            
-                            <img v-if="sectionNum == 2" v-on:click="sectionNum = 1" src="~/@/assets/arrow-up.svg" alt="" style="">
-                            <img v-if="sectionNum == 2"  src="~/@/assets/arrow-down.svg" alt="" style="margin-top:2rem;opacity:0.5;">
+                              <img class="uparrow" v-if="sectionNum == 1" src="~/@/assets/arrow-up.svg" alt="" style="opacity:0.5;">
+                                <img class="downarrow" v-if="sectionNum == 1" v-on:click="sectionNum = 2" src="~/@/assets/arrow-down.svg" alt="" style="">
+    
+                                <img class="uparrow" v-if="sectionNum == 2" v-on:click="sectionNum = 1" src="~/@/assets/arrow-up.svg" alt="" style="">
+                                <img class="downarrow" v-if="sectionNum == 2" src="~/@/assets/arrow-down.svg" alt="" style="opacity:0.5;">
+                           
                     </div>
                 <div class="scrollsection">
 
@@ -134,6 +135,10 @@ export default {
 <style scoped>
 .scrollsection{transition:all 0.2s ease;height:auto;}
 
+.uparrow{margin-bottom:1rem;}
+.downarrow{margin-top:1rem;}
+    .arrows{height: 200px; margin-top: auto; margin-bottom: auto; border-right: 3px solid white; margin-right: 2rem; padding-right: 2rem;}
+
 .socials{margin-left:5rem;}
 .orderbutton {
     cursor: pointer;
@@ -188,5 +193,10 @@ export default {
         background-color: white;
     }
 }
+@media (max-width: 1024px) {
 
+.uparrow{margin:1rem;height:32px;}
+.downarrow{margin:1rem;height:32px;}
+    .arrows{height: auto; width:100%;display:flex;flex-flow:row;justify-content:flex-start; margin-top: auto; margin-bottom: auto; border-right: 0px solid white; margin-right: 2rem; padding-right: 2rem;}
+  }
 </style>
