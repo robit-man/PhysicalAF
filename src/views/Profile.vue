@@ -1,8 +1,5 @@
 <template>
-    <div class="hero-text" style="margin:auto;padding-left:2rem;">
-    
-        <h2 style="font-size:3rem;transform-origin:10% 150%;transform:rotate(-14deg);">Your Profile</h2>
-    </div>
+<img src="~/@/assets/af-transparent/holding.png" style="position:fixed;left:-10rem;height:120vh;" alt="">
     
     <div class="row centered" style="margin:auto;margin-top:10rem;">
         <div class="referral" v-if="referral">
@@ -48,15 +45,16 @@
             </div>
         </div>
     
-        <div class="basic">
+        <div class="basic">               
+             <h1 style="margin-bottom:1rem;">Order History</h1>
+
             <div class="profilebox">
-                <h1>Order History</h1>
     
                 <!--REPLACE WITH FOR EACH-->
     
                 <div class="orders">
     
-                    <div class="order row">
+                    <div class="order row between">
                         <div class="quantitycard">10x</div>
                         <div class="card">Physical Card</div>
                         <div class="quantityaf">10x</div>
@@ -65,7 +63,7 @@
                         <div class="date">08/06/2022</div>
                         <div class="viewbutton">View</div>
                     </div>
-                    <div class="order row">
+                    <div class="order row between">
                         <div class="quantitycard">10x</div>
                         <div class="card">Physical Card</div>
                         <div class="quantityaf">10x</div>
@@ -74,7 +72,7 @@
                         <div class="date">08/06/2022</div>
                         <div class="viewbutton">View</div>
                     </div>
-                    <div class="order row">
+                    <div class="order row between">
                         <div class="quantitycard">10x</div>
                         <div class="card">Physical Card</div>
                         <div class="quantityaf">10x</div>
@@ -83,7 +81,7 @@
                         <div class="date">08/06/2022</div>
                         <div class="viewbutton">View</div>
                     </div>
-                    <div class="order row">
+                    <div class="order row between">
                         <div class="quantitycard">10x</div>
                         <div class="card">Physical Card</div>
                         <div class="quantityaf">10x</div>
@@ -92,7 +90,7 @@
                         <div class="date">08/06/2022</div>
                         <div class="viewbutton">View</div>
                     </div>
-                    <div class="order row">
+                    <div class="order row between">
                         <div class="quantitycard">10x</div>
                         <div class="card">Physical Card</div>
                         <div class="quantityaf">10x</div>
@@ -174,6 +172,9 @@ export default {
     opacity: 0.8;
 }
 
+.profileswap {
+    color: white;
+}
 .profileswap:hover {
     background: white;
     color: black;
@@ -196,6 +197,7 @@ export default {
 .orders {
     max-height: 300px;
     overflow-y: auto;
+    color:white;
 }
 
 .profilebox {
@@ -204,6 +206,7 @@ export default {
     border: 1px solid #fffa;
     min-width: 200px;
     min-height: 200px;
+    background:#0a0a0a;
 }
 
 .profilebox>h1 {
@@ -212,9 +215,9 @@ export default {
 
 .basic {
     max-height: 500px;
-    display: flex;
-    flex-flow: row;
     margin: 1rem 2rem;
+    max-width:900px;
+    width:100%;
 }
 
 .referral {

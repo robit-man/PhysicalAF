@@ -195,16 +195,14 @@ export default {
 }
 
 .cta-button-or {
-    padding: 0.5rem 1rem;
     margin: 1rem 0rem;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
     border-radius: 3px;
     background-color: var(--vt-c-green);
     height: 64px;
     width: 226px;
-    line-height: 36px;
-    font-size: 32px;
+    line-height: 64px;
     color: black;
     text-align: center;
     cursor: pointer;
@@ -217,16 +215,14 @@ export default {
 
 .cta-button-lm {
     cursor: pointer;
-    padding: 0.5rem 1rem;
     margin: 1rem 0rem;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
     border-radius: 3px;
     background-color: var(--vt-c-white);
     height: 64px;
     width: 226px;
-    line-height: 36px;
-    font-size: 32px;
+    line-height: 64px;
     color: black;
     text-align: center;
 }
