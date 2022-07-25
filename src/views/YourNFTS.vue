@@ -2,7 +2,7 @@
     <div class="fill-h-f column ">
         <div class="row  auto">
             <div class="hero-text" style="">
-                <h1 >Your NFTs</h1>
+                <h1>Your NFTs</h1>
             </div>
         </div>
     
@@ -338,7 +338,7 @@
                         <div class="column">
                             <div class="row" style="margin-bottom:1rem;margin-top:2rem;">
                                 <p style="margin-right:0.5rem;">Nx NFTs Selected</p> <button style="  height: 2rem;
-          margin: auto;">Clear</button></div>
+              margin: auto;">Clear</button></div>
     
                             <div class="confirm-button" v-on:click="preview = !preview" style="">Confirm</div>
                             <div style="margin-top:1rem" class="confirm-button" v-on:click="checkout = !checkout">Checkout</div>

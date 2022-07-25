@@ -119,7 +119,8 @@
     
     
                     <div class="image-title row center" style="margin:auto;">
-                        <img src="~/@/assets/guide.png" style="max-width:400px;margin-top:2rem;" alt="">
+                        <img src="~/@/assets/card-front.png" style="max-width:400px;margin-top:2rem;" alt="">
+                        <img src="~/@/assets/play.svg" class="qr" alt="">
     
                     </div>
     
@@ -196,17 +197,36 @@
                             <div class="column" style="margin-top:64px;margin-left:2rem;max-width:500px;">
                                 <div class="text-desc">
                                     <p><b>About Frank</b></p>
-                                    <hr style="width:40%;min-width:200px;">
+                                    <hr style="width:30%;min-width:200px;">
                                     <p>Frank may not be the most sane, but he sure knows how to be a Frank. Franks are a one-of-a-kind and live by a set of rules that only make sense to them.</p>
                                 </div>
-                                <div class="row icons between" style="margin:1rem 0rem;max-width:200px;">
+                                <div class="row icons between" style="margin:1rem 0rem;max-width:256px;">
                                     <a href=""><img src="~/@/assets/icons/world.svg" alt=""></a>
                                     <a href=""><img src="~/@/assets/icons/twitter.svg" alt=""></a>
                                     <a href=""><img src="~/@/assets/icons/discord.svg" alt=""></a>
                                     <a href=""><img src="~/@/assets/icons/opensea.svg" alt=""></a>
                                     <a href=""><img src="~/@/assets/icons/eth.svg" alt=""></a>
                                 </div>
-                                <div class="row between filters"></div>
+                                <div class="row between filters">
+                                    <div class="column">
+    
+                                        <select name="Details" id="details">
+                                                    <option value="volvo">Details</option>
+                                                    <option value="saab">Detail</option>
+                                                    <option value="opel">Detail</option>
+                                                    <option value="audi">Detail</option>
+                                                </select>
+                                    </div>
+                                    <div class="column">
+    
+                                        <select name="Properties" id="properties">
+                                                    <option value="volvo">Properties</option>
+                                                    <option value="saab">Property</option>
+                                                    <option value="opel">Property</option>
+                                                    <option value="audi">Property</option>
+                                                </select>
+                                    </div>
+                                </div>
                             </div>
     
     
@@ -348,25 +368,25 @@
         </div>
     
         <!--
-                                                                                <footer style="padding-bottom:2rem;height:100px;display:flex;flex-flow:column;justify-content: center;width:100%;">
-                                                                                
-                                                                                
-                                                                                  <div class="row" style="margin:auto;flex-flow:row;width:100%;justify-content: space-between;">
-                                                                                
-                                                                                    <div class="copyright" style="margin-top:auto;font-weight:100;font-size:1rem;">© PhysicalAF, Inc. 2022. </div>
-                                                                                      <div class="order-box" style="background-color:#3F3C40; width:auto;padding:0.5rem;border-radius:0.25rem;height:auto;display:flex;flex-flow:row;justify-content:space-between;">
-                                                                                        <div class="text" style="padding:0rem 2rem;display: flex;flex-flow: column;justify-content: center;">
-                                                                                          <h3 style="font-size:30px!important;">Pre-Order a Physical NFT </h3>
-                                                                                          <p style="font-size:20px!important;">And mint a #AFer entirely free!</p>
-                                                                                        </div>
-                                                                                        <div class="orderbutton2" v-if="!modalLoginOpen" v-on:click="wallet = !wallet">Order</div>
-                                                                                        <RouterLink v-else class="orderbutton2" style="animation:flash 1s linear infinite;" to="/mint">ORDER</RouterLink>
-                                                                                      </div>
-                                                                                
-                                                                                  </div>
-                                                                                
-                                                                                </footer>
-                                                                                -->
+                                                                                                    <footer style="padding-bottom:2rem;height:100px;display:flex;flex-flow:column;justify-content: center;width:100%;">
+                                                                                                    
+                                                                                                    
+                                                                                                      <div class="row" style="margin:auto;flex-flow:row;width:100%;justify-content: space-between;">
+                                                                                                    
+                                                                                                        <div class="copyright" style="margin-top:auto;font-weight:100;font-size:1rem;">© PhysicalAF, Inc. 2022. </div>
+                                                                                                          <div class="order-box" style="background-color:#3F3C40; width:auto;padding:0.5rem;border-radius:0.25rem;height:auto;display:flex;flex-flow:row;justify-content:space-between;">
+                                                                                                            <div class="text" style="padding:0rem 2rem;display: flex;flex-flow: column;justify-content: center;">
+                                                                                                              <h3 style="font-size:30px!important;">Pre-Order a Physical NFT </h3>
+                                                                                                              <p style="font-size:20px!important;">And mint a #AFer entirely free!</p>
+                                                                                                            </div>
+                                                                                                            <div class="orderbutton2" v-if="!modalLoginOpen" v-on:click="wallet = !wallet">Order</div>
+                                                                                                            <RouterLink v-else class="orderbutton2" style="animation:flash 1s linear infinite;" to="/mint">ORDER</RouterLink>
+                                                                                                          </div>
+                                                                                                    
+                                                                                                      </div>
+                                                                                                    
+                                                                                                    </footer>
+                                                                                                    -->
     
     </div>
 </template>
@@ -381,7 +401,7 @@ export default {
         return {
             nftName: 'Frank#000',
             sectionNum: 1,
-            step: 3,
+            step: 0,
             vstat: false,
             imageprocessed: false,
             wallet: false,
@@ -395,10 +415,10 @@ export default {
     },
     methods: {
         processCard() {
-              var m = document.getElementById('processsteps');
-                // Get all <li> children of #menu
-                var lis = m.getElementsByTagName('h3');
-                console.log(lis.length);
+            var m = document.getElementById('processsteps');
+            // Get all <li> children of #menu
+            var lis = m.getElementsByTagName('h3');
+
         },
 
 
@@ -478,6 +498,19 @@ export default {
     font-weight: bold;
 }
 
+.icons>a {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    background: #3F3C40;
+    border-radius: 0.25rem;
+    width: 42px;
+}
+
+.icons>a:hover {
+    transform: scale(1.1);
+}
+
 .viewbutton {
     height: 64px;
     background: #3F3C40;
@@ -530,6 +563,26 @@ export default {
 .text-section {
     display: flex;
     flex-flow: column;
+}
+
+#details {
+    border: 1px solid white;
+    background: transparent;
+    color: white;
+    font-size: 1rem;
+    width: 200px;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+}
+
+#properties {
+    border: 1px solid white;
+    background: transparent;
+    color: white;
+    font-size: 1rem;
+    width: 200px;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
 }
 
 @keyframes flash {
@@ -593,6 +646,11 @@ export default {
     border-right: 3px solid white;
     margin-right: 2rem;
     padding-right: 2rem;
+}
+
+option {
+    background: black;
+    border: unset;
 }
 
 .circle-1,
@@ -667,6 +725,22 @@ export default {
     height: calc(100vh - 200px);
 }
 
+.qr {
+    width: 64px;
+    margin-top: auto;
+    margin-bottom: 2rem;
+    margin-left: 1rem;
+    animation:float 2s ease infinite;
+}
+@keyframes float{
+
+    0%{    transform: rotate(180deg)translatex(0rem);
+}
+    50%{    transform: rotate(180deg)translatex(1rem);
+}
+    100%{    transform: rotate(180deg)translatex(0rem);
+}
+}
 .verify-row {
     padding-right: 400px;
     transition: all 0.2s ease;
