@@ -40,7 +40,7 @@
             </div>
 
 <div class="socials column">
-    <div class="row">
+    <div class="row between " style="max-width:320px;width:100%;">
         <a href=""><img width="60px" height="60px" src="~/@/assets/Twitter.svg" alt=""></a>`
         <a href=""><img width="60px" height="60px" src="~/@/assets/Discord.svg" alt=""></a>`
         <a href=""><img width="60px" height="60px" src="~/@/assets/Instagram.svg" alt=""></a>`

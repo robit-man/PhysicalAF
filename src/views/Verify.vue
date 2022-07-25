@@ -6,7 +6,7 @@
             <div style="display:flex;flex-flow:row;margin-bottom:2rem;">
                 <h3 style="height: 3rem; cursor:pointer;margin:auto;margin-left:1rem;padding:1rem;background:#3F3C40;border-radius:0.25rem;line-height:1rem;border:1px solid #505050;" v-if="step < 6" v-on:click="step ++">{{step}}</h3>
                 <h3 style="height: 3rem; cursor:pointer;margin:auto;margin-left:1rem;padding:1rem;background:#B7EAC2;border-radius:0.25rem;line-height:1rem;border:1px solid gray;" v-if="step > 4" v-on:click="vstat = true">V</h3>
-                <h3 style="height: 3rem; cursor:pointer;margin:auto;margin-left:1rem;padding:1rem;background:#EAB7B7;border-radius:0.25rem;line-height:1rem;border:1px solid gray;" v-if="step > 4" v-on:click="vstat = false">X</h3>
+                <h3 style="height: 3rem; cursor:pointer;margin:auto;margin-left:1rem;padding:1rem;background:#FF6565;border-radius:0.25rem;line-height:1rem;border:1px solid gray;" v-if="step > 4" v-on:click="vstat = false">X</h3>
                 <h3 style="height: 3rem; cursor:pointer;margin:auto;margin-left:1rem;padding:1rem;background:#3F3C40;border-radius:0.25rem;line-height:1rem;border:1px solid gray;" v-if="step > 4" v-on:click="step = 0">!</h3>
             </div>
     
@@ -32,7 +32,7 @@
                         <div class="circle-3">
                             <h3 class="circ-h3">STATUS</h3>
                             <div class="stat-1" style="background:#3F3C40;" v-if="step >= 5 && vstat == true"><img src="~/@/assets/check2.png" width="60" height="60" alt=""></div>
-                            <div class="stat-1" style="background:#3F3C40;" v-if="step >= 5 && vstat == false"><img src="~/@/assets/x.png" width="60" height="60" alt=""></div>
+                            <div class="stat-1" style="background:#3F3C40;" v-if="step >= 5 && vstat == false"><img src="~/@/assets/x.svg" width="60" height="60" alt=""></div>
                         </div>
     
                     </div>
@@ -78,7 +78,6 @@
     
     
     
-                                    <p v-on:click="sectionNum = 2" style="cursor:pointer;">Click here to Link a PhysicalAF Card to it’s NFT</p>
     
                                 </div>
                                 <div v-if="sectionNum == 2" class="section2">
@@ -99,15 +98,18 @@
                         </div>
     
     
-                        <div v-if="sectionNum == 1" class="action row">
+                        <div v-if="sectionNum == 1" class="action row" style="margin-left:5rem;margin-top:1rem;">
     
                             <div v-if="step == 0" v-on:click="step ++" class="uploadbutton">UPLOAD QR IMAGE</div>
                             <div v-if="step == 1" v-on:click="step ++" class="uploadbutton">UPLOADING...</div>
                             <div v-if="step == 2" v-on:click="step ++" class="uploadbutton">DONE UPLOADING</div>
                             <div v-if="step == 2" class="" style="width:16px;"> </div>
-                            <div v-if="step == 2" v-on:click="step = 0" class="uploadbutton" style="background-color:#EAB7B7;height:64px;width:64px;display:flex;flex-flow:row;justify-content: center;"><img src="~/@/assets/reload.svg" width="32" alt=""></div>
+                            <div v-if="step == 2" v-on:click="step = 0" class="uploadbutton" style="background-color:#FF6565;height:64px;width:64px;display:flex;flex-flow:row;justify-content: center;"><img src="~/@/assets/reload.svg" width="32" alt=""></div>
+    
+    
                         </div>
-                        <div v-if="sectionNum == 2" class="action row">
+                        <p v-if="sectionNum == 1" v-on:click="sectionNum = 2" style="cursor:pointer;margin-left:5rem;text-decoration:underline;">Click here to Link a PhysicalAF Card to it’s NFT</p>
+                        <div v-if="sectionNum == 2" class="action row" style="margin-left:5rem;margin-top:1rem;">
     
                             <div v-on:click="step ++" class="uploadbutton">LINK</div>
     
@@ -144,16 +146,16 @@
                         <div class="action row">
     
                             <div class="uploadbutton">
-                                <h3 v-on:click="imageprocessed = true, step ++" v-if="imageprocessed == false">PROCESSING</h3>
-                                <h3 v-on:click="imageprocessed = false, step ++" v-if="imageprocessed == true">PROCESSED</h3>
+                                <div v-on:click="processCard(), imageprocessed = true, step ++" v-if="imageprocessed == false">PROCESSING</div>
+                                <div v-on:click="imageprocessed = false, step ++" v-if="imageprocessed == true">PROCESSED</div>
                             </div>
     
                         </div>
                     </div>
-                    <div class="processingsteps">
-                        <h3 style="margin-bottom:2rem;animation:opaque 1s ease;animation-delay: 0s;">Checking Card Validity on the Blockchain...</h3>
-                        <h3 style="margin-bottom:2rem;animation:opaque 1s ease;animation-delay: 1s;">Checking Owner and Connected Wallet...</h3>
-                        <h3 style="animation:opaque 1s ease;animation-delay: 2s;">Generating Status Report...</h3>
+                    <div id="processsteps" class="processingsteps">
+                        <h3 class="processingstep" style="margin-bottom:4rem;margin-left:2rem;">Checking Card Validity on the Blockchain...</h3>
+                        <h3 class="processingstep" style="margin-bottom:4rem;margin-left:2rem;">Checking Owner and Connected Wallet...</h3>
+                        <h3 class="processingstep" style="margin-left:2rem;">Generating Status Report...</h3>
                     </div>
                 </div>
     
@@ -165,7 +167,6 @@
             <div class="verified section" v-if="vstat == true && step >= 5">
                 <div class="section-title">
                     <h2 style="color:#B7EAC2">SUCCESS</h2>
-                    <h3 style="color:#B7EAC2">Card Validated</h3>
     
                 </div>
     
@@ -174,54 +175,88 @@
     
                     <div class="text-section">
     
-                        <div class="instruction" style="margin:2rem 0rem;max-width:500px;">
+                        <div class="instruction" style="margin:2rem 0rem;">
                             <h3>The Verification of your Physical NFT was a Success! </h3>
                             <p></p>
                         </div>
+                        <div class="row start">
+                            <div class="column">
+                                <h3 style="height:64px;line-height:64px;"><b>{{nftName}}</b></h3>
+                                <img src="~/@/assets/imagetest.png" alt="">
+                                <div class="image-desc" style="margin:1rem 0rem;">
+                                    <p>Description</p>
+                                    <hr>
+                                    <p>By PhysicalAF</p>
+                                </div>
+                                <a href="">
+                                    <p><b>Verified Collection</b> <img src="~/@/assets/checkmark.svg" alt=""></p>
+                                </a>
     
-                        <div class="action ">
-    
-                            <p>Traits of the NFT scraped from Opensea</p>
-                            <div class="uploadbutton">OPENSEA
                             </div>
+                            <div class="column" style="margin-top:64px;margin-left:2rem;max-width:500px;">
+                                <div class="text-desc">
+                                    <p><b>About Frank</b></p>
+                                    <hr style="width:40%;min-width:200px;">
+                                    <p>Frank may not be the most sane, but he sure knows how to be a Frank. Franks are a one-of-a-kind and live by a set of rules that only make sense to them.</p>
+                                </div>
+                                <div class="row icons between" style="margin:1rem 0rem;max-width:200px;">
+                                    <a href=""><img src="~/@/assets/icons/world.svg" alt=""></a>
+                                    <a href=""><img src="~/@/assets/icons/twitter.svg" alt=""></a>
+                                    <a href=""><img src="~/@/assets/icons/discord.svg" alt=""></a>
+                                    <a href=""><img src="~/@/assets/icons/opensea.svg" alt=""></a>
+                                    <a href=""><img src="~/@/assets/icons/eth.svg" alt=""></a>
+                                </div>
+                                <div class="row between filters"></div>
+                            </div>
+    
+    
                         </div>
                     </div>
-                    <div class="cardviewverify">
-                        <Renderer id="c" ref="renderer" resize antialias alpha :orbit-ctrl="{ autoRotate: true, enableZoom: false, enablePan: false,  enableDamping: true, dampingFactor: 0.05 }">
-                            <Camera :position="{ x: 0, y: 0, z: 6 }" />
-                            <Scene>
-                                <AmbientLight :intensity="0.65" />
-                                <PointLight color="#55ffff" :intensity="0.25" :position="{x: 100, y: -150, z: 120 }" />
-                                <PointLight color="#ffff55" :intensity="0.25" :position="{x: -100, y: 150, z: 150 }" />
-                                <PointLight color="#ff55ff" :intensity="0.25" :position="{x: 100, y: -100, z: -100 }" />
-                                <PointLight color="#55ffff" :intensity="0.25" :position="{x: -100, y: 150, z: -120 }" />
-                                <PointLight color="#ffff55" :intensity="0.25" :position="{x: 100, y: -150, z: -150 }" />
-                                <PointLight color="#ff55ff" :intensity="0.25" :position="{x: -100, y: 100, z: 100 }" />
-                                <Group>
-                                    <Box cast-shadow ref="mesh" :width="3" :height="4" :depth="0.05" :position="{x: 0, y:  0, z: 0}" :depthSegments="20" :width-segments="200" :height-segments="200">
-                                        <MatcapMaterial name="3B3C3F_DAD9D5_929290_ABACA8" />
-                                    </Box>
     
-                                    <Box ref="mesh" :width="3" :height="4" :depth="0" :position="{x: 0, y:  0, z: 0.0253}" :depthSegments="20" :width-segments="200" :height-segments="200">
-                                        <StandardMaterial :props="{ displacementScale: 1 }">
-                                            <Texture antialias refraction :refraction-ratio="0.5" src="/success.png" />
-                                        </StandardMaterial>
-                                    </Box>
+                    <div class="column between">
+                        <div class="cardviewverify">
+                            <Renderer id="c" ref="renderer" resize antialias alpha :orbit-ctrl="{ autoRotate: false, enableZoom: false, enablePan: false,  enableDamping: true, dampingFactor: 0.05 }">
+                                <Camera :position="{ x: 0, y: 0, z: 6 }" />
+                                <Scene>
+                                    <AmbientLight :intensity="0.65" />
+                                    <PointLight color="#55ffff" :intensity="0.25" :position="{x: 100, y: -150, z: 120 }" />
+                                    <PointLight color="#ffff55" :intensity="0.25" :position="{x: -100, y: 150, z: 150 }" />
+                                    <PointLight color="#ff55ff" :intensity="0.25" :position="{x: 100, y: -100, z: -100 }" />
+                                    <PointLight color="#55ffff" :intensity="0.25" :position="{x: -100, y: 150, z: -120 }" />
+                                    <PointLight color="#ffff55" :intensity="0.25" :position="{x: 100, y: -150, z: -150 }" />
+                                    <PointLight color="#ff55ff" :intensity="0.25" :position="{x: -100, y: 100, z: 100 }" />
+                                    <Group>
+                                        <Box cast-shadow ref="mesh" :width="3" :height="4" :depth="0.05" :position="{x: 0, y:  0, z: 0}" :depthSegments="20" :width-segments="200" :height-segments="200">
+                                            <MatcapMaterial name="3B3C3F_DAD9D5_929290_ABACA8" />
+                                        </Box>
     
-                                    <Box ref="mesh" :width="3" :height="4" :depth="0" :position="{x: 0, y:  0, z: -0.0253}" :depthSegments="20" :width-segments="200" :height-segments="200">
-                                        <BasicMaterial :props="{ displacementScale: 1 }">
-                                            <Texture refraction :refraction-ratio="0.2" src="/card-back.png" />
-                                        </BasicMaterial>
-                                    </Box>
-                                </Group>
+                                        <Box ref="mesh" :width="3" :height="4" :depth="0" :position="{x: 0, y:  0, z: 0.0253}" :depthSegments="20" :width-segments="200" :height-segments="200">
+                                            <StandardMaterial :props="{ displacementScale: 1 }">
+                                                <Texture antialias refraction :refraction-ratio="0.5" src="/card-front.png" />
+                                            </StandardMaterial>
+                                        </Box>
     
-                            </Scene>
+                                        <Box ref="mesh" :width="3" :height="4" :depth="0" :position="{x: 0, y:  0, z: -0.0253}" :depthSegments="20" :width-segments="200" :height-segments="200">
+                                            <BasicMaterial :props="{ displacementScale: 1 }">
+                                                <Texture refraction :refraction-ratio="0.2" src="/card-back.png" />
+                                            </BasicMaterial>
+                                        </Box>
+                                    </Group>
     
-                            <EffectComposer>
-                                <RenderPass />
-                            </EffectComposer>
+                                </Scene>
     
-                        </Renderer>
+                                <EffectComposer>
+                                    <RenderPass />
+                                </EffectComposer>
+    
+                            </Renderer>
+                        </div>
+    
+                        <a href="">
+                            <div class="viewbutton row between">
+                                View on Opensea <img style="background:white;margin:0.5rem 0rem;padding:0.25rem;margin-right:-0.5rem;border-radius:2px;" src="~/@/assets/Openseagray.svg" alt="">
+                            </div>
+                        </a>
     
     
                     </div>
@@ -230,64 +265,76 @@
     
             </div>
             <div class="failed section" v-if="vstat == false && step >= 5">
-                <div style="color:#EAB7B7" class="section-title">
-                    <h2 style="color:#EAB7B7">FAILED</h2>
-                    <h3 style="color:#EAB7B7">Not Today Buddy...</h3>
+                <div style="color:#FF6565;display:flex;flex-flow:row;" class="section-title">
+                    <h2 style="color:#FF6565">FAILED</h2>
+                    <h3 style="color:#FF6565;margin-left:1rem;line-height: 4rem;">Not Today Buddy...</h3>
                 </div>
     
                 <div class="row between">
     
-                    <div class="text-section">
+                    <div class="text-section between">
     
-                        <div class="instruction" style="margin:2rem 0rem;max-width:500px;">
-                            <h3>The Verification of your Physical NFT failed. </h3>
+                        <div class="instruction" style="margin-top:4rem;">
+                            <h3 style="margin-bottom:2rem;">The Verification of your Physical NFT failed. </h3>
+                            <h3 style="font-weight:lighter;"><b>{{nftName}}</b> is no longer in your wallet.</h3>
                             <p></p>
                         </div>
     
                         <div class="action ">
     
-                            <p style="margin-bottom:1rem;">MFER#6969 is no longer in your wallet.</p>
+                            <p v-on:click="sectionNum = 2, step = 2" style="cursor:pointer;text-decoration:underline;"><b>Click here</b> to Link a PhysicalAF Card to it’s NFT</p>
+    
                             <div class="uploadbutton" v-on:click="step = 0">START OVER
                             </div>
                         </div>
                     </div>
-                    <div class="cardviewverify">
-                        <Renderer id="c" ref="renderer" resize antialias alpha :orbit-ctrl="{ autoRotate: true, enableZoom: false, enablePan: false,  enableDamping: true, dampingFactor: 0.05 }">
-                            <Camera :position="{ x: 0, y: 0, z: 6 }" />
-                            <Scene>
-                                <AmbientLight :intensity="0.65" />
-                                <PointLight color="#55ffff" :intensity="0.25" :position="{x: 100, y: -150, z: 120 }" />
-                                <PointLight color="#ffff55" :intensity="0.25" :position="{x: -100, y: 150, z: 150 }" />
-                                <PointLight color="#ff55ff" :intensity="0.25" :position="{x: 100, y: -100, z: -100 }" />
-                                <PointLight color="#55ffff" :intensity="0.25" :position="{x: -100, y: 150, z: -120 }" />
-                                <PointLight color="#ffff55" :intensity="0.25" :position="{x: 100, y: -150, z: -150 }" />
-                                <PointLight color="#ff55ff" :intensity="0.25" :position="{x: -100, y: 100, z: 100 }" />
-                                <Group>
-                                    <Box cast-shadow ref="mesh" :width="3" :height="4" :depth="0.05" :position="{x: 0, y:  0, z: 0}" :depthSegments="20" :width-segments="200" :height-segments="200">
-                                        <MatcapMaterial name="3B3C3F_DAD9D5_929290_ABACA8" />
-                                    </Box>
     
-                                    <Box ref="mesh" :width="3" :height="4" :depth="0" :position="{x: 0, y:  0, z: 0.0253}" :depthSegments="20" :width-segments="200" :height-segments="200">
-                                        <StandardMaterial :props="{ displacementScale: 1 }">
-                                            <Texture antialias refraction :refraction-ratio="0.5" src="/failed.png" />
-                                        </StandardMaterial>
-                                    </Box>
+                    <div class="column between">
+                        <div class="cardviewverify">
+                            <h1 style="color:black;font-size:128px;position:absolute;top:calc(50% - 64px);left:64px;text-align:center;transform:rotate(45deg);z-index:2;">FAILED</h1>
+                            <h1 style="color:#FF6565;font-size:128px;position:absolute;top:calc(50% - 72px);left:64px;text-align:center;transform:rotate(45deg);z-index:3;">FAILED</h1>
+                            <Renderer id="c" ref="renderer" resize antialias alpha :orbit-ctrl="{ autoRotate: false, enableZoom: false, enablePan: false,  enableDamping: true, dampingFactor: 0.05 }">
+                                <Camera :position="{ x: 0, y: 0, z: 6 }" />
+                                <Scene>
+                                    <AmbientLight :intensity="0.25" />
+                                    <PointLight color="#ff1111" :intensity="0.25" :position="{x: 100, y: -150, z: 120 }" />
+                                    <PointLight color="#ff1212" :intensity="0.25" :position="{x: -100, y: 150, z: 150 }" />
+                                    <PointLight color="#ff2727" :intensity="0.25" :position="{x: 100, y: -100, z: -100 }" />
+                                    <PointLight color="#ff2929" :intensity="0.25" :position="{x: -100, y: 150, z: -120 }" />
+                                    <PointLight color="#fff303" :intensity="0.25" :position="{x: 100, y: -150, z: -150 }" />
+                                    <PointLight color="#fff239" :intensity="0.25" :position="{x: -100, y: 100, z: 100 }" />
+                                    <Group>
+                                        <Box cast-shadow ref="mesh" :width="3" :height="4" :depth="0.05" :position="{x: 0, y:  0, z: 0}" :depthSegments="20" :width-segments="200" :height-segments="200">
+                                            <MatcapMaterial name="3B3C3F_DAD9D5_929290_ABACA8" />
+                                        </Box>
     
-                                    <Box ref="mesh" :width="3" :height="4" :depth="0" :position="{x: 0, y:  0, z: -0.0253}" :depthSegments="20" :width-segments="200" :height-segments="200">
-                                        <BasicMaterial :props="{ displacementScale: 1 }">
-                                            <Texture refraction :refraction-ratio="0.2" src="/card-back.png" />
-                                        </BasicMaterial>
-                                    </Box>
-                                </Group>
+                                        <Box ref="mesh" :width="3" :height="4" :depth="0" :position="{x: 0, y:  0, z: 0.0253}" :depthSegments="20" :width-segments="200" :height-segments="200">
+                                            <StandardMaterial :props="{ displacementScale: 1 }">
+                                                <Texture antialias refraction :refraction-ratio="0.5" src="/card-front.png" />
+                                            </StandardMaterial>
+                                        </Box>
     
-                            </Scene>
+                                        <Box ref="mesh" :width="3" :height="4" :depth="0" :position="{x: 0, y:  0, z: -0.0253}" :depthSegments="20" :width-segments="200" :height-segments="200">
+                                            <BasicMaterial :props="{ displacementScale: 1 }">
+                                                <Texture refraction :refraction-ratio="0.2" src="/card-back.png" />
+                                            </BasicMaterial>
+                                        </Box>
+                                    </Group>
     
-                            <EffectComposer>
-                                <RenderPass />
-                            </EffectComposer>
+                                </Scene>
     
-                        </Renderer>
+                                <EffectComposer>
+                                    <RenderPass />
+                                </EffectComposer>
     
+                            </Renderer>
+    
+                        </div>
+                        <a href="">
+                            <div class="viewbutton row between">
+                                View on Opensea <img style="background:white;margin:0.5rem 0rem;padding:0.25rem;margin-right:-0.5rem;border-radius:2px;" src="~/@/assets/Openseagray.svg" alt="">
+                            </div>
+                        </a>
     
                     </div>
                 </div>
@@ -301,25 +348,25 @@
         </div>
     
         <!--
-                <footer style="padding-bottom:2rem;height:100px;display:flex;flex-flow:column;justify-content: center;width:100%;">
-                
-                
-                  <div class="row" style="margin:auto;flex-flow:row;width:100%;justify-content: space-between;">
-                
-                    <div class="copyright" style="margin-top:auto;font-weight:100;font-size:1rem;">© PhysicalAF, Inc. 2022. </div>
-                      <div class="order-box" style="background-color:#3F3C40; width:auto;padding:0.5rem;border-radius:0.25rem;height:auto;display:flex;flex-flow:row;justify-content:space-between;">
-                        <div class="text" style="padding:0rem 2rem;display: flex;flex-flow: column;justify-content: center;">
-                          <h3 style="font-size:30px!important;">Pre-Order a Physical NFT </h3>
-                          <p style="font-size:20px!important;">And mint a #AFer entirely free!</p>
-                        </div>
-                        <div class="orderbutton2" v-if="!modalLoginOpen" v-on:click="wallet = !wallet">Order</div>
-                        <RouterLink v-else class="orderbutton2" style="animation:flash 1s linear infinite;" to="/mint">ORDER</RouterLink>
-                      </div>
-                
-                  </div>
-                
-                </footer>
-                -->
+                                                                                <footer style="padding-bottom:2rem;height:100px;display:flex;flex-flow:column;justify-content: center;width:100%;">
+                                                                                
+                                                                                
+                                                                                  <div class="row" style="margin:auto;flex-flow:row;width:100%;justify-content: space-between;">
+                                                                                
+                                                                                    <div class="copyright" style="margin-top:auto;font-weight:100;font-size:1rem;">© PhysicalAF, Inc. 2022. </div>
+                                                                                      <div class="order-box" style="background-color:#3F3C40; width:auto;padding:0.5rem;border-radius:0.25rem;height:auto;display:flex;flex-flow:row;justify-content:space-between;">
+                                                                                        <div class="text" style="padding:0rem 2rem;display: flex;flex-flow: column;justify-content: center;">
+                                                                                          <h3 style="font-size:30px!important;">Pre-Order a Physical NFT </h3>
+                                                                                          <p style="font-size:20px!important;">And mint a #AFer entirely free!</p>
+                                                                                        </div>
+                                                                                        <div class="orderbutton2" v-if="!modalLoginOpen" v-on:click="wallet = !wallet">Order</div>
+                                                                                        <RouterLink v-else class="orderbutton2" style="animation:flash 1s linear infinite;" to="/mint">ORDER</RouterLink>
+                                                                                      </div>
+                                                                                
+                                                                                  </div>
+                                                                                
+                                                                                </footer>
+                                                                                -->
     
     </div>
 </template>
@@ -332,8 +379,9 @@ import { Box, Camera, StandardMaterial, BasicMaterial, SubSurfaceMaterial, Rende
 export default {
     data() {
         return {
+            nftName: 'Frank#000',
             sectionNum: 1,
-            step: 0,
+            step: 3,
             vstat: false,
             imageprocessed: false,
             wallet: false,
@@ -346,6 +394,14 @@ export default {
         };
     },
     methods: {
+        processCard() {
+              var m = document.getElementById('processsteps');
+                // Get all <li> children of #menu
+                var lis = m.getElementsByTagName('h3');
+                console.log(lis.length);
+        },
+
+
         showModal() {
             this.isModalVisible = true;
         },
@@ -373,14 +429,12 @@ export default {
 
 .processingsteps {
     width: 100%;
-    text-align: center;
+    text-align: left;
 }
 
 .cardviewverify {
-    height: 60vh;
+    min-height: 60vh;
     min-width: 600px;
-    margin-top: -100px;
-    margin-right: 20%;
 }
 
 .uploadbutton {
@@ -399,6 +453,10 @@ export default {
     cursor: pointer;
 }
 
+.uploadbutton>div {
+    font-weight: bold;
+}
+
 .uploadbutton:hover {
     color: var(--vt-c-white);
     background-color: var(--vt-c-black-soft);
@@ -413,11 +471,25 @@ export default {
     cursor: pointer;
     padding: 0.5rem 1rem;
     color: #030306;
-    background-color: #EAB7B7;
+    background-color: #FF6565;
     border-radius: 0.25rem;
     margin: auto 0;
     font-size: 1.5rem;
     font-weight: bold;
+}
+
+.viewbutton {
+    height: 64px;
+    background: #3F3C40;
+    color: white;
+    line-height: 64px;
+    padding: 0rem 1rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+    border-radius: 0.25rem;
+    width: 350px;
+    margin: auto;
+    margin-top: -4rem;
 }
 
 .verification-status {}
@@ -458,7 +530,6 @@ export default {
 .text-section {
     display: flex;
     flex-flow: column;
-    justify-content: space-between;
 }
 
 @keyframes flash {
@@ -506,9 +577,23 @@ export default {
     display: flex;
     flex-flow: column;
 }
-.uparrow{margin-bottom:1rem;}
-.downarrow{margin-top:1rem;}
-    .arrows{height: 200px; margin-top: auto; margin-bottom: auto; border-right: 3px solid white; margin-right: 2rem; padding-right: 2rem;}
+
+.uparrow {
+    margin-bottom: 1rem;
+}
+
+.downarrow {
+    margin-top: 1rem;
+}
+
+.arrows {
+    height: 200px;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-right: 3px solid white;
+    margin-right: 2rem;
+    padding-right: 2rem;
+}
 
 .circle-1,
 .circle-2,
@@ -595,12 +680,22 @@ export default {
 .processingsteps>h3 {
     opacity: 0.5;
 }
-    .Mobile{display:none;}
 
-    .Desktop{display:block;}
+.Mobile {
+    display: none;
+}
+
+.Desktop {
+    display: block;
+}
+
 @media (max-width: 1024px) {
-    .Desktop{display:none;}
-    .Mobile{display:block;}
+    .Desktop {
+        display: none;
+    }
+    .Mobile {
+        display: block;
+    }
     .statushr {
         background-color: white;
         opacity: 1;
@@ -621,13 +716,32 @@ export default {
         text-align: center;
         margin-right: auto;
     }
-    
-.uparrow{margin:1rem;height:32px;}
-.downarrow{margin:1rem;height:32px;}
-    .arrows{height: auto; width:100%;display:flex;flex-flow:row;justify-content:flex-start; margin-top: auto; margin-bottom: auto; border-right: 0px solid white; margin-right: 2rem; padding-right: 2rem;}
-    .verify-row {
-        flex-flow: column;padding-right:unset;
+    .uparrow {
+        margin: 1rem;
+        height: 32px;
     }
-    p{max-width: calc(100vw - 2rem)!important;}
+    .downarrow {
+        margin: 1rem;
+        height: 32px;
+    }
+    .arrows {
+        height: auto;
+        width: 100%;
+        display: flex;
+        flex-flow: row;
+        justify-content: flex-start;
+        margin-top: auto;
+        margin-bottom: auto;
+        border-right: 0px solid white;
+        margin-right: 2rem;
+        padding-right: 2rem;
+    }
+    .verify-row {
+        flex-flow: column;
+        padding-right: unset;
+    }
+    p {
+        max-width: calc(100vw - 2rem) !important;
+    }
 }
 </style>

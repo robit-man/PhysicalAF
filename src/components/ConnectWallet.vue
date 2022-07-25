@@ -28,7 +28,7 @@ export default {
       form: {
         quantity: ''
       },
-      modalLoginOpen: false,
+      connectWallet: false,
     };
   },
   mounted() {

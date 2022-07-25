@@ -105,7 +105,7 @@ h4{
 @media (max-width: 1024px) {
   .row{flex-flow:wrap;}
 }  
-#app{padding:1rem;overflow-y:auto;}
+#app{padding:1rem;}
 
 /*
 @media (prefers-color-scheme: dark) {
@@ -157,7 +157,7 @@ body {
 
 @media (max-width: 1024px) {
   h1{
-    font-size:3rem;
+    font-size:2.5rem;
     font-weight:bold;
     color:var(--vt-c-white);
   }

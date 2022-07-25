@@ -319,4 +319,31 @@ export default {
     font-weight: bold;
     margin-bottom: 2rem;
 }
+
+
+
+@media (max-width: 1024px) {
+    
+.wall {
+    pointer-events: none;
+    position: fixed;
+    bottom: 0px;
+    max-height: 100vh;
+    right: -50vw;
+    width: auto;
+    z-index: -2;
+    filter:brightness(0.5);
+}
+
+.standing {
+    pointer-events: none;
+    position: fixed;
+    bottom: -20vh;
+    max-height: 80vh;
+    right: 35vw;
+    width: auto;display:none;
+    z-index: -1;
+    filter:brightness(0.5);
+}
+}
 </style>

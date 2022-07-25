@@ -110,6 +110,14 @@ export default {
             modalLoginOpen: false,
         };
     },
+    methods: {
+          showModal() {
+            this.ConnectWallet = true;
+        },
+        closeModal() {
+            this.ConnectWallet = false;
+        }
+    },
     mounted() {},
     components: { Box, Camera, ConnectWallet, StandardMaterial, BasicMaterial, SubSurfaceMaterial, FilmPass, PhongMaterial, EffectComposer, UnrealBloomPass, RenderPass, MatcapMaterial, CubeTexture, Texture, Renderer, Scene },
 };
@@ -325,10 +333,10 @@ canvas {}
         flex-flow: column-reverse
     }
     .cardview {
-        width: 100vw;
+        width: 100%;
         margin-right: auto;
         margin-left: auto;
-        margin-top: -5vh;
+        margin-top: -8vh;
         height: 40vh;
     }
     .wall {
